@@ -9,7 +9,7 @@ body.css2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contianer {
+.container {
     max-width: 900px;
     margin: 0px auto;
 }
@@ -32,33 +32,39 @@ h1 {
 
 .form-container {
     margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    grid-template-areas:
-        "first-name last-name"
-        "email email"
-        "position linkedin-url"
-        "upload-cv upload-cv"
-        "cover-letter cover-letter"
-        "button button";
 }
 
 .form-control {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .form-control-email {
+    flex: 2;
     display: flex;
     flex-direction: column;
-    grid-area: email;
 }
 
 .textarea {
-    grid-area: cover-letter;
+    flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+.cover-letter-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 label {
@@ -77,15 +83,9 @@ textarea {
     background-color: transparent;
 }
 
-input:focus {
-    outline-color: royalblue;
-}
-
-.button-container {
-    grid-area: button;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+.form-control-email input,
+.textarea textarea {
+    width: 100%;
 }
 
 button {
@@ -102,7 +102,6 @@ button:hover {
     background-color: pink;
     border: 2px solid black;
     transform: scale(1.05);
-    /* Adjust the scaling factor as needed */
     cursor: pointer;
 }
 
@@ -120,19 +119,10 @@ button:hover {
     }
 
     .form-container {
-        grid-template-areas:
-            "first-name"
-            "last-name"
-            "email"
-            "position"
-            "linkedin-url"
-            "upload-cv"
-            "cover-letter"
-            "button";
+        gap: 10px;
     }
 }
 
-/* CSS for footer */
 footer * {
     margin: 0;
     padding: 0;
@@ -201,7 +191,6 @@ footer .col h3 {
     background-color: pink;
     border: 2px solid black;
     transform: scale(1.05);
-    /* Adjust the scaling factor as needed */
     cursor: pointer;
 }
 
@@ -295,7 +284,6 @@ body.css1 {
     z-index: 999;
 }
 
-/* Notification dot style */
 #notification-dot {
     position: absolute;
     top: 5px;
@@ -318,7 +306,6 @@ body.css1 {
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: none;
-    /* Initially hidden */
     background-color: #fff;
     z-index: 999;
     display: flex;
@@ -337,7 +324,6 @@ body.css1 {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /* Needed for absolute positioning of the notification dot */
 }
 
 #close-button {
@@ -381,7 +367,6 @@ body.css1 {
     background-color: pink;
     border: 2px solid white;
     transform: scale(1.05);
-    /* Adjust the scaling factor as needed */
     cursor: pointer;
 }
 
