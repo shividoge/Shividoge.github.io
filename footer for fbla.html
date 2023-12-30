@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <link rel="stylesheet" href="CSSforapp.css">
+    <script src="https://kit.fontawesome.com/ca0d8e26e9.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-ApNb4+C4FpAeXJWE2+KvaJ37oUyDyQLdf4BvjV/PRXjfs0AV9mrK1FdPjdC6LEwo/Ha73RrDL5d/lXh8dtCnvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Add your existing CSS styles here */
+
+        @media (max-width: 768px) {
+            /* Adjust the styling for smaller screens */
+            .testarea {
+                width: 100%;
+            }
+        }
+        body.css2 {
+            background: linear-gradient(90deg, pink, wheat);
+            font-family: Arial, Helvetica, sans-serif; 
+        }
+
+        body.css1 {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+    </style>
+    <script>
+        function submitForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            // Perform form validation here if needed
+
+            // Simulate form submission (replace with actual implementation)
+            // In this example, we display a thank you message
+            document.getElementById('stay-connected-form').reset(); // Reset the form fields
+            document.getElementById('thank-you-message').style.display = 'block'; // Display the thank you message
+        }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const chatButton = document.getElementById("chat-button");
+      const chatContainer = document.getElementById("chat-container");
+      const chatHeader = document.getElementById("chat-header");
+      const chatHistory = document.getElementById("chat-history");
+      const messageInput = document.getElementById("message-input");
+      const sendButton = document.getElementById("send-button");
+      const closeButton = document.getElementById("close-button");
+      const notificationDot = document.getElementById("notification-dot");
+
+      let isOpen = false;
+      let isFirstOpen = true;
+      let messageCount = 0;
+
+      chatButton.addEventListener("click", toggleChatBox);
+      closeButton.addEventListener("click", toggleChatBox);
+      sendButton.addEventListener("click", sendMessage);
+
+      // Open chat box with a welcome message when the page is loaded
+      appendBotMessage("Welcome to RoboHorizons! How can we assist you today?");
+
+      function toggleChatBox() {
+        isOpen = !isOpen;
+        chatContainer.style.display = isOpen ? "flex" : "none";
+
+        if (isOpen && isFirstOpen) {
+          isFirstOpen = false;
+          notificationDot.style.display = "none";
+        }
+      }
+
+      function sendMessage() {
+        const messageText = messageInput.value.trim();
+        if (messageText !== "") {
+          const userMessageElement = document.createElement("div");
+          userMessageElement.textContent = messageText;
+          userMessageElement.className = "user-message";
+          chatHistory.appendChild(userMessageElement);
+
+          messageCount++;
+
+          setTimeout(() => {
+            if (messageCount === 1) {
+              // First bot message with buttons
+              appendBotMessage("We have notified our team and someone will help you soon!", true);
+            }
+
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+          }, 500);
+
+          messageInput.value = "";
+          chatHistory.scrollTop = chatHistory.scrollHeight;
+
+          notificationDot.style.display = "block";
+        }
+      }
+
+      function appendBotMessage(message, includeButtons) {
+        const botResponseElement = document.createElement("div");
+        botResponseElement.textContent = message;
+        botResponseElement.className = "bot-message";
+        chatHistory.appendChild(botResponseElement);
+
+        if (includeButtons) {
+          appendBotButtons();
+        }
+
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+      }
+
+      function appendBotButtons() {
+        const pages = [
+          { title: "Home", url: "/home" },
+          { title: "About Us", url: "/about" },
+          { title: "Products", url: "/products" },
+          { title: "Services", url: "/services" },
+          { title: "Contact Us", url: "/contact" },
+          { title: "FAQ", url: "/faq" },
+        ];
+
+        const buttonsContainer = document.createElement("div");
+        buttonsContainer.style.marginTop = "10px";
+        buttonsContainer.style.display = "flex";
+        buttonsContainer.style.flexDirection = "column";
+
+        pages.forEach((page) => {
+          const button = document.createElement("button");
+          button.textContent = page.title;
+          button.addEventListener("click", () => {
+            window.location.href = page.url;
+          });
+          button.style.marginBottom = "8px"; // Adjusted padding between buttons
+          buttonsContainer.appendChild(button);
+        });
+
+        const botResponseElement = document.createElement("div");
+        botResponseElement.className = "bot-message";
+        botResponseElement.appendChild(buttonsContainer);
+        chatHistory.appendChild(botResponseElement);
+      }
+    });
+    </script>
+</head>
+<body class="css2">
+    <button id="chat-button">
+        Chat with us
+        <div id="notification-dot"></div>
+    </button>
+      
+      <div id="chat-container" class="css1">
+        <div id="chat-header">
+          <button id="close-button">&#10005;</button>
+          <i class="fas fa-comments" style="margin-right: 5px;"></i>
+          Chat with us
+        </div>
+        <div id="chat-history"></div>
+        <div id="chat-input">
+          <input type="text" id="message-input" placeholder="Type your message...">
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+      
+     <div class="container">
+        <div class="apply-box">
+            <h1>Job Application</h1>
+
+            <form action="process.php" method="post">
+                <div class="form-container">
+                    <div class="form-control">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="Enter First Name">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name">
+                    </div>
+
+                    <div class="form-control-email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Email">
+                    </div>
+
+                    <div class="form-control">
+                        <label for="position">Position</label>
+                        <select name="position" id="position">
+                            <option value=""> Select Position</option>
+                            <option value="Mechinical resurcher"> Mechinical Resurcher</option>
+                            <option value="Mechinical resurcher"> Officer manager</option>
+                            <option value="Mechinical resurcher"> Mechinical Resurcher</option>
+                            <option value="Mechinical resurcher"> Mechinical Resurcher</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="linkedin-url">LinkedIn URL</label>
+                        <input type="url" id="linkedin-url" name="linkedin-url" placeholder="Enter LinkedIn URL">
+                    </div>
+
+                    <div class="testarea">
+                        <label for="cover-letter">Cover Letter</label>
+                        <textarea name="cover-letter" id="cover-letter" cols="56.9" rows="10" placeholder="Enter Cover Letter"></textarea>
+                    </div>
+
+                    <div class="textarea">
+                        <label for="upload-cv">Upload Your CV</label>
+                        <input type="file" id="upload-cv" name="upload-cv">
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Your footer section here -->
+    <footer>
+        <div class="row">
+            <!-- Column one -->
+            <div class="col">
+                <img src="image.png" class="logo">
+                <p>ribiciinnect</p>
+            </div>
+            <!-- Column two -->
+            <div class="col">
+                <h3>Stay in Contact<div class="underline"><span></span></div></h3>
+                <p>Subscribe to our newsletter to stay updated.</p>
+
+                <form id="stay-connected-form" onsubmit="event.preventDefault(); submitForm();">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <input type="submit" value="Subscribe">
+                </form>
+
+                <p id="thank-you-message" class="thank-you" style="display: none;">Thank you for subscribing!</p>
+            </div>
+            <!-- Column three -->
+            <div class="col">
+                <h3>Navigation<div class="underline"><span></span></div></h3>
+                <ul>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/index.html">Home</a></li>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/meetings/index.html">Meetings</a></li>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/gallery/index.html">Gallery</a></li>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/downloads/index.html">Downloads</a></li>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/officers/index.html">Officers</a></li>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/competitions/index.html">Competitions</a></li>
+                    <li style="font-weight: bold;"> <a href="https://flsam.org/results/index.html">Results</a></li>
+                </ul>
+            </div>
+            <!-- Column four -->
+            <div class="col">
+                <h3>Stay in contact<div class="underline"><span></span></div></h3>
+                <div class="social-icons">
+                    <a href="https://www.example.com" target="_blank"> <i class="fa-brands fa-twitter"></i> </a>
+                    <br>
+                    <a href="https://www.example.com" target="_blank"> <i class="fa-brands fa-instagram"></i> </a>
+                    <br>
+                    <a href="https://www.example.com" target="_blank"> <i class="fa-brands fa-discord"></i> </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright"> Copyright © 2023 RoboHorizons</p>
+    </footer>
+</body>
+</html>
