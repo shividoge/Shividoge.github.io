@@ -224,46 +224,90 @@
         </div>
       </section>
 
-      <!-- Section - Our solutions -->
-      <section class="ln-section d-xl-flex" data-anchor="our-solutions" data-tooltip="Our solutions" data-overlay-color="#00050e" data-overlay-opacity="90">
-        <div class="overlay overlay-advanced">
-          <div class="overlay-inner bg-image-holder bg-cover">
-            <img src="assets/images/image-3.jpg" alt="background">
+      <!-- Section - Apply -->
+<section class="ln-section d-xl-flex" data-anchor="our-solutions" data-tooltip="Our solutions" data-overlay-color="#00050e" data-overlay-opacity="90">
+    <div class="overlay overlay-advanced">
+      <div class="overlay-inner bg-image-holder bg-cover">
+        <img src="assets/images/image-3.jpg" alt="background">
+      </div>
+      <div class="overlay-inner bg-dark opacity-50"></div>
+    </div>
+    <div class="container align-self-xl-center text-white">
+        <button id="chat-button">
+            Chat with us
+            <div id="notification-dot"></div>
+        </button>
+          
+          <div id="chat-container" class="css1">
+            <div id="chat-header">
+              <button id="close-button">&#10005;</button>
+              <i class="fas fa-comments" style="margin-right: 5px;"></i>
+              Chat with us
+            </div>
+            <div id="chat-history"></div>
+            <div id="chat-input">
+              <input type="text" id="message-input" placeholder="Type your message...">
+              <button id="send-button">Send</button>
+            </div>
           </div>
-          <div class="overlay-inner bg-dark opacity-50"></div>
+          
+         <div class="container">
+            <div class="apply-box">
+                <h1>Job Application</h1>
+    
+                <form action="process.php" method="post">
+                    <div class="form-container">
+                        <div class="form-control">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="Enter First Name">
+                        </div>
+    
+                        <div class="form-control">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name">
+                        </div>
+    
+                        <div class="form-control-email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Email">
+                        </div>
+    
+                        <div class="form-control">
+                            <label for="position">Position</label>
+                            <select name="position" id="position">
+                                <option value="">Select Position</option>
+                                <option value="Mechanical researcher">Mechanical Researcher</option>
+                                <option value="Officer manager">Officer Manager</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                    
+                        <div class="form-control">
+                            <label for="linkedin-url">LinkedIn URL</label>
+                            <input type="url" id="linkedin-url" name="linkedin-url" placeholder="Enter LinkedIn URL">
+                        </div>
+                    
+                        <div class="form-control">
+                            <label for="cover-letter">Cover Letter</label>
+                            <textarea id="cover-letter" name="cover-letter" placeholder="Enter Cover Letter"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="textarea cover-letter-container">
+                        <label for="upload-cv">Upload Your CV</label>
+                        <input type="file" id="upload-cv" name="upload-cv">
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="container align-self-xl-center text-white">
-          <div class="row mb-8">
-            <div class="col-12 col-xl-6">
-              <h2 class="mb-4 animated" data-animation="fadeInUp">A complete marketing solution</h2>
-              <p class="animated" data-animation="fadeInUp" data-animation-delay="150">Mauris ut sem elementum, tristique velit sed, volutpat mauris. Ut interdum nibh sit amet imperdiet condimentum. Nulla sed tellus placerat, vehicula risus ac, sollicitudin quam. Quisque pharetra porta libero, a sagittis nisl tristique non.</p>
-            </div>
-          </div>
-          <div class="row">
 
-            <div class="col-12 col-lg-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="150">
-              <h4>We are</h4>
-              <p class="mb-0">Quisque ultrices non velit sit amet consectetur. Cras turpis dolor, facilisis a nibh non, ullamcorper facilisis mauris. Nulla rutrum arcu sed ligula malesuada, quis condimentum eros sollicitudin. Morbi eget lorem turpis. Maecenas id metus sapien. Aliquam et est turpis. Sed sit amet dui vel sapien sagittis pellentesque nec id sem.</p>
-            </div>
-
-            <div class="col-12 col-lg-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="300">
-              <h4>We practice</h4>
-              <p class="mb-0">Quisque ultrices non velit sit amet consectetur. Cras turpis dolor, facilisis a nibh non, ullamcorper facilisis mauris. Nulla rutrum arcu sed ligula malesuada, quis condimentum eros sollicitudin. Morbi eget lorem turpis. Maecenas id metus sapien. Aliquam et est turpis. Sed sit amet dui vel sapien sagittis pellentesque nec id sem.</p>
-            </div>
-
-            <div class="col-12 col-lg-6 mb-8 mb-lg-0 animated" data-animation="fadeInUp" data-animation-delay="450">
-              <h4>We deliver</h4>
-              <p class="mb-0">Quisque ultrices non velit sit amet consectetur. Cras turpis dolor, facilisis a nibh non, ullamcorper facilisis mauris. Nulla rutrum arcu sed ligula malesuada, quis condimentum eros sollicitudin. Morbi eget lorem turpis. Maecenas id metus sapien. Aliquam et est turpis. Sed sit amet dui vel sapien sagittis pellentesque nec id sem.</p>
-            </div>
-
-            <div class="col-12 col-lg-6 animated" data-animation="fadeInUp" data-animation-delay="600">
-              <h4>We create and innovate</h4>
-              <p class="mb-0">Quisque ultrices non velit sit amet consectetur. Cras turpis dolor, facilisis a nibh non, ullamcorper facilisis mauris. Nulla rutrum arcu sed ligula malesuada, quis condimentum eros sollicitudin. Morbi eget lorem turpis. Maecenas id metus sapien. Aliquam et est turpis. Sed sit amet dui vel sapien sagittis pellentesque nec id sem.</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
       <!-- Section - Our work -->
       <section class="ln-section d-xl-flex" data-anchor="our-work" data-tooltip="Our work" data-overlay-color="#00050e" data-overlay-opacity="80">
