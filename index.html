@@ -103,6 +103,23 @@
 
     <!-- Fullpage content -->
     <div class="ln-fullpage" data-navigation="true">
+	<button id="chat-button">
+        Chat with us
+        <div id="notification-dot"></div>
+    </button>
+      
+      <div id="chat-container" class="css1">
+        <div id="chat-header">
+          <button id="close-button">&#10005;</button>
+          <i class="fas fa-comments" style="margin-right: 5px;"></i>
+          Chat with us
+        </div>
+        <div id="chat-history"></div>
+        <div id="chat-input">
+          <input type="text" id="message-input" placeholder="Type your message...">
+          <button id="send-button">Send</button>
+        </div>
+      </div>
 
       <!-- Section - Home -->
       <section class="ln-section d-flex js-min-vh-100" data-anchor="home" data-tooltip="Home" data-overlay-color="#00050e" data-overlay-opacity="50">
