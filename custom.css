@@ -102,17 +102,6 @@ button:hover {
     z-index: 999;
 }
 
-#my-notification-dot {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 10px;
-    height: 10px;
-    background-color: #e74c3c;
-    border-radius: 50%;
-    display: none;
-}
-
 #my-chat-container {
     position: fixed;
     bottom: 20px;
