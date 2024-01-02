@@ -52,6 +52,25 @@
         <span class="navbar-toggler-alternative-icon"></span>
       </button>
 
+<button id="my-chat-button">
+    Chat with us
+    <div id="my-notification-dot"></div>
+</button>
+
+<div id="my-chat-container" class="my-chat-container">
+    <div id="my-chat-header">
+        <button id="my-close-button">&#10005;</button>
+        <i class="fas fa-comments" style="margin-right: 5px;"></i>
+        Chat with us
+    </div>
+    <div id="my-chat-history"></div>
+    <div id="my-chat-input">
+        <input type="text" id="my-message-input" placeholder="Type your message...">
+        <button id="my-send-button">Send</button>
+    </div>
+</div>
+
+	    
       <!-- Collapse -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
@@ -103,24 +122,7 @@
 
     <!-- Fullpage content -->
     <div class="ln-fullpage" data-navigation="true">
-	<button id="chat-button">
-        Chat with us
-        <div id="notification-dot"></div>
-    </button>
-      
-      <div id="chat-container" class="css1">
-        <div id="chat-header">
-          <button id="close-button">&#10005;</button>
-          <i class="fas fa-comments" style="margin-right: 5px;"></i>
-          Chat with us
-        </div>
-        <div id="chat-history"></div>
-        <div id="chat-input">
-          <input type="text" id="message-input" placeholder="Type your message...">
-          <button id="send-button">Send</button>
-        </div>
-      </div>
-
+	    
       <!-- Section - Home -->
       <section class="ln-section d-flex js-min-vh-100" data-anchor="home" data-tooltip="Home" data-overlay-color="#00050e" data-overlay-opacity="50">
         <div class="overlay overlay-advanced">
