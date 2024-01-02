@@ -193,3 +193,99 @@ button:hover {
     border-radius: 8px;
     align-self: flex-start;
 }
+
+.unique-container {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+.custom-apply-box {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0px auto;
+    margin-top: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+.custom-form-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.custom-form-control {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-form-control-email {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-textarea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-cover-letter-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.custom-button-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+input,
+select,
+textarea {
+    padding: 6px 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+.custom-form-control-email input,
+.custom-textarea textarea {
+    width: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: black solid 2px;
+    color: black;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: transform 0.4s ease-out;
+}
+
+button:hover {
+    background-color: pink;
+    border: 2px solid black;
+    transform: scale(1.05);
+    cursor: pointer;
+}
