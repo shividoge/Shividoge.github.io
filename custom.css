@@ -91,7 +91,7 @@ button:hover {
 #my-chat-button {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px; /* Updated to left side */
     background-color: #3498db;
     color: #fff;
     padding: 10px 20px;
@@ -116,7 +116,7 @@ button:hover {
 #my-chat-container {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px; /* Updated to left side */
     width: 300px;
     height: 400px;
     border: 1px solid #ccc;
