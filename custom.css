@@ -89,7 +89,7 @@ button:hover {
     cursor: pointer;
 }
 
-#chat-button {
+#my-chat-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -103,7 +103,7 @@ button:hover {
     z-index: 999;
 }
 
-#notification-dot {
+#my-notification-dot {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -114,7 +114,7 @@ button:hover {
     display: none;
 }
 
-#chat-container {
+#my-chat-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -131,7 +131,7 @@ button:hover {
     flex-direction: column;
 }
 
-#chat-header {
+#my-chat-header {
     background-color: #3498db;
     color: #fff;
     padding: 10px;
@@ -145,7 +145,7 @@ button:hover {
     position: relative;
 }
 
-#close-button {
+#my-close-button {
     background: none;
     border: none;
     color: #ccc;
@@ -153,7 +153,7 @@ button:hover {
     cursor: pointer;
 }
 
-#chat-history {
+#my-chat-history {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
@@ -161,7 +161,7 @@ button:hover {
     color: #3498db;
 }
 
-#chat-input {
+#my-chat-input {
     padding: 10px;
     border-top: 1px solid #ccc;
     display: flex;
@@ -169,12 +169,12 @@ button:hover {
     align-items: stretch;
 }
 
-#message-input {
+#my-message-input {
     padding: 5px;
     margin-bottom: 8px;
 }
 
-#send-button {
+#my-send-button {
     padding: 5px 10px;
     background-color: #3498db;
     color: #fff;
@@ -182,14 +182,14 @@ button:hover {
     cursor: pointer;
 }
 
-#send-button:hover {
+#my-send-button:hover {
     background-color: pink;
     border: 2px solid white;
     transform: scale(1.05);
     cursor: pointer;
 }
 
-.user-message {
+.my-user-message {
     background-color: #3498db;
     color: #fff;
     padding: 8px;
@@ -198,7 +198,7 @@ button:hover {
     align-self: flex-end;
 }
 
-.bot-message {
+.my-bot-message {
     background-color: #f0f0f0;
     padding: 8px;
     margin-bottom: 8px;
