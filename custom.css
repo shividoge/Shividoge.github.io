@@ -72,6 +72,22 @@ textarea {
     width: 100%;
 }
 
+shivinsbutton {
+    background-color: transparent;
+    border: black solid 2px;
+    color: black;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: transform 0.4s ease-out;
+}
+
+shivinsbutton:hover {
+    background-color: pink;
+    border: 2px solid black;
+    transform: scale(1.05);
+    cursor: pointer;
+}
 #my-chat-button {
     position: fixed;
     bottom: 20px;
@@ -257,3 +273,17 @@ textarea {
     width: 100%;
 }
 
+button {
+    background-color: transparent;
+    border: black solid 2px;
+    color: black;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: pink;
+    border: 2px solid black;
+    cursor: pointer;
+}
