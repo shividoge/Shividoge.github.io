@@ -26,6 +26,112 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="custom.css">
+<style>
+	.container {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+.apply-box {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0px auto;
+    margin-top: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+}
+
+.form-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-control {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control-email {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cover-letter-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+input,
+select,
+textarea {
+    padding: 6px 10px;
+    border: 1px solid;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+.form-control-email input,
+.textarea textarea {
+    width: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: black solid 2px;
+    color: black;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: transform 0.4s ease-out;
+}
+
+button:hover {
+    background-color: pink;
+    border: 2px solid black;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.textarea-control {
+    grid-column: 1 / span 2;
+}
+
+.textarea-control textarea {
+    width: 100%;
+}
+</style>
+
 	  
     <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -144,6 +250,40 @@
       }
     });
   });
+
+    function submitJobApplicationForm() {
+      var firstName = document.getElementById('first-name').value;
+      var lastName = document.getElementById('last-name').value;
+      var email = document.getElementById('email').value;
+      var position = document.getElementById('position').value;
+      var linkedinUrl = document.getElementById('linkedin-url').value;
+      var coverLetter = document.getElementById('cover-letter').value;
+      var uploadCv = document.getElementById('upload-cv').value;
+
+      // Perform form validation
+      if (!firstName || !lastName || !email || !position || !linkedinUrl || !coverLetter || !uploadCv) {
+        // If any of the required fields is empty, display an error message
+        alert("Please fill out all fields before submitting.");
+        return;
+      }
+
+      // Validate file type for the CV upload
+      var allowedFileTypes = ['pdf', 'docx'];
+      var fileType = uploadCv.split('.').pop().toLowerCase();
+      if (allowedFileTypes.indexOf(fileType) === -1) {
+        // If the file type is not allowed, display an error message
+        alert("Please upload a PDF or DOCX file for CV.");
+        return;
+      }
+
+      // Simulate form submission (replace with actual implementation)
+      // In this example, we reset the form fields
+      document.getElementById('job-application-form').reset();
+
+      // Display the thank you message
+      document.getElementById('thank-you-message-job-application').style.display = 'block';
+    }
+
     </script>
   </head>
   <body class="layout-wide">
@@ -358,67 +498,70 @@
       </section>
 
       <!-- Section - Applications -->
-<section class="ln-section d-xl-flex" data-anchor="our-solutions" data-tooltip="Our solutions" data-overlay-color="#00050e" data-overlay-opacity="90">
-    <div class="overlay overlay-advanced">
-      <div class="overlay-inner bg-image-holder bg-cover">
-        <img src="assets/images/image-3.jpg" alt="background">
-      </div>
-      <div class="overlay-inner bg-dark opacity-50"></div>
+    <section class="ln-section d-xl-flex" data-anchor="our-solutions" data-tooltip="Our solutions" data-overlay-color="#00050e" data-overlay-opacity="90">
+        <div class="overlay overlay-advanced">
+          <div class="overlay-inner bg-image-holder bg-cover">
+            <img src="assets/images/image-3.jpg" alt="background">
+          </div>
+          <div class="overlay-inner bg-dark opacity-50"></div>
+        </div>
+        <div class="container">
+            <div class="apply-box">
+                <h1>Job Application</h1>
+    
+                <form id="job-application-form" onsubmit="event.preventDefault(); submitJobApplicationForm();">
+                    <div class="form-container">
+                        <div class="form-control">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="Enter First Name">
+                        </div>
+    
+                        <div class="form-control">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name">
+                        </div>
+    
+                        <div class="form-control-email">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Email">
+                        </div>
+    
+                        <div class="form-control">
+                            <label for="position">Position</label>
+                            <select name="position" id="position">
+                                <option value="">Select Position</option>
+                                <option value="Mechanical researcher">Mechanical Researcher</option>
+                                <option value="Officer manager">Officer Manager</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                    
+                        <div class="form-control">
+                            <label for="linkedin-url">LinkedIn URL</label>
+                            <input type="url" id="linkedin-url" name="linkedin-url" placeholder="Enter LinkedIn URL">
+                        </div>
+                    
+                        <div class="form-control">
+                            <label for="cover-letter">Cover Letter</label>
+                            <textarea id="cover-letter" name="cover-letter" placeholder="Enter Cover Letter"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="textarea cover-letter-container">
+                        <label for="upload-cv">Upload Your CV (.pdf or .docx only):</label>
+                        <input type="file" id="upload-cv" name="upload-cv" required>
+                      </div>
+                    
+                    <div class="button-container">
+                        <button type="submit">Submit</button>
+                    </div>
+
+                    <p id="thank-you-message-job-application" class="thank-you" style="display: none;">Thank you for submitting your application!</p>
+
+                </form>
+            </div>  
     </div>
-    <div class="shivin-container">
-    <div class="shivin-apply-box">
-        <h1>Job Application</h1>
-
-        <form action="process.php" method="post">
-            <div class="shivin-form-container">
-                <div class="shivin-form-control">
-                    <label for="shivin-first-name">First Name</label>
-                    <input type="text" id="shivin-first-name" name="shivin-first-name" placeholder="Enter First Name">
-                </div>
-
-                <div class="shivin-form-control">
-                    <label for="shivin-last-name">Last Name</label>
-                    <input type="text" id="shivin-last-name" name="shivin-last-name" placeholder="Enter Last Name">
-                </div>
-
-                <div class="shivin-form-control-email">
-                    <label for="shivin-email">Email</label>
-                    <input type="email" id="shivin-email" name="shivin-email" placeholder="Enter Email">
-                </div>
-
-                <div class="shivin-form-control">
-                    <label for="shivin-position">Position</label>
-                    <select name="shivin-position" id="shivin-position">
-                        <option value="">Select Position</option>
-                        <option value="Mechanical researcher">Mechanical Researcher</option>
-                        <option value="Officer manager">Officer Manager</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
-
-                <div class="shivin-form-control">
-                    <label for="shivin-linkedin-url">LinkedIn URL</label>
-                    <input type="url" id="shivin-linkedin-url" name="shivin-linkedin-url" placeholder="Enter LinkedIn URL">
-                </div>
-
-                <div class="shivin-form-control">
-                    <label for="shivin-cover-letter">Cover Letter</label>
-                    <textarea id="shivin-cover-letter" name="shivin-cover-letter" placeholder="Enter Cover Letter"></textarea>
-                </div>
-            </div>
-
-            <div class="shivin-textarea shivin-cover-letter-container">
-                <label for="shivin-upload-cv">Upload Your CV</label>
-                <input type="file" id="shivin-upload-cv" name="shivin-upload-cv">
-            </div>
-
-            <div class="shivin-button-container">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-</div>
-  </section>
+      </section>
 
 
       <!-- Section - Careers -->
