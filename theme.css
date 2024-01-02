@@ -20305,13 +20305,3 @@ button.mfp-arrow.mfp-arrow-right::after {
 .slick-dotted.slick-slider.dots-light .slick-dots li button {
   background: #fff;
 }
-
-#video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Ensure the video stays behind other content */
-}
