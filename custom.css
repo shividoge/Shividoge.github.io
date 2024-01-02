@@ -72,7 +72,7 @@ textarea {
     width: 100%;
 }
 
-button {
+shivinsbutton {
     background-color: transparent;
     border: black solid 2px;
     color: black;
@@ -82,7 +82,7 @@ button {
     transition: transform 0.4s ease-out;
 }
 
-button:hover {
+shivinsbutton:hover {
     background-color: pink;
     border: 2px solid black;
     transform: scale(1.05);
