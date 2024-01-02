@@ -28,108 +28,125 @@
     <link rel="stylesheet" href="custom.css">
 	  
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const chatButton = document.getElementById("my-chat-button");
-          const chatContainer = document.getElementById("my-chat-container");
-          const chatHeader = document.getElementById("my-chat-header");
-          const chatHistory = document.getElementById("my-chat-history");
-          const messageInput = document.getElementById("my-message-input");
-          const sendButton = document.getElementById("my-send-button");
-          const closeButton = document.getElementById("my-close-button");
-          const notificationDot = document.getElementById("my-notification-dot");
-      
-          let isOpen = false;
-          let isFirstOpen = true;
-          let messageCount = 0;
-      
-          chatButton.addEventListener("click", toggleChatBox);
-          closeButton.addEventListener("click", toggleChatBox);
-          sendButton.addEventListener("click", sendMessage);
-      
-          // Open chat box with a welcome message when the page is loaded
-          appendBotMessage("Welcome to RoboHorizons! How can we assist you today?");
-      
-          function toggleChatBox() {
-            isOpen = !isOpen;
-            chatContainer.style.display = isOpen ? "flex" : "none";
-      
-            if (isOpen && isFirstOpen) {
-              isFirstOpen = false;
-              notificationDot.style.display = "none";
-            }
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const chatButton = document.getElementById("my-chat-button");
+    const chatContainer = document.getElementById("my-chat-container");
+    const chatHeader = document.getElementById("my-chat-header");
+    const chatHistory = document.getElementById("my-chat-history");
+    const messageInput = document.getElementById("my-message-input");
+    const sendButton = document.getElementById("my-send-button");
+    const closeButton = document.getElementById("my-close-button");
+    const notificationDot = document.getElementById("my-notification-dot");
+
+    let isOpen = false;
+    let isFirstOpen = true;
+    let messageCount = 0;
+
+    chatButton.addEventListener("click", toggleChatBox);
+    closeButton.addEventListener("click", toggleChatBox);
+    sendButton.addEventListener("click", sendMessage);
+
+    // Open chat box with a welcome message when the page is loaded
+    appendBotMessage("Welcome to RoboHorizons! How can we assist you today?");
+
+    function toggleChatBox() {
+      isOpen = !isOpen;
+      chatContainer.style.display = isOpen ? "flex" : "none";
+
+      if (isOpen && isFirstOpen) {
+        isFirstOpen = false;
+        notificationDot.style.display = "none";
+      }
+    }
+
+    function sendMessage() {
+      const messageText = messageInput.value.trim();
+      if (messageText !== "") {
+        const userMessageElement = document.createElement("div");
+        userMessageElement.textContent = messageText;
+        userMessageElement.className = "my-user-message";
+        chatHistory.appendChild(userMessageElement);
+
+        messageCount++;
+
+        setTimeout(() => {
+          if (messageCount === 1) {
+            // First bot message with buttons
+            appendBotMessage("We have notified our team and someone will help you soon!", true);
           }
-      
-          function sendMessage() {
-            const messageText = messageInput.value.trim();
-            if (messageText !== "") {
-              const userMessageElement = document.createElement("div");
-              userMessageElement.textContent = messageText;
-              userMessageElement.className = "my-user-message";
-              chatHistory.appendChild(userMessageElement);
-      
-              messageCount++;
-      
-              setTimeout(() => {
-                if (messageCount === 1) {
-                  // First bot message with buttons
-                  appendBotMessage("We have notified our team and someone will help you soon!", true);
-                }
-      
-                chatHistory.scrollTop = chatHistory.scrollHeight;
-              }, 500);
-      
-              messageInput.value = "";
-              chatHistory.scrollTop = chatHistory.scrollHeight;
-      
-              notificationDot.style.display = "block";
-            }
-          }
-      
-          function appendBotMessage(message, includeButtons) {
-            const botResponseElement = document.createElement("div");
-            botResponseElement.textContent = message;
-            botResponseElement.className = "my-bot-message";
-            chatHistory.appendChild(botResponseElement);
-      
-            if (includeButtons) {
-              appendBotButtons();
-            }
-      
-            chatHistory.scrollTop = chatHistory.scrollHeight;
-          }
-      
-          function appendBotButtons() {
-            const pages = [
-              { title: "Home", url: "/home" },
-              { title: "Our Mission", url: "/Our Mission" },
-              { title: "What we do", url: "/What we do" },
-              { title: "Applications", url: "/applications" },
-              { title: "Careers", url: "/careers" },
-              { title: "Contact", url: "/contact" },
-            ];
-      
-            const buttonsContainer = document.createElement("div");
-            buttonsContainer.style.marginTop = "10px";
-            buttonsContainer.style.display = "flex";
-            buttonsContainer.style.flexDirection = "column";
-      
-            pages.forEach((page) => {
-              const button = document.createElement("button");
-              button.textContent = page.title;
-              button.addEventListener("click", () => {
-                window.location.href = page.url;
-              });
-              button.style.marginBottom = "8px"; // Adjusted padding between buttons
-              buttonsContainer.appendChild(button);
-            });
-      
-            const botResponseElement = document.createElement("div");
-            botResponseElement.className = "my-bot-message";
-            botResponseElement.appendChild(buttonsContainer);
-            chatHistory.appendChild(botResponseElement);
-          }
+
+          chatHistory.scrollTop = chatHistory.scrollHeight;
+        }, 500);
+
+        messageInput.value = "";
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+
+        notificationDot.style.display = "block";
+      }
+    }
+
+    function appendBotMessage(message, includeButtons) {
+      const botResponseElement = document.createElement("div");
+      botResponseElement.textContent = message;
+      botResponseElement.className = "my-bot-message";
+      chatHistory.appendChild(botResponseElement);
+
+      if (includeButtons) {
+        appendBotButtons();
+      }
+
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    function appendBotButtons() {
+      const pages = [
+        { title: "Home", url: "/home" },
+        { title: "Our Mission", url: "/Our Mission" },
+        { title: "What we do", url: "/What we do" },
+        { title: "Applications", url: "/applications" },
+        { title: "Careers", url: "/careers" },
+        { title: "Contact", url: "/contact" },
+      ];
+
+      const buttonsContainer = document.createElement("div");
+      buttonsContainer.style.marginTop = "10px";
+      buttonsContainer.style.display = "flex";
+      buttonsContainer.style.flexDirection = "column";
+
+      pages.forEach((page) => {
+        const button = document.createElement("button");
+        button.textContent = page.title;
+        button.addEventListener("click", () => {
+          window.location.href = page.url;
         });
+        button.style.marginBottom = "8px"; // Adjusted padding between buttons
+        buttonsContainer.appendChild(button);
+      });
+
+      const botResponseElement = document.createElement("div");
+      botResponseElement.className = "my-bot-message";
+      botResponseElement.appendChild(buttonsContainer);
+      chatHistory.appendChild(botResponseElement);
+    }
+
+    // Prevent default scroll behavior for the chat box
+    chatHistory.addEventListener("wheel", function (e) {
+      e.preventDefault();
+
+      // Calculate the new scrollTop value based on the wheel delta
+      chatHistory.scrollTop += e.deltaY;
+    });
+
+    // Synchronize chat box scrolling with page scrolling
+    document.addEventListener("scroll", function () {
+      if (isOpen) {
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+      }
+    });
+  });
 </script>
+
 
     </script>
   </head>
