@@ -393,53 +393,57 @@ function submitBhuveshJobApplicationForm() {
             </div>
             <div class="overlay-inner bg-dark opacity-50"></div>
         </div>
-<div class="container align-self-xl-center text-white">
         <div class="Bhuvesh-container">
             <div class="Bhuvesh-apply-box">
-                <h1 class="Bhuvesh-h1">Job Application</h1>
-                <form id="Bhuvesh-job-application-form" onsubmit="event.preventDefault(); submitBhuveshJobApplicationForm();">
-                    <div class="Bhuvesh-form-container">
-                        <div class="Bhuvesh-form-control">
-                            <label class="Bhuvesh-label" for="Bhuvesh-first-name">First Name</label>
-                            <input type="text" id="Bhuvesh-first-name" name="Bhuvesh-first-name" placeholder="Enter First Name" class="Bhuvesh-input">
+                <div class="Bhuvesh-form-container-left">
+                    <h1 class="Bhuvesh-h1">Job Application</h1>
+                    <form id="Bhuvesh-job-application-form" onsubmit="event.preventDefault(); submitBhuveshJobApplicationForm();">
+                        <div class="Bhuvesh-form-container">
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-first-name">First Name</label>
+                                <input type="text" id="Bhuvesh-first-name" name="Bhuvesh-first-name" placeholder="Enter First Name" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-last-name">Last Name</label>
+                                <input type="text" id="Bhuvesh-last-name" name="Bhuvesh-last-name" placeholder="Enter Last Name" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control-email">
+                                <label class="Bhuvesh-label" for="Bhuvesh-email">Email</label>
+                                <input type="email" id="Bhuvesh-email" name="Bhuvesh-email" placeholder="Enter Email" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-position">Position</label>
+                                <select name="Bhuvesh-position" id="Bhuvesh-position" class="Bhuvesh-select">
+                                    <option value="">Select Position</option>
+                                    <option value="Mechanical researcher">Mechanical Researcher</option>
+                                    <option value="Officer manager">Officer Manager</option>
+                                </select>
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-linkedin-url">LinkedIn URL</label>
+                                <input type="url" id="Bhuvesh-linkedin-url" name="Bhuvesh-linkedin-url" placeholder="Enter LinkedIn URL" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-cover-letter">Cover Letter</label>
+                                <textarea id="Bhuvesh-cover-letter" name="Bhuvesh-cover-letter" placeholder="Enter Cover Letter" class="Bhuvesh-textarea"></textarea>
+                            </div>
                         </div>
                         <div class="Bhuvesh-form-control">
-                            <label class="Bhuvesh-label" for="Bhuvesh-last-name">Last Name</label>
-                            <input type="text" id="Bhuvesh-last-name" name="Bhuvesh-last-name" placeholder="Enter Last Name" class="Bhuvesh-input">
+                            <label class="Bhuvesh-label" for="Bhuvesh-upload-cv">Upload Your CV (.pdf or .docx only):</label>
+                            <input type="file" class="Bhuvesh-input Bhuvesh-file-input" id="fileInput" name="fileInput" required>
                         </div>
-                        <div class="Bhuvesh-form-control-email">
-                            <label class="Bhuvesh-label" for="Bhuvesh-email">Email</label>
-                            <input type="email" id="Bhuvesh-email" name="Bhuvesh-email" placeholder="Enter Email" class="Bhuvesh-input">
+                        <div class="Bhuvesh-button-container">
+                            <button type="submit" class="Bhuvesh-button">Submit</button>
                         </div>
-                        <div class="Bhuvesh-form-control">
-                            <label class="Bhuvesh-label" for="Bhuvesh-position">Position</label>
-                            <select name="Bhuvesh-position" id="Bhuvesh-position" class="Bhuvesh-select">
-                                <option value="">Select Position</option>
-                                <option value="Mechanical researcher">Mechanical Researcher</option>
-                                <option value="Officer manager">Officer Manager</option>
-                            </select>
-                        </div>
-                        <div class="Bhuvesh-form-control">
-                            <label class="Bhuvesh-label" for="Bhuvesh-linkedin-url">LinkedIn URL</label>
-                            <input type="url" id="Bhuvesh-linkedin-url" name="Bhuvesh-linkedin-url" placeholder="Enter LinkedIn URL" class="Bhuvesh-input">
-                        </div>
-                        <div class="Bhuvesh-form-control">
-                            <label class="Bhuvesh-label" for="Bhuvesh-cover-letter">Cover Letter</label>
-                            <textarea id="Bhuvesh-cover-letter" name="Bhuvesh-cover-letter" placeholder="Enter Cover Letter" class="Bhuvesh-textarea"></textarea>
-                        </div>
-                    </div>
-                    <div class="Bhuvesh-form-control">
-                        <label class="Bhuvesh-label" for="Bhuvesh-upload-cv">Upload Your CV (.pdf or .docx only):</label>
-                        <input type="file" class="Bhuvesh-input Bhuvesh-file-input" id="fileInput" name="fileInput" required>
-                    </div>
-                    <div class="Bhuvesh-button-container">
-                        <button type="submit" class="Bhuvesh-button">Submit</button>
-                    </div>
-                    <p id="Bhuvesh-thank-you-message-job-application" class="thank-you" style="display: none;">Thank you for submitting your application!</p>
-                </form>
+                        <p id="Bhuvesh-thank-you-message-job-application" class="thank-you" style="display: none;">Thank you for submitting your application!</p>
+                    </form>
+                </div>
+            </div>
+            <div class="Bhuvesh-content-container-right">
+                <h2 class="Bhuvesh-title">Form Title</h2>
+                <p class="Bhuvesh-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-</div>
     </section>
 
       <!-- Section - Careers -->
