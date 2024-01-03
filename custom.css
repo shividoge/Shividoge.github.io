@@ -209,3 +209,16 @@
     width: 96.5%;
     padding: 6px 10px;
 }
+
+.Bhuvesh-input::placeholder,
+.Bhuvesh-select option:first-child {
+    color: white;
+}
+
+.Bhuvesh-select {
+    color: white;
+}
+
+.Bhuvesh-select option {
+    color: white; /* Change the color as needed */
+}
