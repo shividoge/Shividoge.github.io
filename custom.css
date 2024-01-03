@@ -108,15 +108,29 @@
 /* CSS for applicaiton */ 
 
 
+.Bhuvesh-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .Bhuvesh-apply-box {
-    max-width: 600px;
-    padding: 25px;
+    display: flex;
+}
+
+.Bhuvesh-form-container-left {
+    width: 60%;
+    padding: 25px; /* Adjust padding as needed */
     margin: 0px auto;
-    margin-top: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
+}
+
+.Bhuvesh-content-container-right {
+    width: 35%;
+    text-align: center;
+    padding-left: 5%;
 }
 
 .Bhuvesh-h1 {
@@ -147,6 +161,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    color: white; /* Text color for the textarea */
+    border: 1px solid white; /* Border color for the textarea */
 }
 
 .Bhuvesh-cover-letter-container {
@@ -169,12 +185,14 @@
 
 .Bhuvesh-input,
 .Bhuvesh-select,
-.Bhuvesh-textarea {
+.Bhuvesh-textarea,
+.Bhuvesh-file-input {
     padding: 6px 10px;
-    border: 1px solid;
+    border: 1px solid white; /* Border color for input elements */
     border-radius: 4px;
     font-size: 15px;
     background-color: transparent;
+    color: white; /* Text color for input elements */
 }
 
 .Bhuvesh-button {
@@ -202,16 +220,10 @@
     width: 100%;
 }
 
-.Bhuvesh-file-input {
-    width: 96.5%;
-    padding: 6px 10px;
-}
-
 /* Borders color for input elements and dropdown menu */
 .Bhuvesh-input,
 .Bhuvesh-select {
     border: 1px solid white;
-    color: white; /* Add this line for text color */
 }
 
 /* Style for the selected option in the dropdown menu */
@@ -219,32 +231,9 @@
     color: black; /* Change the color as needed */
 }
 
-/* Text color for the cover letter textarea */
-.Bhuvesh-textarea {
-    color: white;
-    border: 1px solid white;
-}
-
 /* Placeholder text color for input elements */
 .Bhuvesh-input::placeholder,
 .Bhuvesh-select option:first-child,
 .Bhuvesh-textarea::placeholder {
     color: white;
-}
-
-.Bhuvesh-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.Bhuvesh-form-container-left {
-    width: 100%; /* Adjust the width as needed */
-}
-
-.Bhuvesh-content-container-right {
-    width: 35%; /* Adjust the width as needed */
-    text-align: center;
-    text-align: middle;
-    padding-left: 1%; /* Adjust padding for space between the form and text */
-    padding-right: 1%;
 }
