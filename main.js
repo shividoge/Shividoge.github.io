@@ -948,13 +948,6 @@ License: https://themeforest.net/licenses/standard
       chatHistory.appendChild(botResponseElement);
     }
 
-    // Prevent default scroll behavior for the chat box
-    chatHistory.addEventListener("wheel", function (e) {
-      e.preventDefault();
-
-      // Calculate the new scrollTop value based on the wheel delta
-      chatHistory.scrollTop += e.deltaY;
-    });
 
   });
 
