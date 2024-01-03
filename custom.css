@@ -109,28 +109,19 @@
 
 
 .Bhuvesh-container {
-    display: flex;
-    justify-content: space-between;
+    max-width: 600px;
+    margin: 0px auto;
 }
 
 .Bhuvesh-apply-box {
-    display: flex;
-}
-
-.Bhuvesh-form-container-left {
-    width: 60%;
-    padding: 25px; /* Adjust padding as needed */
+    max-width: 600px;
+    padding: 25px;
     margin: 0px auto;
+    margin-top: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
-}
-
-.Bhuvesh-content-container-right {
-    width: 35%;
-    text-align: center;
-    padding-left: 5%;
 }
 
 .Bhuvesh-h1 {
@@ -161,8 +152,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    color: white; /* Text color for the textarea */
-    border: 1px solid white; /* Border color for the textarea */
 }
 
 .Bhuvesh-cover-letter-container {
@@ -185,14 +174,12 @@
 
 .Bhuvesh-input,
 .Bhuvesh-select,
-.Bhuvesh-textarea,
-.Bhuvesh-file-input {
+.Bhuvesh-textarea {
     padding: 6px 10px;
-    border: 1px solid white; /* Border color for input elements */
+    border: 1px solid;
     border-radius: 4px;
     font-size: 15px;
     background-color: transparent;
-    color: white; /* Text color for input elements */
 }
 
 .Bhuvesh-button {
@@ -220,15 +207,27 @@
     width: 100%;
 }
 
+.Bhuvesh-file-input {
+    width: 96.5%;
+    padding: 6px 10px;
+}
+
 /* Borders color for input elements and dropdown menu */
 .Bhuvesh-input,
 .Bhuvesh-select {
     border: 1px solid white;
+    color: white; /* Add this line for text color */
 }
 
 /* Style for the selected option in the dropdown menu */
 .Bhuvesh-select option {
     color: black; /* Change the color as needed */
+}
+
+/* Text color for the cover letter textarea */
+.Bhuvesh-textarea {
+    color: white;
+    border: 1px solid white;
 }
 
 /* Placeholder text color for input elements */
