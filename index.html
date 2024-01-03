@@ -138,13 +138,6 @@
       // Calculate the new scrollTop value based on the wheel delta
       chatHistory.scrollTop += e.deltaY;
     });
-
-    // Synchronize chat box scrolling with page scrolling
-    document.addEventListener("scroll", function () {
-      if (isOpen) {
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-      }
-    });
   });
 
 function submitBhuveshJobApplicationForm() {
