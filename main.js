@@ -891,7 +891,7 @@ License: https://themeforest.net/licenses/standard
         setTimeout(() => {
           if (messageCount === 1) {
             // First bot message with buttons
-            appendBotMessage("We have notified our team and someone will help you soon!", true);
+            appendBotMessage("We have notified our team and someone will help you soon! While you're waiting, please feel free to look through the rest of our site, with the links below.", true);
           }
 
           chatHistory.scrollTop = chatHistory.scrollHeight;
