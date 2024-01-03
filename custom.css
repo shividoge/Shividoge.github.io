@@ -210,15 +210,27 @@
     padding: 6px 10px;
 }
 
-.Bhuvesh-input::placeholder,
-.Bhuvesh-select option:first-child {
-    color: white;
-}
-
+/* Borders color for input elements and dropdown menu */
+.Bhuvesh-input,
 .Bhuvesh-select {
-    color: white;
+    border: 1px solid white;
+    color: white; /* Add this line for text color */
 }
 
+/* Style for the selected option in the dropdown menu */
 .Bhuvesh-select option {
-    color: white; /* Change the color as needed */
+    color: black; /* Change the color as needed */
+}
+
+/* Text color for the cover letter textarea */
+.Bhuvesh-textarea {
+    color: white;
+    border: 1px solid white;
+}
+
+/* Placeholder text color for input elements */
+.Bhuvesh-input::placeholder,
+.Bhuvesh-select option:first-child,
+.Bhuvesh-textarea::placeholder {
+    color: white;
 }
