@@ -124,27 +124,29 @@
     <!-- Fullpage content -->
     <div class="ln-fullpage" data-navigation="true">
 	    
-      <!-- Section - Home -->
-      <section class="ln-section d-flex js-min-vh-100" data-anchor="home" data-tooltip="Home" data-overlay-color="#00050e" data-overlay-opacity="50">
-        <div class="overlay overlay-advanced">
-          <div class="overlay-inner bg-image-holder bg-cover">
-            <img src="assets/images/image-16.jpg" alt="background">
-          </div>
-          <div class="overlay-inner bg-dark opacity-70"></div>
-        </div>
-        <div class="container align-self-center text-white">
-          <div class="row">
-            <div class="col-12 col-lg-9 col-xl-6">
+<section class="ln-section d-flex js-min-vh-100" data-anchor="home" data-tooltip="Home" data-overlay-color="#00050e" data-overlay-opacity="50">
+  <div class="overlay overlay-advanced">
+    <div class="overlay-inner bg-video-holder bg-cover">
+      <!-- Use a video element instead of an image -->
+      <video autoplay muted loop id="background-video">
+        <source src="AdobeStock_227376709_Video_HD_Preview.MOV" type="video/mov">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="overlay-inner bg-dark opacity-70"></div>
+  </div>
+  <div class="container align-self-center text-white">
+    <div class="row">
+      <div class="col-12 col-lg-9 col-xl-6">
+        <h1 class="mb-4 animated" data-animation="fadeInUp">Robotics For Everyone!</h1>
+        <p class="mb-7 animated" data-animation="fadeInUp" data-animation-delay="200">Our primary goal is to break down barriers and make robotics accessible to everyone, regardless of background or expertise.</p>
+        <a href="https://shividoge.github.io/#what-we-do" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp" data-animation-delay="400">Learn more</a>
+        <button type="button" class="btn btn-soft-white scrollto animated" data-animation="fadeInUp" data-animation-delay="600" data-toggle="modal" data-target="https://shividoge.github.io/#our-solutions">Apply Now!</button>
+      </div>
+    </div>
+  </div>
+</section>
 
-              <h1 class="mb-4 animated" data-animation="fadeInUp">Robotics For Everyone!</h1>
-              <p class="mb-7 animated" data-animation="fadeInUp" data-animation-delay="200">Our primary goal is to break down barriers and make robotics accessible to everyone, regardless of background or expertise.</p>
-              <a href="https://shividoge.github.io/#what-we-do" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp" data-animation-delay="400">Learn more</a>
-              <button type="button" class="btn btn-soft-white scrollto animated" data-animation="fadeInUp" data-animation-delay="600" data-toggle="modal" data-target="https://shividoge.github.io/#our-solutions">Apply Now!</button>
-
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- Section - Our mission -->
       <section class="ln-section d-xl-flex" data-anchor="our-mission" data-tooltip="Our mission" data-overlay-color="#00050e" data-overlay-opacity="90">
@@ -193,37 +195,37 @@
 
                 <div class="col-md-6 col-sm-6 mb-8 animated" data-animation="fadeInUp">
                   <div class="icon-7x mb-4">
-                    <i class="ti-timer"></i>
+                    <i class="fa-solid fa-robot"></i>
                   </div>
-                  <h3 class="h4 mb-0">Launch Quickly</h3>
+                  <h3 class="h4 mb-0">Inclusive Robotics</h3>
                 </div>
 
                 <div class="col-md-6 col-sm-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="150">
                   <div class="icon-7x mb-4">
-                    <i class="ti-brush-alt"></i>
+                    <i class="fa-solid fa-microscope"></i>
                   </div>
-                  <h3 class="h4 mb-0">Stylish Design</h3>
+                  <h3 class="h4 mb-0">Cutting-edge Research</h3>
                 </div>
 
                 <div class="col-md-6 col-sm-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="300">
                   <div class="icon-7x mb-4">
-                    <i class="ti-book"></i>
+                    <i class="fa-solid fa-circle-info"></i>
                   </div>
-                  <h3 class="h4 mb-0">Well Documented</h3>
+                  <h3 class="h4 mb-0">Accessible Technology</h3>
                 </div>
 
                 <div class="col-md-6 col-sm-6 mb-8 animated" data-animation="fadeInUp" data-animation-delay="450">
                   <div class="icon-7x mb-4">
-                    <i class="ti-layers"></i>
+                    <i class="fa-solid fa-globe"></i>
                   </div>
-                  <h3 class="h4 mb-0">Multiple Styles</h3>
+                  <h3 class="h4 mb-0">Global Impact</h3>
                 </div>
 
                 <div class="col-md-6 col-sm-6 mb-8 mb-sm-0 animated" data-animation="fadeInUp" data-animation-delay="600">
                   <div class="icon-7x mb-4">
-                    <i class="ti-settings"></i>
+                    <i class="fa-solid fa-laptop-file"></i>
                   </div>
-                  <h3 class="h4 mb-0">Fully Customizable</h3>
+                  <h3 class="h4 mb-0">Empowering Education/h3>
                 </div>
 
                 <div class="col-md-6 col-sm-6 animated" data-animation="fadeInUp" data-animation-delay="750">
@@ -565,7 +567,7 @@
                 </a>
               </li>
             </ul>
-            <p class="mb-0">© 2023 Lana - All Rights Reserved - <a href="#!" class="text-gray-400">Terms of Service</a></p>
+            <p class="mb-0">© 2024 RoboHorizons - All Rights Reserved - <a href="#!" class="text-gray-400">Terms of Service</a></p>
           </div>
         </div>
       </div>
