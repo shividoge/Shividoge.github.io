@@ -182,8 +182,8 @@
 
 .Bhuvesh-button {
     background-color: transparent;
-    border: black solid 2px;
-    color: black;
+    border: white solid 2px;
+    color: white;
     border-radius: 12px;
     padding: 12px 20px;
     font-size: 16px;
@@ -192,7 +192,7 @@
 
 .Bhuvesh-button:hover {
     background-color: #50b6bc;
-    border: 2px solid black;
+    border: 2px solid white;
     transform: scale(1.05);
     cursor: pointer;
 }
