@@ -919,12 +919,12 @@ License: https://themeforest.net/licenses/standard
 
     function appendBotButtons() {
       const pages = [
-        { title: "Home", url: "/home" },
-        { title: "Our Mission", url: "/Our Mission" },
-        { title: "What we do", url: "/What we do" },
-        { title: "Applications", url: "/applications" },
-        { title: "Careers", url: "/careers" },
-        { title: "Contact", url: "/contact" },
+        { title: "Home", url: "https://shividoge.github.io/#home" },
+        { title: "Our Mission", url: "https://shividoge.github.io/#our-mission" },
+        { title: "What we do", url: "https://shividoge.github.io/#what-we-do" },
+        { title: "Applications", url: "https://shividoge.github.io/#our-solutions" },
+        { title: "Careers", url: "https://shividoge.github.io/#our-work" },
+        { title: "Contact", url: "https://shividoge.github.io/#contact" },
       ];
 
       const buttonsContainer = document.createElement("div");
