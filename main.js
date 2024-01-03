@@ -848,108 +848,112 @@ License: https://themeforest.net/licenses/standard
 // [16. Applicaiton and chat button]
 
   document.addEventListener("DOMContentLoaded", function () {
-    const chatButton = document.getElementById("my-chat-button");
-    const chatContainer = document.getElementById("my-chat-container");
-    const chatHeader = document.getElementById("my-chat-header");
-    const chatHistory = document.getElementById("my-chat-history");
-    const messageInput = document.getElementById("my-message-input");
-    const sendButton = document.getElementById("my-send-button");
-    const closeButton = document.getElementById("my-close-button");
-    const notificationDot = document.getElementById("my-notification-dot");
+        const chatButton = document.getElementById("my-chat-button");
+        const chatContainer = document.getElementById("my-chat-container");
+        const chatHeader = document.getElementById("my-chat-header");
+        const chatHistory = document.getElementById("my-chat-history");
+        const messageInput = document.getElementById("my-message-input");
+        const sendButton = document.getElementById("my-send-button");
+        const closeButton = document.getElementById("my-close-button");
+        const notificationDot = document.getElementById("my-notification-dot");
 
-    let isOpen = false;
-    let isFirstOpen = true;
-    let messageCount = 0;
+        let isOpen = false;
+        let isFirstOpen = true;
+        let messageCount = 0;
 
-    chatButton.addEventListener("click", toggleChatBox);
-    closeButton.addEventListener("click", toggleChatBox);
-    sendButton.addEventListener("click", sendMessage);
+        chatButton.addEventListener("click", toggleChatBox);
+        closeButton.addEventListener("click", toggleChatBox);
+        sendButton.addEventListener("click", sendMessage);
 
-    // Open chat box with a welcome message when the page is loaded
-    appendBotMessage("Welcome to RoboHorizons! How can we assist you today?");
+        // Open chat box with a welcome message when the page is loaded
+        appendBotMessage("Welcome to RoboHorizons! How can we assist you today?");
 
-    function toggleChatBox() {
-      isOpen = !isOpen;
-      chatContainer.style.display = isOpen ? "flex" : "none";
+        function toggleChatBox() {
+          isOpen = !isOpen;
+          chatContainer.style.display = isOpen ? "flex" : "none";
 
-      if (isOpen && isFirstOpen) {
-        isFirstOpen = false;
-        notificationDot.style.display = "none";
-      }
-    }
+          if (isOpen && isFirstOpen) {
+            isFirstOpen = false;
+            notificationDot.style.display = "none";
+          }
+        }
 
-    function sendMessage() {
-      const messageText = messageInput.value.trim();
-      if (messageText !== "") {
-        const userMessageElement = document.createElement("div");
-        userMessageElement.textContent = messageText;
-        userMessageElement.className = "my-user-message";
-        chatHistory.appendChild(userMessageElement);
+        function sendMessage() {
+          const messageText = messageInput.value.trim();
+          if (messageText !== "") {
+            const userMessageElement = document.createElement("div");
+            userMessageElement.textContent = messageText;
+            userMessageElement.className = "my-user-message";
+            chatHistory.appendChild(userMessageElement);
 
-        messageCount++;
+            messageCount++;
 
-        setTimeout(() => {
-          if (messageCount === 1) {
-            // First bot message with buttons
-            appendBotMessage("We have notified our team and someone will help you soon! While you're waiting, please feel free to look through the rest of our site, with the links below.", true);
+            setTimeout(() => {
+              if (messageCount === 1) {
+                // First bot message with buttons
+                appendBotMessage("We have notified our team and someone will help you soon! While you're waiting, please feel free to look through the rest of our site, with the links below.", true);
+              }
+
+              chatHistory.scrollTop = chatHistory.scrollHeight;
+            }, 500);
+
+            messageInput.value = "";
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+
+            notificationDot.style.display = "block";
+          }
+        }
+
+        function appendBotMessage(message, includeButtons) {
+          const botResponseElement = document.createElement("div");
+          botResponseElement.textContent = message;
+          botResponseElement.className = "my-bot-message";
+          chatHistory.appendChild(botResponseElement);
+
+          if (includeButtons) {
+            appendBotButtons();
           }
 
           chatHistory.scrollTop = chatHistory.scrollHeight;
-        }, 500);
+        }
 
-        messageInput.value = "";
-        chatHistory.scrollTop = chatHistory.scrollHeight;
+        function appendBotButtons() {
+          const pages = [
+            { title: "Home", url: "https://shividoge.github.io/#home" },
+            { title: "Our Mission", url: "https://shividoge.github.io/#our-mission" },
+            { title: "What we do", url: "https://shividoge.github.io/#what-we-do" },
+            { title: "Applications", url: "https://shividoge.github.io/#our-solutions" },
+            { title: "Careers", url: "https://shividoge.github.io/#our-work" },
+            { title: "Contact", url: "https://shividoge.github.io/#contact" },
+          ];
 
-        notificationDot.style.display = "block";
-      }
-    }
+          const buttonsContainer = document.createElement("div");
+          buttonsContainer.style.marginTop = "10px";
+          buttonsContainer.style.display = "flex";
+          buttonsContainer.style.flexDirection = "column";
 
-    function appendBotMessage(message, includeButtons) {
-      const botResponseElement = document.createElement("div");
-      botResponseElement.textContent = message;
-      botResponseElement.className = "my-bot-message";
-      chatHistory.appendChild(botResponseElement);
+          pages.forEach((page) => {
+            const button = document.createElement("button");
+            button.textContent = page.title;
+            button.addEventListener("click", () => {
+              window.location.href = page.url;
+            });
+            button.style.marginBottom = "8px"; // Adjusted padding between buttons
+            buttonsContainer.appendChild(button);
+          });
 
-      if (includeButtons) {
-        appendBotButtons();
-      }
+          appendBotMessageElementWithButtons(buttonsContainer);
+        }
 
-      chatHistory.scrollTop = chatHistory.scrollHeight;
-    }
-
-    function appendBotButtons() {
-      const pages = [
-        { title: "Home", url: "https://shividoge.github.io/#home" },
-        { title: "Our Mission", url: "https://shividoge.github.io/#our-mission" },
-        { title: "What we do", url: "https://shividoge.github.io/#what-we-do" },
-        { title: "Applications", url: "https://shividoge.github.io/#our-solutions" },
-        { title: "Careers", url: "https://shividoge.github.io/#our-work" },
-        { title: "Contact", url: "https://shividoge.github.io/#contact" },
-      ];
-
-      const buttonsContainer = document.createElement("div");
-      buttonsContainer.style.marginTop = "10px";
-      buttonsContainer.style.display = "flex";
-      buttonsContainer.style.flexDirection = "column";
-
-      pages.forEach((page) => {
-        const button = document.createElement("button");
-        button.textContent = page.title;
-        button.addEventListener("click", () => {
-          window.location.href = page.url;
-        });
-        button.style.marginBottom = "8px"; // Adjusted padding between buttons
-        buttonsContainer.appendChild(button);
+        function appendBotMessageElementWithButtons(element) {
+          const botResponseElement = document.createElement("div");
+          botResponseElement.className = "my-bot-message";
+          botResponseElement.appendChild(element);
+          chatHistory.appendChild(botResponseElement);
+        }
       });
 
-      const botResponseElement = document.createElement("div");
-      botResponseElement.className = "my-bot-message";
-      botResponseElement.appendChild(buttonsContainer);
-      chatHistory.appendChild(botResponseElement);
-    }
-
-
-  });
+// [16. Applicaiton]
 
 function submitBhuveshJobApplicationForm() {
     var firstName = document.getElementById('Bhuvesh-first-name').value;
