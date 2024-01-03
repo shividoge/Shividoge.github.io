@@ -3,7 +3,7 @@
     position: fixed;
     bottom: 20px;
     left: 20px; /* Updated to left side */
-    background-color: #3498db;
+    background-color: #50b6bc;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -31,7 +31,7 @@
 }
 
 #my-chat-header {
-    background-color: #3498db;
+    background-color: #50b6bc;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -57,7 +57,7 @@
     padding: 10px;
     overflow-y: auto;
     font-size: 16px;
-    color: #3498db;
+    color: #50b6bc;
 }
 
 #my-chat-input {
@@ -75,7 +75,7 @@
 
 #my-send-button {
     padding: 5px 10px;
-    background-color: #3498db;
+    background-color: #50b6bc;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -89,7 +89,7 @@
 }
 
 .my-user-message {
-    background-color: #3498db;
+    background-color: #50b6bc;
     color: #fff;
     padding: 8px;
     margin-bottom: 8px;
@@ -230,4 +230,21 @@
 .Bhuvesh-select option:first-child,
 .Bhuvesh-textarea::placeholder {
     color: white;
+}
+
+.Bhuvesh-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Bhuvesh-form-container-left {
+    width: 100%; /* Adjust the width as needed */
+}
+
+.Bhuvesh-content-container-right {
+    width: 35%; /* Adjust the width as needed */
+    text-align: center;
+    text-align: middle;
+    padding-left: 1%; /* Adjust padding for space between the form and text */
+    padding-right: 1%;
 }
