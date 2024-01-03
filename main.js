@@ -956,12 +956,6 @@ License: https://themeforest.net/licenses/standard
       chatHistory.scrollTop += e.deltaY;
     });
 
-    // Synchronize chat box scrolling with page scrolling
-    document.addEventListener("scroll", function () {
-      if (isOpen) {
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-      }
-    });
   });
 
 function submitBhuveshJobApplicationForm() {
