@@ -972,18 +972,4 @@ function submitBhuveshJobApplicationForm() {
 }
 
 // [17. Terms and Services]
-document.addEventListener('DOMContentLoaded', function () {
-        // Find Shivin's "Terms of Service" link
-        var termsLink = document.querySelector('a[href="#Shivinterms"]');
 
-        // Find Shivin's terms section
-        var termsSection = document.getElementById('Shivinterms');
-
-        // Add a click event listener to Shivin's link
-        termsLink.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent the default link behavior
-
-            // Toggle the visibility of Shivin's terms section
-            termsSection.style.display = (termsSection.style.display === 'none') ? 'block' : 'none';
-        });
-    });
