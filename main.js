@@ -896,7 +896,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (isOpen) {
       chatContainer.style.display = "flex";
-      chatContainer.style.height = "580px"; // Set a fixed height for the chat container
+      chatContainer.style.height = "500px"; // Set a fixed height for the chat container
       chatHistory.style.height = "calc(100% - 50px)"; // Adjust the height of chat history
     } else {
       chatContainer.style.display = "none";
