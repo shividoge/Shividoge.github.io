@@ -27,6 +27,7 @@ License: https://themeforest.net/licenses/standard
 14. Bootstrap
 15. Helper Classes
 16. Applicaiton and chat button
+17. Terms and services
 -------------------------------------------------------------------*/
 
 (function($) {
@@ -969,3 +970,20 @@ function submitBhuveshJobApplicationForm() {
     // Display the thank you message
     document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
 }
+
+// [17. Terms and Services]
+document.addEventListener('DOMContentLoaded', function () {
+        // Find Shivin's "Terms of Service" link
+        var termsLink = document.querySelector('a[href="#Shivinterms"]');
+
+        // Find Shivin's terms section
+        var termsSection = document.getElementById('Shivinterms');
+
+        // Add a click event listener to Shivin's link
+        termsLink.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+
+            // Toggle the visibility of Shivin's terms section
+            termsSection.style.display = (termsSection.style.display === 'none') ? 'block' : 'none';
+        });
+    });
