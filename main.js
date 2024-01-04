@@ -972,4 +972,22 @@ function submitBhuveshJobApplicationForm() {
 }
 
 // [17. Terms and Services]
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get the new section link
+    const newSectionLink = document.getElementById('#Terms-and-Services');
+
+    // Add a click event listener to the link
+    newSectionLink.addEventListener('click', function (event) {
+      // Prevent the default link behavior
+      event.preventDefault();
+
+      // Scroll to the new section manually using JavaScript
+      const newSection = document.getElementById('Terms-and-Services');
+      if (newSection) {
+        newSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 
