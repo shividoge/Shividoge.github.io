@@ -847,7 +847,7 @@ License: https://themeforest.net/licenses/standard
 
 // [16. Applicaiton and chat button]
 
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
         const chatButton = document.getElementById("my-chat-button");
         const chatContainer = document.getElementById("my-chat-container");
         const chatHeader = document.getElementById("my-chat-header");
@@ -867,6 +867,22 @@ License: https://themeforest.net/licenses/standard
 
         // Open chat box with a welcome message when the page is loaded
         appendBotMessage("Welcome to RoboHorizons! How can we assist you today?");
+
+        // Set initial scroll position
+        let previousScrollHeight = chatHistory.scrollHeight;
+
+        // Listen for changes in the chat history container's scroll
+        chatHistory.addEventListener("scroll", function () {
+          const scrollDifference = chatHistory.scrollHeight - previousScrollHeight;
+
+          // If the user scrolls up, hide the notification dot
+          if (scrollDifference < 0) {
+            notificationDot.style.display = "none";
+          }
+
+          // Update the previous scroll height
+          previousScrollHeight = chatHistory.scrollHeight;
+        });
 
         function toggleChatBox() {
           isOpen = !isOpen;
@@ -891,7 +907,7 @@ License: https://themeforest.net/licenses/standard
             setTimeout(() => {
               if (messageCount === 1) {
                 // First bot message with buttons
-                appendBotMessage("We have notified our team and someone will help you soon! While you're waiting, please feel free to look through the rest of our site, with the links below.", true);
+                appendBotMessage("We have notified our team and someone will help you soon! While you're waiting, please feel free to look through the rest of our site.", true);
               }
 
               chatHistory.scrollTop = chatHistory.scrollHeight;
@@ -911,45 +927,11 @@ License: https://themeforest.net/licenses/standard
           chatHistory.appendChild(botResponseElement);
 
           if (includeButtons) {
+            // Assuming there is a function named 'appendBotButtons'
             appendBotButtons();
           }
 
           chatHistory.scrollTop = chatHistory.scrollHeight;
-        }
-
-        function appendBotButtons() {
-          const pages = [
-            { title: "Home", url: "https://shividoge.github.io/#home" },
-            { title: "Our Mission", url: "https://shividoge.github.io/#our-mission" },
-            { title: "What we do", url: "https://shividoge.github.io/#what-we-do" },
-            { title: "Applications", url: "https://shividoge.github.io/#our-solutions" },
-            { title: "Careers", url: "https://shividoge.github.io/#our-work" },
-            { title: "Contact", url: "https://shividoge.github.io/#contact" },
-          ];
-
-          const buttonsContainer = document.createElement("div");
-          buttonsContainer.style.marginTop = "10px";
-          buttonsContainer.style.display = "flex";
-          buttonsContainer.style.flexDirection = "column";
-
-          pages.forEach((page) => {
-            const button = document.createElement("button");
-            button.textContent = page.title;
-            button.addEventListener("click", () => {
-              window.location.href = page.url;
-            });
-            button.style.marginBottom = "8px"; // Adjusted padding between buttons
-            buttonsContainer.appendChild(button);
-          });
-
-          appendBotMessageElementWithButtons(buttonsContainer);
-        }
-
-        function appendBotMessageElementWithButtons(element) {
-          const botResponseElement = document.createElement("div");
-          botResponseElement.className = "my-bot-message";
-          botResponseElement.appendChild(element);
-          chatHistory.appendChild(botResponseElement);
         }
       });
 
