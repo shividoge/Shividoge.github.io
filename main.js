@@ -914,7 +914,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(() => {
               if (messageCount === 1) {
                 // First bot message with buttons
-                appendBotMessage("We have notified our team and someone will help you soon! While you're waiting, please feel free to look through the rest of our site.", true);
+                appendBotMessage("We have notified our team and someone will help you soon! While you wait, please feel free to look through the rest of our site.", true);
               }
 
               chatHistory.scrollTop = chatHistory.scrollHeight;
