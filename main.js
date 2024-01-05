@@ -857,6 +857,7 @@ function ln_navigationChangeClasses(nav_event, target) {
 document.addEventListener("DOMContentLoaded", function () {
         const chatButton = document.getElementById("my-chat-button");
         const chatContainer = document.getElementById("my-chat-container");
+		chatContainer.style.height = "500px"; // Adjust the height as needed
         const chatHeader = document.getElementById("my-chat-header");
         const chatHistory = document.getElementById("my-chat-history");
         const messageInput = document.getElementById("my-message-input");
