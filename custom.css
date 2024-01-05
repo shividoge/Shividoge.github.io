@@ -236,3 +236,16 @@
 .Bhuvesh-textarea::placeholder {
     color: white;
 }
+
+/* Add this style for better visibility of the error messages */
+.alert-message {
+    color: red;
+}
+
+/* Add this style to display the thank you message */
+#Bhuvesh-thank-you-message-job-application {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2em;
+}
