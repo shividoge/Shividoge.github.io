@@ -106,145 +106,119 @@
 }
 
 /* CSS for applicaiton */ 
-.Bhuvesh-container {
-    max-width: 600px;
-    margin: 0px auto;
-    padding: 25px; /* Add padding here */
-}
+    .Bhuvesh-container {
+        max-width: 600px;
+        margin: 0px auto;
+        padding: 25px;
+    }
 
-.Bhuvesh-apply-box {
-    max-width: 600px;
-    padding: 25px;
-    margin: 0px auto;
-    margin-top: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 40px;
-}
+    .Bhuvesh-apply-box {
+        max-width: 600px;
+        padding: 25px;
+        margin: 0px auto;
+        margin-top: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 40px;
+    }
 
-.Bhuvesh-h1 {
-    font-size: 2em;
-    text-align: center;
-}
+    .Bhuvesh-h1 {
+        font-size: 2em;
+        text-align: center;
+    }
 
-.Bhuvesh-form-container {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+    .Bhuvesh-form-container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
-.Bhuvesh-form-control {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px; /* Adjust the padding value as needed */
-}
+    .Bhuvesh-form-control {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+    }
 
-.Bhuvesh-form-control-email .Bhuvesh-input,
-.Bhuvesh-textarea .Bhuvesh-textarea {
-    width: 100%;
-}
+    .Bhuvesh-form-control-email .Bhuvesh-input,
+    .Bhuvesh-textarea .Bhuvesh-textarea {
+        width: 100%;
+    }
 
-.Bhuvesh-textarea {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+    .Bhuvesh-textarea {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
 
-.Bhuvesh-cover-letter-container {
-    width: 100%;
-    margin-top: 20px;
-}
+    .Bhuvesh-cover-letter-container {
+        width: 100%;
+        margin-top: 20px;
+    }
 
-.Bhuvesh-button-container {
-    width: 100%;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
+    .Bhuvesh-button-container {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
 
-.Bhuvesh-label {
-    font-size: 1em;
-    margin-bottom: 5px;
-    text-align: center;
-}
+    .Bhuvesh-label {
+        font-size: 1em;
+        margin-bottom: 5px;
+        text-align: center;
+    }
 
-.Bhuvesh-input,
-.Bhuvesh-select,
-.Bhuvesh-textarea {
-    padding: 6px 10px;
-    border: 1px solid;
-    border-radius: 4px;
-    font-size: 15px;
-    background-color: transparent;
-}
+    .Bhuvesh-input,
+    .Bhuvesh-select,
+    .Bhuvesh-textarea {
+        padding: 6px 10px;
+        border: 1px solid white;
+        border-radius: 4px;
+        font-size: 15px;
+        background-color: transparent;
+        color: white;
+    }
 
-.Bhuvesh-button {
-    background-color: transparent;
-    border: white solid 2px;
-    color: white;
-    border-radius: 12px;
-    padding: 12px 20px;
-    font-size: 16px;
-    transition: transform 0.4s ease-out;
-}
+    .Bhuvesh-button {
+        background-color: transparent;
+        border: white solid 2px;
+        color: white;
+        border-radius: 12px;
+        padding: 12px 20px;
+        font-size: 16px;
+        transition: transform 0.4s ease-out;
+    }
 
-.Bhuvesh-button:hover {
-    background-color: #50b6bc;
-    border: 2px solid white;
-    transform: scale(1.05);
-    cursor: pointer;
-}
+    .Bhuvesh-button:hover {
+        background-color: #50b6bc;
+        border: 2px solid white;
+        transform: scale(1.05);
+        cursor: pointer;
+    }
 
-.Bhuvesh-textarea-control {
-    grid-column: 1 / span 2;
-}
+    .Bhuvesh-textarea-control {
+        grid-column: 1 / span 2;
+    }
 
-.Bhuvesh-textarea-control .Bhuvesh-textarea {
-    width: 100%;
-}
+    .Bhuvesh-textarea-control .Bhuvesh-textarea {
+        width: 100%;
+    }
 
-.Bhuvesh-file-input {
-    width: 100%;
-    padding: 6px 10px;
-}
+    .Bhuvesh-file-input {
+        width: 100%;
+        padding: 6px 10px;
+    }
 
-/* Borders color for input elements and dropdown menu */
-.Bhuvesh-input,
-.Bhuvesh-select {
-    border: 1px solid white;
-    color: white; /* Add this line for text color */
-}
+    .alert-message {
+        color: red;
+    }
 
-/* Style for the selected option in the dropdown menu */
-.Bhuvesh-select option {
-    color: black; /* Change the color as needed */
-}
-
-/* Text color for the cover letter textarea */
-.Bhuvesh-textarea {
-    color: white;
-    border: 1px solid white;
-}
-
-/* Placeholder text color for input elements */
-.Bhuvesh-input::placeholder,
-.Bhuvesh-select option:first-child,
-.Bhuvesh-textarea::placeholder {
-    color: white;
-}
-
-/* Add this style for better visibility of the error messages */
-.alert-message {
-    color: red;
-}
-
-/* Add this style to display the thank you message */
-#Bhuvesh-thank-you-message-job-application {
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-    font-size: 1.2em;
-}
+    #Bhuvesh-thank-you-message-job-application {
+        text-align: center;
+        margin-top: 20px;
+        color: white;
+        font-size: 1.2em;
+    }
