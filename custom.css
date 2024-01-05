@@ -145,7 +145,7 @@
 
 .Bhuvesh-form-control-email .Bhuvesh-input,
 .Bhuvesh-textarea .Bhuvesh-textarea {
-    width: 90%;
+    width: 100%;
 }
 
 .Bhuvesh-textarea {
@@ -208,7 +208,7 @@
 }
 
 .Bhuvesh-file-input {
-    width: 98%;
+    width: 100%;
     padding: 6px 10px;
 }
 
