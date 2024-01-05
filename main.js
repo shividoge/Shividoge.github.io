@@ -962,6 +962,20 @@ function submitBhuveshJobApplicationForm() {
         return;
     }
 
+    // Validate email format
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Validate URL format
+    var urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+    if (!urlRegex.test(linkedinUrl)) {
+        alert("Please enter a valid LinkedIn URL.");
+        return;
+    }
+
     // Validate file type for the CV upload
     var allowedFileTypes = ['pdf', 'docx'];
     var fileType = uploadCv.split('.').pop().toLowerCase();
