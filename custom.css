@@ -145,7 +145,6 @@
 .Bhuvesh-form-control-email .Bhuvesh-input,
 .Bhuvesh-textarea .Bhuvesh-textarea {
     width: 100%;
-    max-width: 100%; /* Allow adjusting the width based on the container */
 }
 
 .Bhuvesh-textarea {
@@ -205,7 +204,6 @@
 
 .Bhuvesh-textarea-control .Bhuvesh-textarea {
     width: 100%;
-    max-width: 100%; /* Allow adjusting the width based on the container */
 }
 
 .Bhuvesh-file-input {
