@@ -106,11 +106,10 @@
 }
 
 /* CSS for applicaiton */ 
-
-
 .Bhuvesh-container {
     max-width: 600px;
     margin: 0px auto;
+    padding: 25px; /* Add padding here */
 }
 
 .Bhuvesh-apply-box {
@@ -136,11 +135,11 @@
     gap: 20px;
 }
 
-.Bhuvesh-form-control,
-.Bhuvesh-form-control-email {
+.Bhuvesh-form-control {
     flex: 1;
     display: flex;
     flex-direction: column;
+    padding: 0 10px; /* Adjust the padding value as needed */
 }
 
 .Bhuvesh-form-control-email .Bhuvesh-input,
