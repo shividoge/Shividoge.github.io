@@ -947,48 +947,37 @@ document.addEventListener("DOMContentLoaded", function () {
 // [16. Applicaiton]
 
 function submitBhuveshJobApplicationForm() {
-    var firstName = document.getElementById('Bhuvesh-first-name').value;
-    var lastName = document.getElementById('Bhuvesh-last-name').value;
-    var email = document.getElementById('Bhuvesh-email').value;
-    var position = document.getElementById('Bhuvesh-position').value;
-    var linkedinUrl = document.getElementById('Bhuvesh-linkedin-url').value;
-    var coverLetter = document.getElementById('Bhuvesh-cover-letter').value;
-    var uploadCv = document.getElementById('Bhuvesh-upload-cv').value;
+            var firstName = document.getElementById('Bhuvesh-first-name').value;
+            var email = document.getElementById('Bhuvesh-email').value;
+            var position = document.getElementById('Bhuvesh-position').value;
+            var linkedinUrl = document.getElementById('Bhuvesh-linkedin-url').value;
+            var coverLetter = document.getElementById('Bhuvesh-cover-letter').value;
+            var uploadCv = document.getElementById('fileInput').value;
 
-    // Perform form validation
-    if (!firstName || !lastName || !email || !position || !linkedinUrl || !coverLetter || !uploadCv) {
-        // If any of the required fields is empty, display an error message
-        alert("Please fill out all fields before submitting.");
-        return;
-    }
+            if (!firstName || !email || !position || !linkedinUrl || !coverLetter || !uploadCv) {
+                alert("Please fill out all fields before submitting.");
+                return;
+            }
 
-    // Validate email format
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
 
-    // Validate URL format
-    var urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-    if (!urlRegex.test(linkedinUrl)) {
-        alert("Please enter a valid LinkedIn URL.");
-        return;
-    }
+            var urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+            if (!urlRegex.test(linkedinUrl)) {
+                alert("Please enter a valid LinkedIn URL.");
+                return;
+            }
 
-    // Validate file type for the CV upload
-    var allowedFileTypes = ['pdf', 'docx'];
-    var fileType = uploadCv.split('.').pop().toLowerCase();
-    if (allowedFileTypes.indexOf(fileType) === -1) {
-        // If the file type is not allowed, display an error message
-        alert("Please upload a PDF or DOCX file for CV.");
-        return;
-    }
+            var allowedFileTypes = ['pdf', 'docx'];
+            var fileType = uploadCv.split('.').pop().toLowerCase();
+            if (allowedFileTypes.indexOf(fileType) === -1) {
+                alert("Please upload a PDF or DOCX file for CV.");
+                return;
+            }
 
-    // Simulate form submission (replace with actual implementation)
-    document.getElementById('Bhuvesh-job-application-form').reset();
-
-    // Display the thank you message
-    document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
-}
-
+            document.getElementById('Bhuvesh-job-application-form').reset();
+            document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
+        }
