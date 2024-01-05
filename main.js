@@ -986,9 +986,9 @@ function submitBhuveshJobApplicationForm() {
     }
 
     // Simulate form submission (replace with actual implementation)
-    // In this example, we reset the form fields
     document.getElementById('Bhuvesh-job-application-form').reset();
 
     // Display the thank you message
     document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
 }
+
