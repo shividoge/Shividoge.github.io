@@ -135,16 +135,11 @@
     gap: 20px;
 }
 
-.Bhuvesh-form-control {
+.Bhuvesh-form-control, .Bhuvesh-form-control-email, .Bhuvesh-input, .Bhuvesh-file-input {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0 10px; /* Adjust the padding value as needed */
-}
-
-.Bhuvesh-form-control-email .Bhuvesh-input,
-.Bhuvesh-textarea .Bhuvesh-textarea {
-    width: 100%;
+    padding: 0 12px; /* Adjust the padding value as needed */
 }
 
 .Bhuvesh-textarea {
@@ -204,11 +199,6 @@
 
 .Bhuvesh-textarea-control .Bhuvesh-textarea {
     width: 100%;
-}
-
-.Bhuvesh-file-input {
-    width: 100%;
-    padding: 6px 10px;
 }
 
 /* Borders color for input elements and dropdown menu */
