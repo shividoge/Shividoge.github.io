@@ -30,6 +30,21 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="RoboHorizonslogo-removebg-preview.ico">
 	  
+  <style>
+
+    #accessibility-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px;
+      background-color: #50b6bc;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+	  
   </head>
   <body class="layout-wide">
 
@@ -120,7 +135,9 @@
 
     <!-- Fullpage content -->
     <div class="ln-fullpage" data-navigation="true">
-	    
+
+	<!-- Accessibility button -->
+	    <button id="accessibility-btn">Accessibility</button>
     <!-- Home page -->    
 	<section class="ln-section d-flex js-min-vh-100" data-anchor="home" data-tooltip="Home" data-overlay-color="#00050e" data-overlay-opacity="50">
 	<div class="overlay overlay-advanced">
@@ -140,7 +157,7 @@
 		  
 	    <div class="row">
 	      <div class="col-12 col-lg-9 col-xl-6">
-	        <h1 class="mb-4 animated" data-animation="fadeInUp">Robotics For Everyone!</h1>
+	        <h1 class="mb-4 animated" data-animation="fadeInUp" id="accessible-text">Robotics For Everyone!</h1>
 	        <p class="mb-7 animated" data-animation="fadeInUp" data-animation-delay="200"><strong>We make sure you're journey is more then just a job;</strong> it's a journey to dismantle barriers and make robotics accessible to all, regardless of background or expertise.</p>
 	        <a href="https://shividoge.github.io/#what-we-do">
 			<button type="button" class="btn btn-white mr-3 scrollto animated" data-animation="fadeInUp" data-animation-delay="400">Learn more</button>
@@ -440,7 +457,61 @@
     <p>© 2024 RoboHorizons - All Rights Reserved - <a href="Terms & Services.html" target="_blank">Terms and Services</a></p>
   </div>
 
+<!-- js-->
+<script>
+    // Get elements
+    const body = document.body;
+    const accessibleText = document.getElementById('accessible-text');
+    const accessibilityBtn = document.getElementById('accessibility-btn');
 
+    // Set initial values
+    let fontSize = 16;
+    let textColor = '#333';
+
+    // Function to update styles
+    function updateStyles() {
+      body.style.fontSize = `${fontSize}px`;
+      accessibleText.style.color = textColor;
+    }
+
+    // Function to increase text size
+    function increaseTextSize() {
+      fontSize += 2;
+      updateStyles();
+    }
+
+    // Function to decrease text size
+    function decreaseTextSize() {
+      fontSize = Math.max(10, fontSize - 2);
+      updateStyles();
+    }
+
+    // Function to change text color
+    function changeTextColor() {
+      textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
+      updateStyles();
+    }
+
+    // Attach event listeners to the button
+    accessibilityBtn.addEventListener('click', function() {
+      const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color');
+
+      switch (action) {
+        case '1':
+          increaseTextSize();
+          break;
+        case '2':
+          decreaseTextSize();
+          break;
+        case '3':
+          changeTextColor();
+          break;
+        default:
+          alert('Invalid choice');
+      }
+    });
+  </script>
+	  
     <!-- Libs JS -->
     <script src="jquery.min.js"></script>
     <script src="popper.min.js"></script>
