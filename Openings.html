@@ -55,7 +55,7 @@
     .akshar-box-body {
       font-size: 14px;
     }
-	#accessibility-btn {
+#accessibility-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -67,22 +67,6 @@
   border-radius: 25px;
 }
 
-#accessibility-btn:focus {
-  outline: 2px solid #fff; /* Example focus styling */
-}
-
-#accessibility-tooltip {
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #000;
-  color: #fff;
-  padding: 5px;
-  border-radius: 5px;
-  z-index: 999;
-  display: none; /* Hide initially */
-}
 </style>
   </head>
   <body class="layout-wide">
@@ -129,7 +113,10 @@
     	</div>
 
 <!-- Accessibility button -->
-<button id="accessibility-btn" aria-label="Accessibility Options">Accessibility</button>
+<button id="accessibility-btn">Accessibility</button>
+
+
+
 
 	    
       <!-- Collapse -->
@@ -220,6 +207,8 @@
                       <div class="divider divider-alt bg-white mt-0 mb-8 d-none d-lg-block"></div>
                       <h4 class="h3">Head of Mechanical Research</h4>
                       <p class="text-italic">The visionary Head of Mechanical Research at RoboHorizons propels innovation with a profound grasp of mechanical systems, advancing precision engineering in groundbreaking robotics. Their passion shapes the future of robotics.</p>
+			    <!-- Dummy element for demonstrating accessible text -->
+<div id="accessible-text">This is accessible text</div>
                     </div>
                   </div>
                 </div>
@@ -391,41 +380,131 @@
 
 	  <!--JS-->
 <script>
-// Add keyboard accessibility
-accessibilityBtn.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter' || event.key === ' ') {
-    event.preventDefault();
-    accessibilityBtn.click();
+  // Get elements
+  const body = document.body;
+  const accessibleText = document.getElementById('accessible-text');
+  const accessibilityBtn = document.getElementById('accessibility-btn');
+
+  // Set initial values
+  let fontSize = 16;
+  let textColor = '#333';
+  let lineHeight = '1.5';
+  let textAlign = 'left';
+  let contrast = false;
+  let highlightLinks = false;
+  let biggerText = false;
+  let textSpacing = false;
+  let pauseAnimations = false;
+  let hideImages = false;
+  let dyslexiaFriendly = false;
+  let cursorTooltip = false;
+  let saturation = 100;
+
+  // Function to update styles
+  function updateStyles() {
+    body.style.fontSize = `${fontSize}px`;
+    body.style.color = textColor;
+    body.style.lineHeight = lineHeight;
+    body.style.textAlign = textAlign;
+    if (contrast) {
+      // Implement contrast enhancement
+      body.style.filter = 'contrast(150%)';
+    } else {
+      body.style.filter = 'none';
+    }
+    if (highlightLinks) {
+      // Implement highlighting of links
+      const links = document.querySelectorAll('a');
+      links.forEach(link => {
+        link.style.backgroundColor = 'yellow';
+      });
+    }
+    if (biggerText) {
+      // Implement text enlargement
+      accessibleText.style.fontSize = '20px';
+    }
+    if (textSpacing) {
+      // Implement text spacing adjustment
+      body.style.letterSpacing = '2px';
+    }
+    if (pauseAnimations) {
+      // Implement animation pausing
+      const animations = document.querySelectorAll('*');
+      animations.forEach(animation => {
+        animation.style.animationPlayState = 'paused';
+      });
+    }
+    if (hideImages) {
+      // Implement image hiding
+      const images = document.querySelectorAll('img');
+      images.forEach(image => {
+        image.style.display = 'none';
+      });
+    }
+    if (dyslexiaFriendly) {
+      // Implement dyslexia-friendly font
+      body.style.fontFamily = 'OpenDyslexic, sans-serif';
+    }
+    if (cursorTooltip) {
+      // Implement cursor tooltip
+      body.style.cursor = 'help';
+    }
+    body.style.filter = `saturate(${saturation}%)`;
   }
-});
 
-// Add screen reader compatibility
-accessibilityBtn.setAttribute('aria-describedby', 'accessibility-tooltip');
+  // Attach event listener to the button
+  accessibilityBtn.addEventListener('click', function () {
+    const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Toggle Contrast\n5. Toggle Highlight Links\n6. Toggle Bigger Text\n7. Toggle Text Spacing\n8. Toggle Pause Animations\n9. Toggle Hide Images\n10. Toggle Dyslexia Friendly Font\n11. Toggle Cursor Tooltip\n12. Change Line Height\n13. Change Text Align\n14. Change Saturation');
 
-// Add tooltips
-const tooltip = document.createElement('div');
-tooltip.id = 'accessibility-tooltip';
-tooltip.textContent = 'Click to adjust accessibility settings';
-tooltip.style.position = 'absolute';
-tooltip.style.top = 'calc(100% + 5px)';
-tooltip.style.left = '50%';
-tooltip.style.transform = 'translateX(-50%)';
-tooltip.style.backgroundColor = '#000';
-tooltip.style.color = '#fff';
-tooltip.style.padding = '5px';
-tooltip.style.borderRadius = '5px';
-tooltip.style.zIndex = '999';
-tooltip.style.display = 'none'; // Hide initially
-
-accessibilityBtn.parentNode.appendChild(tooltip);
-
-accessibilityBtn.addEventListener('focus', function() {
-  tooltip.style.display = 'block';
-});
-
-accessibilityBtn.addEventListener('blur', function() {
-  tooltip.style.display = 'none';
-});
+    switch (action) {
+      case '1':
+        fontSize += 2;
+        break;
+      case '2':
+        fontSize = Math.max(10, fontSize - 2);
+        break;
+      case '3':
+        textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
+        break;
+      case '4':
+        contrast = !contrast;
+        break;
+      case '5':
+        highlightLinks = !highlightLinks;
+        break;
+      case '6':
+        biggerText = !biggerText;
+        break;
+      case '7':
+        textSpacing = !textSpacing;
+        break;
+      case '8':
+        pauseAnimations = !pauseAnimations;
+        break;
+      case '9':
+        hideImages = !hideImages;
+        break;
+      case '10':
+        dyslexiaFriendly = !dyslexiaFriendly;
+        break;
+      case '11':
+        cursorTooltip = !cursorTooltip;
+        break;
+      case '12':
+        lineHeight = prompt('Enter line height (e.g., 1.5):', lineHeight) || lineHeight;
+        break;
+      case '13':
+        textAlign = prompt('Enter text alignment (e.g., left, right, center):', textAlign) || textAlign;
+        break;
+      case '14':
+        saturation = prompt('Enter saturation value (0-100):', saturation) || saturation;
+        break;
+      default:
+        alert('Invalid choice');
+        return;
+    }
+    updateStyles();
+  });
 </script>
 
 
