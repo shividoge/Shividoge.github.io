@@ -55,6 +55,34 @@
     .akshar-box-body {
       font-size: 14px;
     }
+	#accessibility-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #50b6bc;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+}
+
+#accessibility-btn:focus {
+  outline: 2px solid #fff; /* Example focus styling */
+}
+
+#accessibility-tooltip {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 999;
+  display: none; /* Hide initially */
+}
 </style>
   </head>
   <body class="layout-wide">
@@ -100,6 +128,9 @@
         	</div>
     	</div>
 
+<!-- Accessibility button -->
+<button id="accessibility-btn" aria-label="Accessibility Options">Accessibility</button>
+
 	    
       <!-- Collapse -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -107,7 +138,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav ml-auto" id="navigation">
           <li class="nav-item active" data-menuanchor="home">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="#home">Home</a>
           </li>
           <li class="nav-item" data-menuanchor="our-solutions">
             <a class="nav-link" href="Application.html">Application</a>
@@ -117,6 +148,9 @@
           </li>
           <li class="nav-item" data-menuanchor="contact">
             <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item" data-menuanchor="openings">
+            <a class="nav-link" href="Openings.html">Openings</a>
           </li>
         </ul>
 
@@ -354,6 +388,46 @@
 
     <!-- Theme JS -->
     <script src="main.js"></script>
+
+	  <!--JS-->
+<script>
+// Add keyboard accessibility
+accessibilityBtn.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    accessibilityBtn.click();
+  }
+});
+
+// Add screen reader compatibility
+accessibilityBtn.setAttribute('aria-describedby', 'accessibility-tooltip');
+
+// Add tooltips
+const tooltip = document.createElement('div');
+tooltip.id = 'accessibility-tooltip';
+tooltip.textContent = 'Click to adjust accessibility settings';
+tooltip.style.position = 'absolute';
+tooltip.style.top = 'calc(100% + 5px)';
+tooltip.style.left = '50%';
+tooltip.style.transform = 'translateX(-50%)';
+tooltip.style.backgroundColor = '#000';
+tooltip.style.color = '#fff';
+tooltip.style.padding = '5px';
+tooltip.style.borderRadius = '5px';
+tooltip.style.zIndex = '999';
+tooltip.style.display = 'none'; // Hide initially
+
+accessibilityBtn.parentNode.appendChild(tooltip);
+
+accessibilityBtn.addEventListener('focus', function() {
+  tooltip.style.display = 'block';
+});
+
+accessibilityBtn.addEventListener('blur', function() {
+  tooltip.style.display = 'none';
+});
+</script>
+
 
   </body>
 </html>
