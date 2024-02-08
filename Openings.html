@@ -389,19 +389,13 @@
 const body = document.body;
 const accessibleText = document.getElementById('accessible-text');
 const accessibilityBtn = document.getElementById('accessibility-btn');
+const toggleOffBtn = document.getElementById('toggle-off-btn');
 
 // Set initial values
 let fontSize = 16;
 let textColor = '#333';
-let lineHeight = '1.5';
-let textAlign = 'left';
-let contrast = false;
-let highlightLinks = false;
-let biggerText = false;
 let textSpacing = false;
 let pauseAnimations = false;
-let hideImages = false;
-let dyslexiaFriendly = false;
 let cursorTooltip = false;
 let saturation = 100;
 
@@ -409,51 +403,9 @@ let saturation = 100;
 function updateStyles() {
   body.style.fontSize = `${fontSize}px`;
   body.style.color = textColor;
-  body.style.lineHeight = lineHeight;
-  body.style.textAlign = textAlign;
-  if (contrast) {
-    // Implement contrast enhancement
-    body.style.filter = 'contrast(150%)';
-  } else {
-    body.style.filter = 'none';
-  }
-  if (highlightLinks) {
-    // Implement highlighting of links
-    const links = document.querySelectorAll('a');
-    links.forEach(link => {
-      link.style.backgroundColor = 'yellow';
-    });
-  }
-  if (biggerText) {
-    // Implement text enlargement
-    accessibleText.style.fontSize = '20px';
-  }
-  if (textSpacing) {
-    // Implement text spacing adjustment
-    body.style.letterSpacing = '2px';
-  }
-  if (pauseAnimations) {
-    // Implement animation pausing
-    const animations = document.querySelectorAll('*');
-    animations.forEach(animation => {
-      animation.style.animationPlayState = 'paused';
-    });
-  }
-  if (hideImages) {
-    // Implement image hiding
-    const images = document.querySelectorAll('img');
-    images.forEach(image => {
-      image.style.display = 'none';
-    });
-  }
-  if (dyslexiaFriendly) {
-    // Implement dyslexia-friendly font
-    body.style.fontFamily = 'OpenDyslexic, sans-serif';
-  }
-  if (cursorTooltip) {
-    // Implement cursor tooltip
-    body.style.cursor = 'help';
-  }
+  body.style.letterSpacing = textSpacing ? '2px' : 'normal';
+  body.style.animationPlayState = pauseAnimations ? 'paused' : 'running';
+  body.style.cursor = cursorTooltip ? 'help' : 'auto';
   body.style.filter = `saturate(${saturation}%)`;
 }
 
@@ -475,27 +427,52 @@ function changeTextColor() {
   updateStyles();
 }
 
+// Function to toggle text spacing
+function toggleTextSpacing() {
+  textSpacing = !textSpacing;
+  updateStyles();
+}
+
+// Function to toggle pause animations
+function togglePauseAnimations() {
+  pauseAnimations = !pauseAnimations;
+  updateStyles();
+}
+
+// Function to toggle cursor tooltip
+function toggleCursorTooltip() {
+  cursorTooltip = !cursorTooltip;
+  updateStyles();
+}
+
+// Function to change saturation
+function changeSaturation() {
+  saturation = prompt('Enter saturation value (0-100):', saturation) || saturation;
+  updateStyles();
+}
+
 // Function to reset to default values
 function resetToDefault() {
   fontSize = 16;
   textColor = '#333';
-  lineHeight = '1.5';
-  textAlign = 'left';
-  contrast = false;
-  highlightLinks = false;
-  biggerText = false;
   textSpacing = false;
   pauseAnimations = false;
-  hideImages = false;
-  dyslexiaFriendly = false;
   cursorTooltip = false;
   saturation = 100;
   updateStyles();
 }
 
+// Function to toggle off all features
+function toggleOffFeatures() {
+  textSpacing = false;
+  pauseAnimations = false;
+  cursorTooltip = false;
+  updateStyles();
+}
+
 // Attach event listener to the button
 accessibilityBtn.addEventListener('click', function () {
-  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Toggle Contrast\n5. Toggle Highlight Links\n6. Toggle Bigger Text\n7. Toggle Text Spacing\n8. Toggle Pause Animations\n9. Toggle Hide Images\n10. Toggle Dyslexia Friendly Font\n11. Toggle Cursor Tooltip\n12. Change Line Height\n13. Change Text Align\n14. Change Saturation\n15. Reset to Default');
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Toggle Text Spacing\n5. Toggle Pause Animations\n6. Toggle Cursor Tooltip\n7. Change Saturation\n8. Reset to Default');
 
   switch (action) {
     case '1':
@@ -508,50 +485,18 @@ accessibilityBtn.addEventListener('click', function () {
       changeTextColor();
       break;
     case '4':
-      contrast = !contrast;
-      updateStyles();
+      toggleTextSpacing();
       break;
     case '5':
-      highlightLinks = !highlightLinks;
-      updateStyles();
+      togglePauseAnimations();
       break;
     case '6':
-      biggerText = !biggerText;
-      updateStyles();
+      toggleCursorTooltip();
       break;
     case '7':
-      textSpacing = !textSpacing;
-      updateStyles();
+      changeSaturation();
       break;
     case '8':
-      pauseAnimations = !pauseAnimations;
-      updateStyles();
-      break;
-    case '9':
-      hideImages = !hideImages;
-      updateStyles();
-      break;
-    case '10':
-      dyslexiaFriendly = !dyslexiaFriendly;
-      updateStyles();
-      break;
-    case '11':
-      cursorTooltip = !cursorTooltip;
-      updateStyles();
-      break;
-    case '12':
-      lineHeight = prompt('Enter line height (e.g., 1.5):', lineHeight) || lineHeight;
-      updateStyles();
-      break;
-    case '13':
-      textAlign = prompt('Enter text alignment (e.g., left, right, center):', textAlign) || textAlign;
-      updateStyles();
-      break;
-    case '14':
-      saturation = prompt('Enter saturation value (0-100):', saturation) || saturation;
-      updateStyles();
-      break;
-    case '15':
       resetToDefault();
       break;
     default:
@@ -560,6 +505,10 @@ accessibilityBtn.addEventListener('click', function () {
   }
 });
 
+// Attach event listener to toggle off button
+toggleOffBtn.addEventListener('click', function() {
+  toggleOffFeatures();
+});
 </script>
 
 
