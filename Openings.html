@@ -509,6 +509,17 @@ accessibilityBtn.addEventListener('click', function () {
 toggleOffBtn.addEventListener('click', function() {
   toggleOffFeatures();
 });
+
+// Get the slider element
+const slider = document.querySelector('.slider');
+
+// Initialize the Slick slider
+$(slider).slick();
+
+// Override the left-to-right animation
+$('.slick-next').hide();
+$('.slick-prev').hide();
+
 </script>
 
 
