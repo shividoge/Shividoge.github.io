@@ -140,11 +140,11 @@
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: #007bff;
+    background-color: #50b6bc;
     border-radius: 8px; /* Slightly rounded corners */
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
     display: flex;
     justify-content: center;
