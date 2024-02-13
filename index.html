@@ -310,5 +310,90 @@
 	domain="www.chatbase.co"
 	defer>
 	</script>
+
+    <!-- JS for acc button-->
+	  <script>
+	  // Get elements
+const body = document.body;
+const colorPicker = document.getElementById('color-picker');
+const accessibilityBtn = document.getElementById('accessibility-btn'); // Corrected selector
+
+// Initial styles
+let fontSize = 16;
+let textColor = '#333';
+let saturation = 100;
+
+// Function to update styles
+function updateStyles() {
+  body.style.fontSize = `${fontSize}px`;
+  body.style.color = textColor; // Corrected selector
+  body.style.filter = `saturate(${saturation}%)`;
+}
+
+// Function to reset all styles to default
+function resetStyles() {
+  fontSize = 16;
+  textColor = '#333';
+  saturation = 100;
+  updateStyles();
+}
+
+// Function to increase text size
+function increaseTextSize() {
+  fontSize += 2;
+  updateStyles();
+}
+
+// Function to decrease text size
+function decreaseTextSize() {
+  fontSize = Math.max(10, fontSize - 2);
+  updateStyles();
+}
+
+// Function to change saturation
+function changeSaturation() {
+  const newSaturation = prompt('Enter the saturation level (0-100):');
+  if (newSaturation !== null && !isNaN(newSaturation) && newSaturation >= 0 && newSaturation <= 100) {
+    saturation = parseFloat(newSaturation);
+    updateStyles();
+  } else {
+    alert('Invalid saturation level. Please enter a number between 0 and 100.');
+  }
+}
+
+// Function to change text color
+function changeTextColor(event) {
+  textColor = event.target.value;
+  updateStyles();
+}
+
+// Attach event listener to the button
+accessibilityBtn.addEventListener('click', function() {
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change saturation\n4. Reset all styles');
+
+  switch (action) {
+    case '1':
+      increaseTextSize();
+      break;
+    case '2':
+      decreaseTextSize();
+      break;
+    case '3':
+      changeSaturation();
+      break;
+    case '4':
+      resetStyles();
+      break;
+    default:
+      alert('Invalid choice');
+  }
+});
+
+// Event listener for color picker
+colorPicker.addEventListener('change', changeTextColor);
+
+// Initial update of styles
+updateStyles();
+  </script>
   </body>
 </html>
