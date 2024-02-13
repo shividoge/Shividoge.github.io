@@ -322,7 +322,6 @@ const accessibilityBtn = document.getElementById('accessibility-btn');
 // Set initial values
 let fontSize = 16;
 let textColor = '#333';
-let textSaturation = '100%'; // Initial saturation value
 
 // Function to update styles
 function updateStyles() {
@@ -342,25 +341,27 @@ function decreaseTextSize() {
   updateStyles();
 }
 
-// Function to change text color and saturation
+// Function to change text color
 function changeTextColor() {
   const colorInput = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
-  const saturationInput = prompt('Enter a saturation value (0-100%):', textSaturation) || textSaturation;
-
-  // Apply saturation to the color using CSS filter
-  const saturatedColor = `hsl(${colorInput}) saturate(${saturationInput})`;
-
-  // Update the textColor variable and textSaturation variable
-  textColor = saturatedColor;
-  textSaturation = saturationInput;
-
-  // Update styles
+  textColor = colorInput;
   updateStyles();
+}
+
+// Function to change saturation
+function changeSaturation() {
+  const saturationInput = prompt('Enter a saturation value (0-100%):') || '100%';
+
+  // Apply saturation to the text color using CSS filter
+  accessibleText.style.filter = `saturate(${saturationInput})`;
+
+  // Update the textSaturation variable
+  textSaturation = saturationInput;
 }
 
 // Attach event listeners to the button
 accessibilityBtn.addEventListener('click', function() {
-  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color');
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Change saturation');
 
   switch (action) {
     case '1':
@@ -372,6 +373,9 @@ accessibilityBtn.addEventListener('click', function() {
     case '3':
       changeTextColor();
       break;
+    case '4':
+      changeSaturation();
+      break;
     default:
       alert('Invalid choice');
   }
@@ -380,7 +384,7 @@ accessibilityBtn.addEventListener('click', function() {
 // Initial styles update
 updateStyles();
 
-  </script>
+</script>
 	  
     <!-- Libs JS -->
     <script src="jquery.min.js"></script>
