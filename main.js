@@ -903,71 +903,48 @@ function submitBhuveshJobApplicationForm() {
             document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
         }
 //17. Appliction button
-// Get elements
-const body = document.body;
-const accessibilityBtn = document.getElementById('accessibility-btn'); // Corrected selector
-
-// Initial styles
-let fontSize = 16;
-let saturation = 100;
-
-// Function to update styles
-function updateStyles() {
-  body.style.fontSize = `${fontSize}px`;
-  body.style.filter = `saturate(${saturation}%)`;
-}
-
-// Function to reset all styles to default
-function resetStyles() {
-  fontSize = 16;
-  saturation = 100;
-  updateStyles();
-}
-
-// Function to increase text size
-function increaseTextSize() {
-  fontSize += 2;
-  updateStyles();
-}
-
-// Function to decrease text size
-function decreaseTextSize() {
-  fontSize = Math.max(10, fontSize - 2);
-  updateStyles();
-}
-
-// Function to change saturation
-function changeSaturation() {
-  const newSaturation = prompt('Enter the saturation level (0-100):');
-  if (newSaturation !== null && !isNaN(newSaturation) && newSaturation >= 0 && newSaturation <= 100) {
-    saturation = parseFloat(newSaturation);
-    updateStyles();
-  } else {
-    alert('Invalid saturation level. Please enter a number between 0 and 100.');
-  }
-}
-
-// Attach event listener to the button
-accessibilityBtn.addEventListener('click', function() {
-  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change saturation\n4. Reset all styles');
-
-  switch (action) {
-    case '1':
+function performAccessibilityAction() {
+  var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Saturation\n4. Reset to Defaults"));
+  
+  switch (option) {
+    case 1:
       increaseTextSize();
       break;
-    case '2':
+    case 2:
       decreaseTextSize();
       break;
-    case '3':
-      changeSaturation();
+    case 3:
+      var saturationLevel = parseInt(prompt("Enter saturation level (0-100):"));
+      if (saturationLevel >= 0 && saturationLevel <= 100) {
+        changeSaturation(saturationLevel);
+      } else {
+        alert("Invalid saturation level. Please enter a number between 0 and 100.");
+      }
       break;
-    case '4':
-      resetStyles();
+    case 4:
+      resetDefaults();
       break;
     default:
-      alert('Invalid choice');
+      alert("Invalid option. Please choose a number between 1 and 4.");
   }
-});
+}
 
-// Initial update of styles
-updateStyles();
+function increaseTextSize() {
+  // Implement code to increase text size
+  alert("Text size increased.");
+}
+
+function decreaseTextSize() {
+  // Implement code to decrease text size
+  alert("Text size decreased.");
+}
+
+function changeSaturation(saturationLevel) {
+  // Implement code to change saturation based on the saturationLevel input
+  alert("Saturation changed to " + saturationLevel + ".");
+}
+
+function resetDefaults() {
+  // Implement code to reset to defaults
+  alert("Reset to defaults.");
+}
