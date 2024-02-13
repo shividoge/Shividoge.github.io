@@ -138,8 +138,8 @@
 /* Accesibility button*/
 #accessibility-btn {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 5%; /* Adjusted to be 5% from the bottom */
+    left: 5%; /* Adjusted to be 5% from the left */
     padding: 10px; /* Fixed size */
     background-color: #50b6bc;
     color: #fff;
