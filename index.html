@@ -314,57 +314,72 @@
 
 <!-- js-->
 <script>
-	  // Get elements
-    const body = document.body;
-    const accessibleText = document.getElementById('accessible-text');
-    const accessibilityBtn = document.getElementById('accessibility-btn');
+// Get elements
+const body = document.body;
+const accessibleText = document.getElementById('accessible-text');
+const accessibilityBtn = document.getElementById('accessibility-btn');
 
-    // Set initial values
-    let fontSize = 16;
-    let textColor = '#333';
+// Set initial values
+let fontSize = 16;
+let textColor = '#333';
+let textSaturation = '100%'; // Initial saturation value
 
-    // Function to update styles
-    function updateStyles() {
-      body.style.fontSize = `${fontSize}px`;
-      accessibleText.style.color = textColor;
-    }
+// Function to update styles
+function updateStyles() {
+  body.style.fontSize = `${fontSize}px`;
+  accessibleText.style.color = textColor;
+}
 
-    // Function to increase text size
-    function increaseTextSize() {
-      fontSize += 2;
-      updateStyles();
-    }
+// Function to increase text size
+function increaseTextSize() {
+  fontSize += 2;
+  updateStyles();
+}
 
-    // Function to decrease text size
-    function decreaseTextSize() {
-      fontSize = Math.max(10, fontSize - 2);
-      updateStyles();
-    }
+// Function to decrease text size
+function decreaseTextSize() {
+  fontSize = Math.max(10, fontSize - 2);
+  updateStyles();
+}
 
-    // Function to change text color
-    function changeTextColor() {
-      textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
-      updateStyles();
-    }
+// Function to change text color and saturation
+function changeTextColor() {
+  const colorInput = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
+  const saturationInput = prompt('Enter a saturation value (0-100%):', textSaturation) || textSaturation;
 
-    // Attach event listeners to the button
-    accessibilityBtn.addEventListener('click', function() {
-      const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color');
+  // Apply saturation to the color using CSS filter
+  const saturatedColor = `hsl(${colorInput}) saturate(${saturationInput})`;
 
-      switch (action) {
-        case '1':
-          increaseTextSize();
-          break;
-        case '2':
-          decreaseTextSize();
-          break;
-        case '3':
-          changeTextColor();
-          break;
-        default:
-          alert('Invalid choice');
-      }
-    });
+  // Update the textColor variable and textSaturation variable
+  textColor = saturatedColor;
+  textSaturation = saturationInput;
+
+  // Update styles
+  updateStyles();
+}
+
+// Attach event listeners to the button
+accessibilityBtn.addEventListener('click', function() {
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color');
+
+  switch (action) {
+    case '1':
+      increaseTextSize();
+      break;
+    case '2':
+      decreaseTextSize();
+      break;
+    case '3':
+      changeTextColor();
+      break;
+    default:
+      alert('Invalid choice');
+  }
+});
+
+// Initial styles update
+updateStyles();
+
   </script>
 	  
     <!-- Libs JS -->
