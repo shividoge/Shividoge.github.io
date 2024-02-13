@@ -136,13 +136,20 @@
 
 
 /* Accesibility button*/
-#accessibility-btn {
-    bottom: 20px; /* Adjusted to be 5% from the bottom */
-    left: 20px; /* Adjusted to be 5% from the left */
-    padding: 10px; /* Fixed size */
-    background-color: #50b6bc;
-    color: #fff;
-    cursor: pointer;
+  #accessibilityButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px; /* Increased width */
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 8px; /* Slightly rounded corners */
     border: none;
-    border-radius: 25px; /* Fixed size */
-}
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px; /* Slightly smaller font size */
+  }
