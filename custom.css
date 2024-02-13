@@ -138,7 +138,7 @@
 /* Accesibility button*/
 .accessibility-btn {
     position: fixed;
-    bottom: calc(20px / 40); /* Adjusted proportionally */
+    bottom: calc(40px / 40); /* Adjusted proportionally */
     left: 20px;
     padding: 10px; /* Fixed size */
     background-color: #50b6bc;
@@ -147,3 +147,4 @@
     border: none;
     border-radius: 25px; /* Fixed size */
 }
+
