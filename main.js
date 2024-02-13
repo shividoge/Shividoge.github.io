@@ -905,25 +905,21 @@ function submitBhuveshJobApplicationForm() {
 //17. Appliction button
 // Get elements
 const body = document.body;
-const colorPicker = document.getElementById('color-picker');
 const accessibilityBtn = document.getElementById('accessibility-btn'); // Corrected selector
 
 // Initial styles
 let fontSize = 16;
-let textColor = '#333';
 let saturation = 100;
 
 // Function to update styles
 function updateStyles() {
   body.style.fontSize = `${fontSize}px`;
-  body.style.color = textColor; // Corrected selector
   body.style.filter = `saturate(${saturation}%)`;
 }
 
 // Function to reset all styles to default
 function resetStyles() {
   fontSize = 16;
-  textColor = '#333';
   saturation = 100;
   updateStyles();
 }
@@ -951,12 +947,6 @@ function changeSaturation() {
   }
 }
 
-// Function to change text color
-function changeTextColor(event) {
-  textColor = event.target.value;
-  updateStyles();
-}
-
 // Attach event listener to the button
 accessibilityBtn.addEventListener('click', function() {
   const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change saturation\n4. Reset all styles');
@@ -978,9 +968,6 @@ accessibilityBtn.addEventListener('click', function() {
       alert('Invalid choice');
   }
 });
-
-// Event listener for color picker
-colorPicker.addEventListener('change', changeTextColor);
 
 // Initial update of styles
 updateStyles();
