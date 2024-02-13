@@ -28,6 +28,7 @@ License: https://themeforest.net/licenses/standard
 15. Helper Classes
 16. Applicaiton and chat button
 17. Terms and services
+18. Accesiblitiy button
 -------------------------------------------------------------------*/
 
 (function($) {
@@ -981,3 +982,78 @@ function submitBhuveshJobApplicationForm() {
             document.getElementById('Bhuvesh-job-application-form').reset();
             document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
         }
+//17. Appliction button
+
+// Get elements
+const body = document.body;
+const accessibleText = document.getElementById('accessible-text');
+const accessibilityBtn = document.getElementById('accessibility-btn');
+const colorPicker = document.getElementById('color-picker');
+
+// Set initial values
+let fontSize = 16;
+let textColor = '#333';
+let saturation = 100;
+
+// Function to update styles
+function updateStyles() {
+  body.style.fontSize = `${fontSize}px`;
+  accessibleText.style.color = textColor;
+  body.style.filter = `saturate(${saturation}%)`;
+}
+
+// Function to reset all styles to default
+function resetStyles() {
+  fontSize = 16;
+  textColor = '#333';
+  saturation = 100;
+  updateStyles();
+}
+
+// Function to increase text size
+function increaseTextSize() {
+  fontSize += 2;
+  updateStyles();
+}
+
+// Function to decrease text size
+function decreaseTextSize() {
+  fontSize = Math.max(10, fontSize - 2);
+  updateStyles();
+}
+
+// Function to change saturation
+function changeSaturation() {
+  const newSaturation = prompt('Enter the saturation level (0-100):');
+  if (newSaturation !== null && !isNaN(newSaturation) && newSaturation >= 0 && newSaturation <= 100) {
+    saturation = parseFloat(newSaturation);
+    updateStyles();
+  } else {
+    alert('Invalid saturation level. Please enter a number between 0 and 100.');
+  }
+}
+
+// Attach event listeners to the button
+accessibilityBtn.addEventListener('click', function() {
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change saturation\n4. Reset all styles');
+
+  switch (action) {
+    case '1':
+      increaseTextSize();
+      break;
+    case '2':
+      decreaseTextSize();
+      break;
+    case '3':
+      changeSaturation();
+      break;
+    case '4':
+      resetStyles();
+      break;
+    default:
+      alert('Invalid choice');
+  }
+});
+
+// Event listener for color picker
+colorPicker.addEventListener('change', changeTextColor);
