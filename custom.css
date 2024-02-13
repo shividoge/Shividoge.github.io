@@ -136,10 +136,11 @@
 
 
 /* Accesibility button*/
-.accessibility-btn {
+
+#accessibility-btn {
     position: fixed;
-    bottom: calc(40px / 40); /* Adjusted proportionally */
-    left: 20px;
+    bottom: calc(20px / 40); /* Adjusted proportionally */
+    right: calc(20px / 40); /* Adjusted proportionally */
     padding: 10px; /* Fixed size */
     background-color: #50b6bc;
     color: #fff;
