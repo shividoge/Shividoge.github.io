@@ -903,17 +903,11 @@ function submitBhuveshJobApplicationForm() {
             document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
         }
 //17. Appliction button
-
 // Get elements
 const body = document.body;
 const accessibleText = document.getElementById('accessible-text');
-const accessibilityBtn = document.getElementById('accessibility-btn');
 const colorPicker = document.getElementById('color-picker');
-
-// Set initial values
-let fontSize = 16;
-let textColor = '#333';
-let saturation = 100;
+const accessibilityBtn = document.querySelector('.accessibility-btn');
 
 // Function to update styles
 function updateStyles() {
