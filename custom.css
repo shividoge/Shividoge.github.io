@@ -139,7 +139,7 @@
 #accessibility-btn {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     padding: 10px; /* Fixed size */
     background-color: #50b6bc;
     color: #fff;
