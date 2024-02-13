@@ -353,12 +353,6 @@ function decreaseTextSize() {
   updateStyles();
 }
 
-// Function to change text color using a color picker
-function changeTextColor() {
-  textColor = colorPicker.value;
-  updateStyles();
-}
-
 // Function to change saturation
 function changeSaturation() {
   const newSaturation = prompt('Enter the saturation level (0-100):');
@@ -372,7 +366,7 @@ function changeSaturation() {
 
 // Attach event listeners to the button
 accessibilityBtn.addEventListener('click', function() {
-  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Change saturation\n5. Reset all styles');
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change saturation\n4. Reset all styles');
 
   switch (action) {
     case '1':
@@ -382,12 +376,9 @@ accessibilityBtn.addEventListener('click', function() {
       decreaseTextSize();
       break;
     case '3':
-      colorPicker.click(); // Open color picker
-      break;
-    case '4':
       changeSaturation();
       break;
-    case '5':
+    case '4':
       resetStyles();
       break;
     default:
