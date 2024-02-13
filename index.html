@@ -314,10 +314,11 @@
 
 <!-- js-->
 <script>
-// Get elements
+   // Get elements
 const body = document.body;
 const accessibleText = document.getElementById('accessible-text');
 const accessibilityBtn = document.getElementById('accessibility-btn');
+const colorPicker = document.getElementById('color-picker');
 
 // Set initial values
 let fontSize = 16;
@@ -341,27 +342,15 @@ function decreaseTextSize() {
   updateStyles();
 }
 
-// Function to change text color
+// Function to change text color using a color picker
 function changeTextColor() {
-  const colorInput = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
-  textColor = colorInput;
+  textColor = colorPicker.value;
   updateStyles();
-}
-
-// Function to change saturation
-function changeSaturation() {
-  const saturationInput = prompt('Enter a saturation value (0-100%):') || '100%';
-
-  // Apply saturation to the text color using CSS filter
-  accessibleText.style.filter = `saturate(${saturationInput})`;
-
-  // Update the textSaturation variable
-  textSaturation = saturationInput;
 }
 
 // Attach event listeners to the button
 accessibilityBtn.addEventListener('click', function() {
-  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Change saturation');
+  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color');
 
   switch (action) {
     case '1':
@@ -371,20 +360,17 @@ accessibilityBtn.addEventListener('click', function() {
       decreaseTextSize();
       break;
     case '3':
-      changeTextColor();
-      break;
-    case '4':
-      changeSaturation();
+      colorPicker.click(); // Open color picker
       break;
     default:
       alert('Invalid choice');
   }
 });
 
-// Initial styles update
-updateStyles();
+// Attach event listener to color picker change event
+colorPicker.addEventListener('change', changeTextColor);
 
-</script>
+  </script>
 	  
     <!-- Libs JS -->
     <script src="jquery.min.js"></script>
