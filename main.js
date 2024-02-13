@@ -905,9 +905,8 @@ function submitBhuveshJobApplicationForm() {
 //17. Appliction button
 // Get elements
 const body = document.body;
-const accessibleText = document.getElementById('accessible-text');
 const colorPicker = document.getElementById('color-picker');
-const accessibilityBtn = document.querySelector('.accessibility-btn');
+const accessibilityBtn = document.getElementById('accessibility-btn'); // Corrected selector
 
 // Initial styles
 let fontSize = 16;
@@ -917,7 +916,7 @@ let saturation = 100;
 // Function to update styles
 function updateStyles() {
   body.style.fontSize = `${fontSize}px`;
-  accessibleText.style.color = textColor;
+  body.style.color = textColor; // Corrected selector
   body.style.filter = `saturate(${saturation}%)`;
 }
 
