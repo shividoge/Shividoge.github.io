@@ -314,73 +314,77 @@
 
 <!-- js-->
 <script>
-    // Get elements
-    const body = document.body;
-    const accessibleText = document.getElementById('accessible-text');
-    const accessibilityBtn = document.getElementById('accessibility-btn');
-    const colorPicker = document.getElementById('color-picker');
-    const saturationInput = document.getElementById('saturation');
+  // Get elements
+  const body = document.body;
+  const accessibleText = document.getElementById('accessible-text');
+  const accessibilityBtn = document.getElementById('accessibility-btn');
+  const colorPicker = document.getElementById('color-picker');
 
-    // Set initial values
-    let fontSize = 16;
-    let textColor = '#333';
-    let saturation = 100;
+  // Set initial values
+  let fontSize = 16;
+  let textColor = '#333';
+  let saturation = 100;
 
-    // Function to update styles
-    function updateStyles() {
-      body.style.fontSize = `${fontSize}px`;
-      accessibleText.style.color = textColor;
-      body.style.filter = `saturate(${saturation}%)`;
-    }
+  // Function to update styles
+  function updateStyles() {
+    body.style.fontSize = `${fontSize}px`;
+    accessibleText.style.color = textColor;
+    body.style.filter = `saturate(${saturation}%)`;
+  }
 
-    // Function to increase text size
-    function increaseTextSize() {
-      fontSize += 2;
+  // Function to increase text size
+  function increaseTextSize() {
+    fontSize += 2;
+    updateStyles();
+  }
+
+  // Function to decrease text size
+  function decreaseTextSize() {
+    fontSize = Math.max(10, fontSize - 2);
+    updateStyles();
+  }
+
+  // Function to change text color using a color picker
+  function changeTextColor() {
+    textColor = colorPicker.value;
+    updateStyles();
+  }
+
+  // Function to change saturation
+  function changeSaturation() {
+    const newSaturation = prompt('Enter the saturation level (0-100):');
+    if (newSaturation !== null && !isNaN(newSaturation) && newSaturation >= 0 && newSaturation <= 100) {
+      saturation = parseFloat(newSaturation);
       updateStyles();
+    } else {
+      alert('Invalid saturation level. Please enter a number between 0 and 100.');
     }
+  }
 
-    // Function to decrease text size
-    function decreaseTextSize() {
-      fontSize = Math.max(10, fontSize - 2);
-      updateStyles();
+  // Attach event listeners to the button
+  accessibilityBtn.addEventListener('click', function() {
+    const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Change saturation');
+
+    switch (action) {
+      case '1':
+        increaseTextSize();
+        break;
+      case '2':
+        decreaseTextSize();
+        break;
+      case '3':
+        colorPicker.click(); // Open color picker
+        break;
+      case '4':
+        changeSaturation();
+        break;
+      default:
+        alert('Invalid choice');
     }
+  });
 
-    // Function to change text color using a color picker
-    function changeTextColor() {
-      textColor = colorPicker.value;
-      updateStyles();
-    }
-
-    // Function to change saturation
-    function changeSaturation() {
-      saturation = saturationInput.value;
-      updateStyles();
-    }
-
-    // Attach event listeners to the button
-    accessibilityBtn.addEventListener('click', function() {
-      const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Change saturation');
-
-      switch (action) {
-        case '1':
-          increaseTextSize();
-          break;
-        case '2':
-          decreaseTextSize();
-          break;
-        case '3':
-          colorPicker.click(); // Open color picker
-          break;
-        case '4':
-          saturationInput.click(); // Open saturation input
-          break;
-        default:
-          alert('Invalid choice');
-      }
-    });
-
-    // Event listener for saturation input
-    saturationInput.addEventListener('input', changeSaturation);
+  // Event listener for color picker
+  colorPicker.addEventListener('change', changeTextColor);
   </script>
 	  
     <!-- Libs JS -->
