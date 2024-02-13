@@ -902,7 +902,31 @@ function submitBhuveshJobApplicationForm() {
             document.getElementById('Bhuvesh-job-application-form').reset();
             document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
         }
-//17. Appliction button
+//17. Acc button
+function increaseTextSize() {
+  // Implement code to increase text size
+  alert("Text size increased.");
+}
+
+function decreaseTextSize() {
+  // Implement code to decrease text size
+  alert("Text size decreased.");
+}
+
+function changeSaturation() {
+  var saturationLevel = parseInt(prompt("Enter saturation level (0-100):"));
+  if (saturationLevel >= 0 && saturationLevel <= 100) {
+    alert("Saturation changed to " + saturationLevel + ".");
+  } else {
+    alert("Invalid saturation level. Please enter a number between 0 and 100.");
+  }
+}
+
+function resetDefaults() {
+  // Implement code to reset to defaults
+  alert("Reset to defaults.");
+}
+
 function performAccessibilityAction() {
   var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Saturation\n4. Reset to Defaults"));
   
@@ -914,12 +938,7 @@ function performAccessibilityAction() {
       decreaseTextSize();
       break;
     case 3:
-      var saturationLevel = parseInt(prompt("Enter saturation level (0-100):"));
-      if (saturationLevel >= 0 && saturationLevel <= 100) {
-        changeSaturation(saturationLevel);
-      } else {
-        alert("Invalid saturation level. Please enter a number between 0 and 100.");
-      }
+      changeSaturation();
       break;
     case 4:
       resetDefaults();
@@ -929,22 +948,3 @@ function performAccessibilityAction() {
   }
 }
 
-function increaseTextSize() {
-  // Implement code to increase text size
-  alert("Text size increased.");
-}
-
-function decreaseTextSize() {
-  // Implement code to decrease text size
-  alert("Text size decreased.");
-}
-
-function changeSaturation(saturationLevel) {
-  // Implement code to change saturation based on the saturationLevel input
-  alert("Saturation changed to " + saturationLevel + ".");
-}
-
-function resetDefaults() {
-  // Implement code to reset to defaults
-  alert("Reset to defaults.");
-}
