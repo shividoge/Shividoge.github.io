@@ -909,6 +909,11 @@ const accessibleText = document.getElementById('accessible-text');
 const colorPicker = document.getElementById('color-picker');
 const accessibilityBtn = document.querySelector('.accessibility-btn');
 
+// Initial styles
+let fontSize = 16;
+let textColor = '#333';
+let saturation = 100;
+
 // Function to update styles
 function updateStyles() {
   body.style.fontSize = `${fontSize}px`;
@@ -947,7 +952,13 @@ function changeSaturation() {
   }
 }
 
-// Attach event listeners to the button
+// Function to change text color
+function changeTextColor(event) {
+  textColor = event.target.value;
+  updateStyles();
+}
+
+// Attach event listener to the button
 accessibilityBtn.addEventListener('click', function() {
   const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change saturation\n4. Reset all styles');
 
@@ -971,3 +982,6 @@ accessibilityBtn.addEventListener('click', function() {
 
 // Event listener for color picker
 colorPicker.addEventListener('change', changeTextColor);
+
+// Initial update of styles
+updateStyles();
