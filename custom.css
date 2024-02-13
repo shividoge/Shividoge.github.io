@@ -112,17 +112,18 @@
 }
 
 .Bhuvesh-apply-box {
-  max-width: 90%; /* Adjust as needed */
+  max-width: 90%;
   padding: 2.5%;
   margin: 0 auto;
+  margin-top: 1%;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 4em; /* Change to em for relative sizing */
+  border-radius: 4em; 
 }
 
 .Bhuvesh-h1 {
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
 }
 
