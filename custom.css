@@ -1,15 +1,13 @@
 #my-chat-button {
     position: fixed;
-    bottom: 5%;
-    left: 5%; /* Updated to left side */
+    bottom: calc(20px / 40); /* Adjusted proportionally */
+    left: calc(20px / 40); /* Adjusted proportionally */
+    padding: 10px; /* Fixed size */
     background-color: #50b6bc;
     color: #fff;
-    padding: 2.5% 5%;
-    border: none;
-    border-radius: 5vw;
     cursor: pointer;
-    box-shadow: 0 0 2.5vw rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    border: none;
+    border-radius: 25px; /* Fixed size */
 }
 
 #my-chat-container {
