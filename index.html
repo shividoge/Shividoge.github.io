@@ -314,100 +314,57 @@
 
 <!-- js-->
 <script>
-  // Get elements
-const body = document.body;
-const accessibleText = document.getElementById('accessible-text');
-const accessibilityBtn = document.getElementById('accessibility-btn');
+	  // Get elements
+    const body = document.body;
+    const accessibleText = document.getElementById('accessible-text');
+    const accessibilityBtn = document.getElementById('accessibility-btn');
 
-// Set initial values
-let fontSize = 16;
-let textColor = '#333';
-let contrast = 100; // Initial contrast percentage
-let fontFamilies = ['Arial', 'Helvetica', 'Verdana', 'Georgia', 'Times New Roman']; // Array of font families
-let currentFontFamilyIndex = 0; // Index to track current font family
+    // Set initial values
+    let fontSize = 16;
+    let textColor = '#333';
 
-// Function to update styles
-function updateStyles() {
-  body.style.fontSize = `${fontSize}px`;
-  accessibleText.style.color = textColor;
-  body.style.filter = `contrast(${contrast}%)`;
-  body.style.fontFamily = fontFamilies[currentFontFamilyIndex];
-}
+    // Function to update styles
+    function updateStyles() {
+      body.style.fontSize = `${fontSize}px`;
+      accessibleText.style.color = textColor;
+    }
 
-// Function to increase text size
-function increaseTextSize() {
-  fontSize += 2;
-  updateStyles();
-}
+    // Function to increase text size
+    function increaseTextSize() {
+      fontSize += 2;
+      updateStyles();
+    }
 
-// Function to decrease text size
-function decreaseTextSize() {
-  fontSize = Math.max(10, fontSize - 2);
-  updateStyles();
-}
+    // Function to decrease text size
+    function decreaseTextSize() {
+      fontSize = Math.max(10, fontSize - 2);
+      updateStyles();
+    }
 
-// Function to change text color
-function changeTextColor() {
-  textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
-  updateStyles();
-}
+    // Function to change text color
+    function changeTextColor() {
+      textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
+      updateStyles();
+    }
 
-// Function to adjust contrast
-function adjustContrast() {
-  contrast = parseInt(prompt('Enter contrast percentage (e.g., 100 for normal, 200 for high contrast):', contrast)) || contrast;
-  contrast = Math.min(Math.max(0, contrast), 200); // Ensure contrast value is within 0 to 200
-  updateStyles();
-}
+    // Attach event listeners to the button
+    accessibilityBtn.addEventListener('click', function() {
+      const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color');
 
-// Function to change font family
-function changeFontFamily() {
-  currentFontFamilyIndex = (currentFontFamilyIndex + 1) % fontFamilies.length; // Cycle through font families
-  updateStyles();
-}
-
-// Function to reset all settings to default
-function resetToDefault() {
-  fontSize = 16;
-  textColor = '#333';
-  contrast = 100;
-  currentFontFamilyIndex = 0;
-  updateStyles();
-}
-
-// Attach event listeners to the button
-accessibilityBtn.addEventListener('click', function() {
-  const action = prompt(`Choose an action:
-1. Increase text size
-2. Decrease text size
-3. Change text color
-4. Adjust contrast
-5. Change font family
-6. Reset to default`);
-
-  switch (action) {
-    case '1':
-      increaseTextSize();
-      break;
-    case '2':
-      decreaseTextSize();
-      break;
-    case '3':
-      changeTextColor();
-      break;
-    case '4':
-      adjustContrast();
-      break;
-    case '5':
-      changeFontFamily();
-      break;
-    case '6':
-      resetToDefault();
-      break;
-    default:
-      alert('Invalid choice');
-  }
-});
-
+      switch (action) {
+        case '1':
+          increaseTextSize();
+          break;
+        case '2':
+          decreaseTextSize();
+          break;
+        case '3':
+          changeTextColor();
+          break;
+        default:
+          alert('Invalid choice');
+      }
+    });
   </script>
 	  
     <!-- Libs JS -->
