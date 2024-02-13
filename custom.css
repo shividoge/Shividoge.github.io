@@ -1,107 +1,3 @@
-#my-chat-button {
-    position: fixed;
-    bottom: calc(20px / 40); /* Adjusted proportionally */
-    left: calc(20px / 40); /* Adjusted proportionally */
-    padding: 10px; /* Fixed size */
-    background-color: #50b6bc;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-    border-radius: 25px; /* Fixed size */
-}
-
-#my-chat-container {
-    position: fixed;
-    bottom: 5%;
-    left: 5%; /* Updated to left side */
-    width: 40vw;
-    height: 50vh;
-    border: 1px solid #ccc;
-    border-radius: 3vh;
-    overflow: hidden;
-    box-shadow: 0 0 2.5vw rgba(0, 0, 0, 0.1);
-    display: none;
-    background-color: #fff;
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-}
-
-#my-chat-header {
-    background-color: #50b6bc;
-    color: #fff;
-    padding: 2.5%;
-    text-align: center;
-    cursor: pointer;
-    border-top-left-radius: 3vh;
-    border-top-right-radius: 3vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-#my-close-button {
-    background: none;
-    border: none;
-    color: #ccc;
-    font-size: 4vw;
-    cursor: pointer;
-}
-
-#my-chat-history {
-    flex: 1;
-    padding: 2.5%;
-    overflow-y: auto;
-    font-size: 3vw;
-    color: #50b6bc;
-}
-
-#my-chat-input {
-    padding: 2.5%;
-    border-top: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-
-#my-message-input {
-    padding: 1.25%;
-    margin-bottom: 2%;
-}
-
-#my-send-button {
-    padding: 1.25% 2.5%;
-    background-color: #50b6bc;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-#my-send-button:hover {
-    background-color: #50b6bc;
-    border: 0.5vw solid white;
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.my-user-message {
-    background-color: #50b6bc;
-    color: #fff;
-    padding: 1.6vw;
-    margin-bottom: 2%;
-    border-radius: 3vh;
-    align-self: flex-end;
-}
-
-.my-bot-message {
-    background-color: #f0f0f0;
-    padding: 1.6vw;
-    margin-bottom: 2%;
-    border-radius: 3vh;
-    align-self: flex-start;
-}
-
 /* CSS for applicaiton */ 
 .Bhuvesh-container {
   max-width: 90%; /* Adjust as needed */
@@ -240,8 +136,7 @@
 
 
 /* Accesibility button*/
-
-#accessibility-btn {
+.accessibility-btn {
     position: fixed;
     bottom: calc(20px / 40); /* Adjusted proportionally */
     left: 20px;
@@ -252,4 +147,3 @@
     border: none;
     border-radius: 25px; /* Fixed size */
 }
-
