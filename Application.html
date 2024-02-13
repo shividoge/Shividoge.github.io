@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
-  <head>
+<head>
 
     <!-- Title -->
     <title>RoboHorizons | Application</title>
@@ -20,7 +20,7 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CMontserrat:200,300,400,500,700&display=swap">
-	<script src="https://kit.fontawesome.com/17a82750f9.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/17a82750f9.js" crossorigin="anonymous"></script>
     <!-- Theme CSS -->
     <link rel="stylesheet" href="theme.css">
 
@@ -30,236 +30,263 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="RoboHorizonslogo-removebg-preview.ico">
 
-  </head>
-  <body class="layout-wide">
+    <style>
+        /* Style for the fixed navbar */
+        .navbar-fixed {
+            position: fixed;
+            top: -100px; /* Start hidden */
+            transition: top 0.3s;
+            width: 100%;
+        }
+        .navbar-fixed.active {
+            top: 0;
+        }
+    </style>
 
-    <!-- Loader -->
-    <div class="loader bg-dark">
-      <div class="spinner-grow text-primary" role="status">
+</head>
+<body class="layout-wide">
+
+<!-- Loader -->
+<div class="loader bg-dark">
+    <div class="spinner-grow text-primary" role="status">
         <span class="sr-only">Loading...</span>
-      </div>
+    </div>
+</div>
+
+<div id="top"></div>
+
+<!-- Site navigation -->
+<nav class="site-navbar site-navbar-transparent navbar navbar-expand-lg navbar-dark fixed-top bg-white shadow-light p-lg-4 navbar-fixed" data-navbar-base="navbar-dark" data-navbar-toggled="navbar-light" data-navbar-scrolled="navbar-light">
+
+    <!-- Brand -->
+    <a class="navbar-brand" href="https://shividoge.github.io" target="_blank">
+        <img src="photo_2024-01-03_16-46-26-removebg-preview.png" class="navbar-brand-img" alt="">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler-alternative" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-alternative-icon"></span>
+    </button>
+
+    <!-- Chat with us button-->
+    <button id="my-chat-button">
+        Chat with us
+        <div id="my-notification-dot"></div>
+    </button>
+
+    <div id="my-chat-container" class="my-chat-container">
+        <div id="my-chat-header">
+            <button id="my-close-button">&#10005;</button>
+            <i class="fas fa-comments" style="margin-right: 5px;"></i>
+            Chat with us
+        </div>
+        <div id="my-chat-history"></div>
+        <div id="my-chat-input">
+            <input type="text" id="my-message-input" placeholder="Type your message...">
+            <button id="my-send-button">Send</button>
+        </div>
     </div>
 
-    <div id="top"></div>
 
-    <!-- Site navigation -->
-    <nav class="site-navbar site-navbar-transparent navbar navbar-expand-lg navbar-dark fixed-top bg-white shadow-light p-lg-4" data-navbar-base="navbar-dark" data-navbar-toggled="navbar-light" data-navbar-scrolled="navbar-light">
-
-      <!-- Brand -->
-      <a class="navbar-brand" href="https://shividoge.github.io" target="_blank">
-        <img src="photo_2024-01-03_16-46-26-removebg-preview.png" class="navbar-brand-img" alt="">
-      </a>
-
-      <!-- Toggler -->
-      <button class="navbar-toggler-alternative" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-alternative-icon"></span>
-      </button>
-
-      <!-- Chat with us button-->
-    	<button id="my-chat-button">
-        	Chat with us
-        	<div id="my-notification-dot"></div>
-    	</button>
-    
-    	<div id="my-chat-container" class="my-chat-container">
-        	<div id="my-chat-header">
-            	<button id="my-close-button">&#10005;</button>
-            	<i class="fas fa-comments" style="margin-right: 5px;"></i>
-            	Chat with us
-        	</div>
-        	<div id="my-chat-history"></div>
-        	<div id="my-chat-input">
-            	<input type="text" id="my-message-input" placeholder="Type your message...">
-            	<button id="my-send-button">Send</button>
-        	</div>
-    	</div>
-
-	    
-      <!-- Collapse -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
 
         <!-- Navigation -->
         <ul class="navbar-nav ml-auto" id="navigation">
-          <li class="nav-item" data-menuanchor="home">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item active" data-menuanchor="our-solutions">
-            <a class="nav-link" href="Application.html">Application</a>
-          </li>
-          <li class="nav-item" data-menuanchor="benefits">
-            <a class="nav-link" href="Benefits.html">Benefits</a>
-          </li>
-          <li class="nav-item" data-menuanchor="contact">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
+            <li class="nav-item" data-menuanchor="home">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active" data-menuanchor="our-solutions">
+                <a class="nav-link" href="Application.html">Application</a>
+            </li>
+            <li class="nav-item" data-menuanchor="benefits">
+                <a class="nav-link" href="Benefits.html">Benefits</a>
+            </li>
+            <li class="nav-item" data-menuanchor="contact">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
         </ul>
 
         <!-- Button -->
         <a class="btn btn-primary d-block d-lg-inline-block ml-lg-3" class="nav-link" href="https://shividoge.github.io/Application.html" target="_blank">Apply Now!</a>
 
-      </div>
-    </nav>
-
-    <!-- Back To Top Button -->
-    <a href="#top" class="backtotop">
-      <span>Back To Top</span>
-      <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Scroll progress -->
-    <div class="scroll-progress">
-      <div class="sp-left">
-        <div class="sp-inner"></div>
-        <div class="sp-inner progress"></div>
-      </div>
-      <div class="sp-right">
-        <div class="sp-inner"></div>
-        <div class="sp-inner progress"></div>
-      </div>
     </div>
+</nav>
 
-    <!-- Fullpage content -->
-    <div class="ln-fullpage" data-navigation="true">
-	    
-	<!-- Section - Benefits -->
-	<section class="ln-section d-xl-flex" data-anchor="our-solutions" data-tooltip="Our soultions" data-overlay-color="#00050e" data-overlay-opacity="90">
-	  <div class="overlay overlay-advanced">
-	    <div class="overlay-inner bg-image-holder bg-cover">
-	      <img src="markus-winkler-3Rn2EjoAC1g-unsplash.jpg" alt="background">
-	    </div>
-	    <div class="overlay-inner bg-dark opacity-70"></div>
-	  </div>
-	  <div class="container align-self-center text-center text-white">
-		<br>
-		<br>
-	    <h2 class="animated mb-4" data-animation="fadeInUp">How to Apply</h2>
-	    <p class="animated" data-animation="fadeInUp" data-animation-delay="150">
+<!-- Back To Top Button -->
+<a href="#top" class="backtotop">
+    <span>Back To Top</span>
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Scroll progress -->
+<div class="scroll-progress">
+    <div class="sp-left">
+        <div class="sp-inner"></div>
+        <div class="sp-inner progress"></div>
+    </div>
+    <div class="sp-right">
+        <div class="sp-inner"></div>
+        <div class="sp-inner progress"></div>
+    </div>
+</div>
+
+<!-- Fullpage content -->
+<div class="ln-fullpage" data-navigation="true">
+
+    <!-- Section - Benefits -->
+    <section class="ln-section d-xl-flex" data-anchor="our-solutions" data-tooltip="Our soultions" data-overlay-color="#00050e" data-overlay-opacity="90">
+        <div class="overlay overlay-advanced">
+            <div class="overlay-inner bg-image-holder bg-cover">
+                <img src="markus-winkler-3Rn2EjoAC1g-unsplash.jpg" alt="background">
+            </div>
+            <div class="overlay-inner bg-dark opacity-70"></div>
+        </div>
+        <div class="container align-self-center text-center text-white">
+            <br>
+            <br>
+            <h2 class="animated mb-4" data-animation="fadeInUp">How to Apply</h2>
+            <p class="animated" data-animation="fadeInUp" data-animation-delay="150">
                 We're thrilled that you're interested in joining our team at <strong>RoboHorizons</strong>! To kickstart your application process, head over to our website and find our user-friendly online application form. Here's a simple guide to help you navigate through the steps:
                 <ul class="animated" data-animation="fadeInUp" data-animation-delay="150" style="list-style-type: none;">
                     <li class="animated" data-animation="fadeInUp" data-animation-delay="150"><strong>Complete the Application Form:</strong> Start by filling in your first name, email address, and the specific position you're applying for. These basic details help us tailor the application process to your unique profile.</li>
-			<br>
+                    <br>
                     <li class="animated" data-animation="fadeInUp" data-animation-delay="150"><strong>Share Your Professional Profile:</strong> Include your LinkedIn URL to provide us with additional insights into your professional background. This step allows us to understand your skills and experiences more comprehensively.</li>
-			<br>
+                    <br>
                     <li class="animated" data-animation="fadeInUp" data-animation-delay="150"><strong>Craft Your Cover Letter:</strong> Take a moment to share your story. Let us know about your motivations, achievements, and why you believe you're the perfect fit for the role.</li>
-			<br>
+                    <br>
                     <li class="animated" data-animation="fadeInUp" data-animation-delay="150"><strong>Submit Your CV:</strong> Upload your CV in either PDF or DOCX format. This document is essential for us to assess your qualifications thoroughly.</li>
-                  </ul>
-	    </p>
-	
+                </ul>
+            </p>
+
             <div class="Bhuvesh-container">
-              <div class="Bhuvesh-apply-box">
-                <h1 class="Bhuvesh-h1">Job Application</h1>
-                <form id="Bhuvesh-job-application-form" onsubmit="event.preventDefault(); submitBhuveshJobApplicationForm();">
-                  <div class="Bhuvesh-form-container">
-                    <div class="Bhuvesh-form-control">
-                      <label class="Bhuvesh-label" for="Bhuvesh-first-name">Full Name</label>
-                      <input type="text" id="Bhuvesh-first-name" name="Bhuvesh-first-name" placeholder="Enter Full Name" class="Bhuvesh-input">
+                <div class="Bhuvesh-apply-box">
+                    <h1 class="Bhuvesh-h1">Job Application</h1>
+                    <form id="Bhuvesh-job-application-form" onsubmit="event.preventDefault(); submitBhuveshJobApplicationForm();">
+                        <div class="Bhuvesh-form-container">
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-first-name">Full Name</label>
+                                <input type="text" id="Bhuvesh-first-name" name="Bhuvesh-first-name" placeholder="Enter Full Name" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control-email">
+                                <label class="Bhuvesh-label" for="Bhuvesh-email">Email</label>
+                                <input type="email" id="Bhuvesh-email" name="Bhuvesh-email" placeholder="Enter Email" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-position">Position</label>
+                                <select name="Bhuvesh-position" id="Bhuvesh-position" class="Bhuvesh-select">
+                                    <option value="">Select Position</option>
+                                    <option value="Mechanical researcher">Head of Mechanical Researcher</option>
+                                    <option value="Officer manager">Head of Electrical Research</option>
+                                    <option value="Officer manager">Full Stack Developerr</option>
+                                    <option value="Officer manager">Marketing Manager</option>
+                                    <option value="Officer manager">Officer Manager</option>
+                                </select>
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-linkedin-url">LinkedIn URL</label>
+                                <input type="url" id="Bhuvesh-linkedin-url" name="Bhuvesh-linkedin-url" placeholder="Enter LinkedIn URL" class="Bhuvesh-input">
+                            </div>
+                            <div class="Bhuvesh-form-control">
+                                <label class="Bhuvesh-label" for="Bhuvesh-cover-letter">Why Us?</label>
+                                <textarea id="Bhuvesh-cover-letter" name="Bhuvesh-cover-letter" placeholder="Enter Cover Letter" class="Bhuvesh-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="Bhuvesh-form-control">
+                            <label class="Bhuvesh-label" for="Bhuvesh-cover-letter">How do you think you can improve RoboHorizons?</label>
+                            <textarea id="Bhuvesh-cover-letter" name="Bhuvesh-cover-letter" placeholder="Enter Cover Letter" class="Bhuvesh-textarea"></textarea>
+                        </div>
+                        <div class="Bhuvesh-form-control">
+                            <label class="Bhuvesh-label" for="Bhuvesh-upload-cv">Upload Your CV (.pdf or .docx only):</label>
+                            <input type="file" class="Bhuvesh-input Bhuvesh-file-input" id="fileInput" name="fileInput" required>
+                        </div>
+                        <div class="Bhuvesh-form-control">
+                            <label class="Bhuvesh-label" for="Bhuvesh-upload-cv">Upload Your Cover Letter (.pdf or .docx only):</label>
+                            <input type="file" class="Bhuvesh-input Bhuvesh-file-input" id="fileInput" name="fileInput" required>
+                        </div>
+                        <div class="Bhuvesh-button-container">
+                            <button type="button" class="Bhuvesh-button" onclick="submitBhuveshJobApplicationForm()">Submit</button>
+                        </div>
+                    </form>
+                    <div id="Bhuvesh-thank-you-message-job-application" style="display: none;">
+                        <p>Thank you for submitting your job application! You will receive an email from our team with further details.</p>
                     </div>
-                    <div class="Bhuvesh-form-control-email">
-                      <label class="Bhuvesh-label" for="Bhuvesh-email">Email</label>
-                      <input type="email" id="Bhuvesh-email" name="Bhuvesh-email" placeholder="Enter Email" class="Bhuvesh-input">
-                    </div>
-                    <div class="Bhuvesh-form-control">
-                      <label class="Bhuvesh-label" for="Bhuvesh-position">Position</label>
-                      <select name="Bhuvesh-position" id="Bhuvesh-position" class="Bhuvesh-select">
-                        <option value="">Select Position</option>
-                        <option value="Mechanical researcher">Head of Mechanical Researcher</option>
-                        <option value="Officer manager">Head of Electrical Research</option>
-                        <option value="Officer manager">Full Stack Developerr</option>
-                        <option value="Officer manager">Marketing Manager</option>
-                        <option value="Officer manager">Officer Manager</option>
-                      </select>
-                    </div>
-                    <div class="Bhuvesh-form-control">
-                      <label class="Bhuvesh-label" for="Bhuvesh-linkedin-url">LinkedIn URL</label>
-                      <input type="url" id="Bhuvesh-linkedin-url" name="Bhuvesh-linkedin-url" placeholder="Enter LinkedIn URL" class="Bhuvesh-input">
-                    </div>
-                    <div class="Bhuvesh-form-control">
-                      <label class="Bhuvesh-label" for="Bhuvesh-cover-letter">Why Us?</label>
-                      <textarea id="Bhuvesh-cover-letter" name="Bhuvesh-cover-letter" placeholder="Enter Cover Letter" class="Bhuvesh-textarea"></textarea>
-                    </div>
-                  </div>
-                    <div class="Bhuvesh-form-control">
-                      <label class="Bhuvesh-label" for="Bhuvesh-cover-letter">How do you think you can improve RoboHorizons?</label>
-                      <textarea id="Bhuvesh-cover-letter" name="Bhuvesh-cover-letter" placeholder="Enter Cover Letter" class="Bhuvesh-textarea"></textarea>
-                    </div>
-                  <div class="Bhuvesh-form-control">
-                    <label class="Bhuvesh-label" for="Bhuvesh-upload-cv">Upload Your CV (.pdf or .docx only):</label>
-                    <input type="file" class="Bhuvesh-input Bhuvesh-file-input" id="fileInput" name="fileInput" required>
-                  </div>
-                  <div class="Bhuvesh-form-control">
-                    <label class="Bhuvesh-label" for="Bhuvesh-upload-cv">Upload Your Cover Letter (.pdf or .docx only):</label>
-                    <input type="file" class="Bhuvesh-input Bhuvesh-file-input" id="fileInput" name="fileInput" required>
-                  </div>
-                  <div class="Bhuvesh-button-container">
-                    <button type="button" class="Bhuvesh-button" onclick="submitBhuveshJobApplicationForm()">Submit</button>
-                  </div>
-                </form>
-                <div id="Bhuvesh-thank-you-message-job-application" style="display: none;">
-                  <p>Thank you for submitting your job application! You will receive an email from our team with further details.</p>
                 </div>
-              </div>
             </div>
-	</section>
-
-    </div>
-	  
-    <!-- Footer -->
-    <footer class="position-relative py-10 py-lg-12 bg-dark text-gray-500">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 col-xl-12 col-xxl-10 mx-auto text-center">
-            <ul class="list-inline mb-5">
-              <li class="list-inline-item mx-0">
-                <a class="btn btn-icon btn-text-secondary text-gray-400" href="https://www.facebook.com/profile.php?id=61555010797778&mibextid=PlNXYD" target="_blank" tabindex="0">
-                  <i class="fab fa-facebook-f btn-icon-inner"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mx-0">
-                <a class="btn btn-icon btn-text-secondary text-gray-400" href="https://twitter.com/RoboHorizons" target="_blank" tabindex="0">
-                  <i class="fab fa-twitter btn-icon-inner"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mx-0">
-                <a class="btn btn-icon btn-text-secondary text-gray-400" href="https://www.instagram.com/robo.horizons" target="_blank" tabindex="0">
-                  <i class="fa-brands fa-instagram btn-icon-inner"></i>
-                </a>
-              </li>
-            </ul>
-            <p>© 2024 RoboHorizons - All Rights Reserved - <a href="https://shividoge.github.io/#terms-and-services" target="_blank">Terms and Services</a></p>
-          </div>
         </div>
-      </div>
-    </footer>
-    <!-- footer end -->
+    </section>
 
-    <!-- Fullpage - Social icons -->
-    <nav class="ln-social-icons">
-      <ul class="mx-auto">
+</div>
+
+<!-- Footer -->
+<footer class="position-relative py-10 py-lg-12 bg-dark text-gray-500">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-12 col-xxl-10 mx-auto text-center">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item mx-0">
+                        <a class="btn btn-icon btn-text-secondary text-gray-400" href="https://www.facebook.com/profile.php?id=61555010797778&mibextid=PlNXYD" target="_blank" tabindex="0">
+                            <i class="fab fa-facebook-f btn-icon-inner"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item mx-0">
+                        <a class="btn btn-icon btn-text-secondary text-gray-400" href="https://twitter.com/RoboHorizons" target="_blank" tabindex="0">
+                            <i class="fab fa-twitter btn-icon-inner"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item mx-0">
+                        <a class="btn btn-icon btn-text-secondary text-gray-400" href="https://www.instagram.com/robo.horizons" target="_blank" tabindex="0">
+                            <i class="fa-brands fa-instagram btn-icon-inner"></i>
+                        </a>
+                    </li>
+                </ul>
+                <p>© 2024 RoboHorizons - All Rights Reserved - <a href="https://shividoge.github.io/#terms-and-services" target="_blank">Terms and Services</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+
+<!-- Fullpage - Social icons -->
+<nav class="ln-social-icons">
+    <ul class="mx-auto">
         <li><a href="https://www.facebook.com/profile.php?id=61555010797778&mibextid=PlNXYD" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
         <li><a href="https://twitter.com/RoboHorizons" target="_blank"><i class="fab fa-twitter"></i></a></li>
         <li><a href="https://www.instagram.com/robo.horizons/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-      </ul>
-    </nav>
+    </ul>
+</nav>
 
-    <!-- Libs JS -->
-    <script src="jquery.min.js"></script>
-    <script src="popper.min.js"></script>
-    <script src="bootstrap.min.js"></script>
-    <script src="scrolloverflow.min.js"></script>
-    <script src="jquery.fullpage.min.js"></script>
-    <script src="jquery.waypoints.min.js"></script>
-    <script src="jquery.smooth-scroll.min.js"></script>
-    <script src="jquery.validate.min.js"></script>
-    <script src="ajquery.form.min.js"></script>
-    <script src="jquery.magnific-popup.min.js"></script>
-    <script src="jquery.countdown.min.js"></script>
-    <script src="granim.min.js"></script>
-    <script src="slick.min.js"></script>
-    <script src="vegas.min.js"></script>
+<!-- Libs JS -->
+<script src="jquery.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="scrolloverflow.min.js"></script>
+<script src="jquery.fullpage.min.js"></script>
+<script src="jquery.waypoints.min.js"></script>
+<script src="jquery.smooth-scroll.min.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script src="ajquery.form.min.js"></script>
+<script src="jquery.magnific-popup.min.js"></script>
+<script src="jquery.countdown.min.js"></script>
+<script src="granim.min.js"></script>
+<script src="slick.min.js"></script>
+<script src="vegas.min.js"></script>
 
-    <!-- Theme JS -->
-    <script src="main.js"></script>
+<!-- Theme JS -->
+<script src="main.js"></script>
 
-  </body>
+<script>
+    // When the user scrolls down 50px from the top of the document, show the navbar
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.querySelector('.navbar-fixed').classList.add('active');
+        } else {
+            document.querySelector('.navbar-fixed').classList.remove('active');
+        }
+    }
+</script>
+
+</body>
 </html>
