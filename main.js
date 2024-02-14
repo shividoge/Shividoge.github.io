@@ -903,73 +903,56 @@ function submitBhuveshJobApplicationForm() {
             document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
         }
 //17. Acc button
-// Function to increase text size
-function increaseTextSize() {
-    // Implement code to increase text size
-    alert("Text size increased.");
-}
-
-// Function to decrease text size
-function decreaseTextSize() {
-    // Implement code to decrease text size
-    alert("Text size decreased.");
-}
-
-// Function to change text color
-function changeTextColor() {
-    var textColor = prompt('Enter a color (e.g., #ff0000):', '#333');
-    if (textColor !== null) {
-        alert("Text color changed to " + textColor + ".");
-    }
-}
-
-// Function to adjust saturation
-function adjustSaturation() {
-    var saturationLevel = parseInt(prompt('Enter saturation level (0-100):', '100'));
-    if (!isNaN(saturationLevel) && saturationLevel >= 0 && saturationLevel <= 100) {
-        alert("Saturation changed to " + saturationLevel + ".");
-    } else {
+function performAccessibilityAction() {
+  var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Saturation\n4. Reset to Defaults"));
+  
+  switch (option) {
+    case 1:
+      increaseTextSize();
+      break;
+    case 2:
+      decreaseTextSize();
+      break;
+    case 3:
+      var saturationLevel = parseInt(prompt("Enter saturation level (0-100):"));
+      if (saturationLevel >= 0 && saturationLevel <= 100) {
+        changeSaturation(saturationLevel);
+      } else {
         alert("Invalid saturation level. Please enter a number between 0 and 100.");
-    }
+      }
+      break;
+    case 4:
+      resetDefaults();
+      break;
+    default:
+      alert("Invalid option. Please choose a number between 1 and 4.");
+  }
 }
 
-// Function to change font family
-function changeFontFamily() {
-    var currentFontFamilyIndex = 0; // Index to track current font family
-    var fontFamilies = ['Arial', 'Helvetica', 'Verdana', 'Georgia', 'Times New Roman']; // Array of font families
-    currentFontFamilyIndex = (currentFontFamilyIndex + 1) % fontFamilies.length; // Cycle through font families
-    alert("Font family changed to " + fontFamilies[currentFontFamilyIndex] + ".");
+function increaseTextSize() {
+  // Implement code to increase text size
+  document.body.style.fontSize = "larger";
+  alert("Text size increased.");
 }
 
-// Function to reset all settings to default
-function resetToDefault() {
-    alert("Reset to defaults.");
+function decreaseTextSize() {
+  // Implement code to decrease text size
+  document.body.style.fontSize = "smaller";
+  alert("Text size decreased.");
 }
 
-// Attach event listener to the button
-document.getElementById("accessibilityButton").addEventListener("click", function () {
-    var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Text Color\n4. Adjust Saturation\n5. Change Font Family\n6. Reset to Defaults"));
+function changeSaturation(saturationLevel) {
+  // Implement code to change saturation based on the saturationLevel input
+  var saturationPercentage = saturationLevel + "%";
+  document.body.style.filter = "saturate(" + saturationPercentage + ")";
+  alert("Saturation changed to " + saturationLevel + ".");
+}
 
-    switch (option) {
-        case 1:
-            increaseTextSize();
-            break;
-        case 2:
-            decreaseTextSize();
-            break;
-        case 3:
-            changeTextColor();
-            break;
-        case 4:
-            adjustSaturation();
-            break;
-        case 5:
-            changeFontFamily();
-            break;
-        case 6:
-            resetToDefault();
-            break;
-        default:
-            alert("Invalid option. Please choose a number between 1 and 6.");
-    }
-});
+function resetDefaults() {
+  // Implement code to reset to defaults
+  document.body.style.fontSize = "medium";
+  document.body.style.filter = "none"; // Reset saturation
+  alert("Reset to defaults.");
+}
+
+performAccessibilityAction(); // Call the function to start the accessibility action
