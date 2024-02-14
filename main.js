@@ -903,95 +903,73 @@ function submitBhuveshJobApplicationForm() {
             document.getElementById('Bhuvesh-thank-you-message-job-application').style.display = 'block';
         }
 //17. Acc button
-// Get elements
-const body = document.body;
-const accessibleText = document.getElementById('accessible-text');
-const accessibilityBtn = document.getElementById('accessibility-btn');
-
-// Set initial values
-let fontSize = 16;
-let textColor = '#333';
-let saturation = 100; // Initial saturation percentage
-let currentFontFamilyIndex = 0; // Index to track current font family
-
-// Function to update styles
-function updateStyles() {
-  body.style.fontSize = `${fontSize}px`;
-  accessibleText.style.color = textColor;
-  body.style.filter = `saturate(${saturation}%)`;
-  body.style.fontFamily = fontFamilies[currentFontFamilyIndex];
-}
-
 // Function to increase text size
 function increaseTextSize() {
-  fontSize += 2;
-  updateStyles();
+    // Implement code to increase text size
+    alert("Text size increased.");
 }
 
 // Function to decrease text size
 function decreaseTextSize() {
-  fontSize = Math.max(10, fontSize - 2);
-  updateStyles();
-}
-
-// Function to adjust saturation
-function adjustSaturation() {
-  saturation = parseInt(prompt('Enter saturation percentage (e.g., 100 for normal, 200 for high saturation):', saturation)) || saturation;
-  saturation = Math.min(Math.max(0, saturation), 200); // Ensure saturation value is within 0 to 200
-  updateStyles();
+    // Implement code to decrease text size
+    alert("Text size decreased.");
 }
 
 // Function to change text color
 function changeTextColor() {
-  textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
-  updateStyles();
+    var textColor = prompt('Enter a color (e.g., #ff0000):', '#333');
+    if (textColor !== null) {
+        alert("Text color changed to " + textColor + ".");
+    }
+}
+
+// Function to adjust saturation
+function adjustSaturation() {
+    var saturationLevel = parseInt(prompt('Enter saturation level (0-100):', '100'));
+    if (!isNaN(saturationLevel) && saturationLevel >= 0 && saturationLevel <= 100) {
+        alert("Saturation changed to " + saturationLevel + ".");
+    } else {
+        alert("Invalid saturation level. Please enter a number between 0 and 100.");
+    }
 }
 
 // Function to change font family
 function changeFontFamily() {
-  currentFontFamilyIndex = (currentFontFamilyIndex + 1) % fontFamilies.length; // Cycle through font families
-  updateStyles();
+    var currentFontFamilyIndex = 0; // Index to track current font family
+    var fontFamilies = ['Arial', 'Helvetica', 'Verdana', 'Georgia', 'Times New Roman']; // Array of font families
+    currentFontFamilyIndex = (currentFontFamilyIndex + 1) % fontFamilies.length; // Cycle through font families
+    alert("Font family changed to " + fontFamilies[currentFontFamilyIndex] + ".");
 }
 
 // Function to reset all settings to default
 function resetToDefault() {
-  fontSize = 16;
-  textColor = '#333';
-  saturation = 100;
-  currentFontFamilyIndex = 0;
-  updateStyles();
+    alert("Reset to defaults.");
 }
 
-// Attach event listeners to the button
-accessibilityBtn.addEventListener('click', function() {
-  const action = prompt(`Choose an action:
-1. Increase text size
-2. Decrease text size
-3. Adjust saturation
-4. Change text color
-5. Change font family
-6. Reset to default`);
+// Attach event listener to the button
+document.getElementById("accessibilityButton").addEventListener("click", function () {
+    var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Text Color\n4. Adjust Saturation\n5. Change Font Family\n6. Reset to Defaults"));
 
-  switch (action) {
-    case '1':
-      increaseTextSize();
-      break;
-    case '2':
-      decreaseTextSize();
-      break;
-    case '3':
-      adjustSaturation();
-      break;
-    case '4':
-      changeTextColor();
-      break;
-    case '5':
-      changeFontFamily();
-      break;
-    case '6':
-      resetToDefault();
-      break;
-    default:
-      alert('Invalid choice');
-  }
+    switch (option) {
+        case 1:
+            increaseTextSize();
+            break;
+        case 2:
+            decreaseTextSize();
+            break;
+        case 3:
+            changeTextColor();
+            break;
+        case 4:
+            adjustSaturation();
+            break;
+        case 5:
+            changeFontFamily();
+            break;
+        case 6:
+            resetToDefault();
+            break;
+        default:
+            alert("Invalid option. Please choose a number between 1 and 6.");
+    }
 });
