@@ -71,12 +71,10 @@
   </head>
   <body class="layout-wide">
 
-    <!-- Loader -->
-    <div class="loader bg-dark">
-      <div class="spinner-grow text-primary" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-    </div>
+	<!-- Loader -->
+	<div class="loader bg-dark">
+	  <img src="image-removebg-preview (14).png" alt="Loading...">
+	</div>
 
     <div id="top"></div>
 
@@ -93,27 +91,8 @@
         <span class="navbar-toggler-alternative-icon"></span>
       </button>
 
-      <!-- Chat with us button-->
-    	<button id="my-chat-button">
-        	Chat with us
-        	<div id="my-notification-dot"></div>
-    	</button>
-    
-    	<div id="my-chat-container" class="my-chat-container">
-        	<div id="my-chat-header">
-            	<button id="my-close-button">&#10005;</button>
-            	<i class="fas fa-comments" style="margin-right: 5px;"></i>
-            	Chat with us
-        	</div>
-        	<div id="my-chat-history"></div>
-        	<div id="my-chat-input">
-            	<input type="text" id="my-message-input" placeholder="Type your message...">
-            	<button id="my-send-button">Send</button>
-        	</div>
-    	</div>
-
-<!-- Accessibility button -->
-<button id="accessibility-btn">Accessibility</button>
+	<!-- Accessibility button -->
+	<button id="accessibilityButton" onclick="performAccessibilityAction()">Accessibility</button>
 	    
       <!-- Collapse -->
       <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -377,145 +356,19 @@
     <!-- Theme JS -->
     <script src="main.js"></script>
 
-	  <!--JS-->
-<script>
-// Get elements
-const body = document.body;
-const accessibleText = document.getElementById('accessible-text');
-const accessibilityBtn = document.getElementById('accessibility-btn');
-const toggleOffBtn = document.getElementById('toggle-off-btn');
-
-// Set initial values
-let fontSize = 16;
-let textColor = '#333';
-let textSpacing = false;
-let pauseAnimations = false;
-let cursorTooltip = false;
-let saturation = 100;
-
-// Function to update styles
-function updateStyles() {
-  body.style.fontSize = `${fontSize}px`;
-  body.style.color = textColor;
-  body.style.letterSpacing = textSpacing ? '2px' : 'normal';
-  body.style.animationPlayState = pauseAnimations ? 'paused' : 'running';
-  body.style.cursor = cursorTooltip ? 'help' : 'auto';
-  body.style.filter = `saturate(${saturation}%)`;
-}
-
-// Function to increase text size
-function increaseTextSize() {
-  fontSize += 2;
-  updateStyles();
-}
-
-// Function to decrease text size
-function decreaseTextSize() {
-  fontSize = Math.max(10, fontSize - 2);
-  updateStyles();
-}
-
-// Function to change text color
-function changeTextColor() {
-  textColor = prompt('Enter a color (e.g., #ff0000):', textColor) || textColor;
-  updateStyles();
-}
-
-// Function to toggle text spacing
-function toggleTextSpacing() {
-  textSpacing = !textSpacing;
-  updateStyles();
-}
-
-// Function to toggle pause animations
-function togglePauseAnimations() {
-  pauseAnimations = !pauseAnimations;
-  updateStyles();
-}
-
-// Function to toggle cursor tooltip
-function toggleCursorTooltip() {
-  cursorTooltip = !cursorTooltip;
-  updateStyles();
-}
-
-// Function to change saturation
-function changeSaturation() {
-  saturation = prompt('Enter saturation value (0-100):', saturation) || saturation;
-  updateStyles();
-}
-
-// Function to reset to default values
-function resetToDefault() {
-  fontSize = 16;
-  textColor = '#333';
-  textSpacing = false;
-  pauseAnimations = false;
-  cursorTooltip = false;
-  saturation = 100;
-  updateStyles();
-}
-
-// Function to toggle off all features
-function toggleOffFeatures() {
-  textSpacing = false;
-  pauseAnimations = false;
-  cursorTooltip = false;
-  updateStyles();
-}
-
-// Attach event listener to the button
-accessibilityBtn.addEventListener('click', function () {
-  const action = prompt('Choose an action:\n1. Increase text size\n2. Decrease text size\n3. Change text color\n4. Toggle Text Spacing\n5. Toggle Pause Animations\n6. Toggle Cursor Tooltip\n7. Change Saturation\n8. Reset to Default');
-
-  switch (action) {
-    case '1':
-      increaseTextSize();
-      break;
-    case '2':
-      decreaseTextSize();
-      break;
-    case '3':
-      changeTextColor();
-      break;
-    case '4':
-      toggleTextSpacing();
-      break;
-    case '5':
-      togglePauseAnimations();
-      break;
-    case '6':
-      toggleCursorTooltip();
-      break;
-    case '7':
-      changeSaturation();
-      break;
-    case '8':
-      resetToDefault();
-      break;
-    default:
-      alert('Invalid choice');
-      return;
-  }
-});
-
-// Attach event listener to toggle off button
-toggleOffBtn.addEventListener('click', function() {
-  toggleOffFeatures();
-});
-
-// Get the slider element
-const slider = document.querySelector('.slider');
-
-// Initialize the Slick slider
-$(slider).slick();
-
-// Override the left-to-right animation
-$('.slick-next').hide();
-$('.slick-prev').hide();
-
-</script>
-
+    <!-- JS for chat-->
+	<script>
+	window.embeddedChatbotConfig = {
+	chatbotId: "PCsgp4x7-flpaQ_WjUZ-P",
+	domain: "www.chatbase.co"
+	}
+	</script>
+	<script
+	src="https://www.chatbase.co/embed.min.js"
+	chatbotId="PCsgp4x7-flpaQ_WjUZ-P"
+	domain="www.chatbase.co"
+	defer>
+	</script>
 
   </body>
 </html>
