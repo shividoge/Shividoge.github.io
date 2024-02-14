@@ -152,3 +152,177 @@
     color: white;
     font-size: 16px; /* Slightly smaller font size */
   }
+/* Nav Bar*/
+html{
+    scroll-behavior: smooth;
+}
+.imgBxsa{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(./img.png);
+    background-size: cover;
+    background-position: center;
+}
+.imgBx1sa{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100vh;
+    background: url(./img.png);
+    background-size: cover;
+    background-position: center;
+}
+::-webkit-scrollbarsa{
+    width: 10px;
+}
+::-webkit-scrollbar-tracksa{
+    background: #fff;
+}
+::-webkit-scrollbar-thumbsa{
+    background: #0718c4;
+    border: 3px solid #fff;
+    border-radius: 8px;
+    transition: .3s ease;
+}
+::-webkit-scrollbar-thumbsa:hover{
+    background: #0718c4aa;
+}
+headersa{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    transition: .6s;
+    z-index: 10000;
+}
+headersa.stickysa{
+    padding: 5px 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+headersa .logosa{
+    position: relative;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .6s;
+}
+headersa ulsa{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+headersa ulsa li{
+    position: relative;
+    list-style: none;
+}
+headersa ulsa li asa{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 1.3em;
+    transition: .6s;
+    text-transform: capitalize;
+}
+togglesa{
+    display: none;
+}
+
+/* Responsivesa */
+@media (max-width: 992px){
+    togglesa{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    togglesa::beforesa{
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        z-index: 1;
+        box-shadow: 0 10px 0 #fff;
+        transition: .5s;
+    }
+    togglesa::aftersa{
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        z-index: 1;
+        transition: .5s;
+    }
+    headersa.active .togglesa::beforesa{
+        top: 14px;
+        transform: rotate(45deg);
+        box-shadow: 0 0 0 #fff;
+    }
+    headersa.active .togglesa::aftersa{
+        bottom: 14px;
+        transform: rotate(-45deg);
+    }
+    headersa ulsa{
+        position: absolute;
+        top: 59px;
+        left: 110px;
+        width: 100%;
+        height: calc(100vh);
+        padding: 50px 100px;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    headersa.active ulsa{
+        left: 0%;
+        background: #fff;
+        visibility: visible;
+        opacity: 1;
+        transition: .5s ease;
+    }
+    headersa.active ulsa li asa{
+        margin: 5px 0;
+        font-size: 24px;
+    }
+    headersa,
+    headersa.stickysa{
+        padding: 5px 50px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    headersa.active ulsa li asa{
+        color: #000;
+    }
+}
