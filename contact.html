@@ -41,72 +41,82 @@
     <div id="top"></div>
 
     <!-- Site navigation -->
-	<headersa id="header">
-        <a href="#" class="logosa">logo</a>
-        <ulsa>
-            <li>
-                <asa href="#">home</asa>
-            </li>
-            <li>
-                <asa href="#">about</asa>
-            </li>
-            <li>
-                <asa href="#">services</asa>
-            </li>
-            <li>
-                <asa href="#">portfolia</asa>
-            </li>
-            <li>
-                <asa href="#">team</asa>
-            </li>
-            <li>
-                <asa href="#">contact</asa>
-            </li>
-        </ulsa>
-        <div class="togglesa active" onclick="toggle()"></div>
-    </headersa>
-    <div class="imgBxsa"></div>
-    <div class="imgBx1sa"></div>
-	  
+    <nav class="site-navbar site-navbar-transparent navbar navbar-expand-lg navbar-dark fixed-top bg-white shadow-light p-lg-4" data-navbar-base="navbar-dark" data-navbar-toggled="navbar-light" data-navbar-scrolled="navbar-light">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="index.html">
+        <img src="photo_2024-01-03_16-46-26-removebg-preview.png" class="navbar-brand-img" alt="">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler-alternative" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-alternative-icon"></span>
+      </button>
+
+	<!-- Accessibility button -->
+	<button id="accessibilityButton" onclick="performAccessibilityAction()">Accessibility</button>
+	    
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <!-- Navigation -->
+        <ul class="navbar-nav ml-auto" id="navigation">
+          <li class="nav-item" data-menuanchor="home">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item" data-menuanchor="our-solutions">
+            <a class="nav-link" href="Application.html">Application</a>
+          </li>
+          <li class="nav-item" data-menuanchor="benefits">
+            <a class="nav-link" href="Benefits.html">Benefits</a>
+          </li>
+          <li class="nav-item active" data-menuanchor="contact">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item" data-menuanchor="openings">
+            <a class="nav-link" href="Openings.html">Openings</a>
+          </li>
+        </ul>
+
+        <!-- Button -->
+        <a class="btn btn-primary d-block d-lg-inline-block ml-lg-3" class="nav-link" href="https://shividoge.github.io/Application.html" target="_blank">Apply Now!</a>
+
+      </div>
+    </nav>
+
     <!-- Back To Top Button -->
     <a href="#top" class="backtotop">
       <span>Back To Top</span>
       <i class="fas fa-angle-up"></i>
     </a>
 
+    <!-- Scroll progress -->
+    <div class="scroll-progress">
+      <div class="sp-left">
+        <div class="sp-inner"></div>
+        <div class="sp-inner progress"></div>
+      </div>
+      <div class="sp-right">
+        <div class="sp-inner"></div>
+        <div class="sp-inner progress"></div>
+      </div>
+    </div>
+
     <!-- Fullpage content -->
     <div class="ln-fullpage" data-navigation="true">
 	    
 <!-- Section - Contact -->
-	<section class="ln-section d-xl-flex" data-anchor="contact" data-tooltip="Contact" data-overlay-color="#00050e" data-overlay-opacity="10">
+	<section class="ln-section d-xl-flex" data-anchor="contact" data-tooltip="Contact" data-overlay-color="#00050e" data-overlay-opacity="90">
 	  <div class="overlay overlay-advanced">
 	    <div class="overlay-inner bg-image-holder bg-cover">
 	      <img src="pexels-alex-andrews.jpg" alt="background">
 	    </div>
-	    <div class="overlay-inner bg-dark opacity-10"></div>
+	    <div class="overlay-inner bg-dark opacity-70"></div>
 	  </div>
 	  <div class="container align-self-center text-center text-white">
           <div class="row mb-7">
             <div class="col-12 col-xl-6">
               <h2 class="mb-4 animated" data-animation="fadeInUp">Contact Us</h2>
-		    <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		    <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
-		      <br>
               <p class="animated" data-animation="fadeInUp" data-animation-delay="150">Want to say hello? Want to know more about us? Give us a call or drop us an email and we will get back to you as soon as we can.</p>
             </div>
           </div>
