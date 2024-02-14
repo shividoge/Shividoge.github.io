@@ -28,7 +28,7 @@ License: https://themeforest.net/licenses/standard
 15. Helper Classes
 16. Applicaiton and chat button
 17. Terms and services
-18. Accesiblitiy button
+18. Nav Bar
 -------------------------------------------------------------------*/
 
 (function($) {
@@ -956,3 +956,14 @@ function resetDefaults() {
 }
 
 performAccessibilityAction(); // Call the function to start the accessibility action
+
+// 18. Nav Bar
+ window.addEventListener('scroll', function () {
+            var headersa = document.querySelector('headersa');
+            headersa.classList.toggle('stickysa', window.scrollY > 0);
+        });
+
+        function toggle() {
+            var headersa = document.getElementById('header');
+            headersa.classList.toggle('active');
+        };
