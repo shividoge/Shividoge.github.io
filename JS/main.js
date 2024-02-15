@@ -866,29 +866,29 @@ defer>
 
 
 // [16. Applicaiton]
-document.getElementById("applicationForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  var fullName = document.getElementById("fullName").value;
-  var email = document.getElementById("email").value;
-  var position = document.getElementById("position").value;
-  var linkedin = document.getElementById("linkedin").value;
-  var whyUs = document.getElementById("whyUs").value;
-  var howToImprove = document.getElementById("howToImprove").value;
-  var cv = document.getElementById("cv").files[0];
-  var coverLetter = document.getElementById("coverLetter").files[0];
-
-  // Validation logic
-  if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
-    // Form is filled correctly
-    document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
-    // You can submit the form data to a server here
-  } else {
-    // Form is not filled correctly
-    document.getElementById("message").innerText = "Please fill in all fields.";
-  }
-});
-
+    document.getElementById("applicationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+    
+      var fullName = document.getElementById("fullName").value;
+      var email = document.getElementById("email").value;
+      var position = document.getElementById("position").value;
+      var linkedin = document.getElementById("linkedin").value;
+      var whyUs = document.getElementById("whyUs").value;
+      var howToImprove = document.getElementById("howToImprove").value;
+      var cv = document.getElementById("cv").files[0];
+      var coverLetter = document.getElementById("coverLetter").files[0];
+    
+      // Validation logic
+      if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
+        // Form is filled correctly
+        document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
+        // Reset the form
+        document.getElementById("applicationForm").reset();
+      } else {
+        // Form is not filled correctly
+        document.getElementById("message").innerText = "Please fill in all fields.";
+      }
+    });
 //17. Acc button
 function performAccessibilityAction() {
   var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Saturation\n4. Reset to Defaults"));
