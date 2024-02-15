@@ -881,7 +881,7 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
   // Validation logic
   if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
     // Form is filled correctly
-    document.getElementById("message").innerText = "Thank you for your application!";
+    document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
     // You can submit the form data to a server here
   } else {
     // Form is not filled correctly
