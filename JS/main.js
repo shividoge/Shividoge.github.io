@@ -866,53 +866,28 @@ defer>
 
 
 // [16. Applicaiton]
-function submitBhuveshJobApplicationForm() {
-    // Get form inputs
-    const firstName = document.getElementById("Bhuvesh-first-name").value.trim();
-    const email = document.getElementById("Bhuvesh-email").value.trim();
-    const position = document.getElementById("Bhuvesh-position").value.trim();
-    const linkedinUrl = document.getElementById("Bhuvesh-linkedin-url").value.trim();
-    const coverLetter = document.getElementById("Bhuvesh-cover-letter").value.trim();
-    const cvFile = document.getElementById("cvFile").files[0];
-    const coverLetterFile = document.getElementById("coverLetterFile").files[0];
+document.getElementById("applicationForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    // Validate inputs
-    if (firstName === "" || email === "" || position === "" || linkedinUrl === "" || coverLetter === "" || !cvFile || !coverLetterFile) {
-        alert("Please fill in all fields and upload both CV and cover letter.");
-        return;
-    }
+  var fullName = document.getElementById("fullName").value;
+  var email = document.getElementById("email").value;
+  var position = document.getElementById("position").value;
+  var linkedin = document.getElementById("linkedin").value;
+  var whyUs = document.getElementById("whyUs").value;
+  var howToImprove = document.getElementById("howToImprove").value;
+  var cv = document.getElementById("cv").files[0];
+  var coverLetter = document.getElementById("coverLetter").files[0];
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-    }
-
-    // Validate LinkedIn URL format
-    const linkedinRegex = /^(http(s)?:\/\/)?([\w-]+\.)?linkedin\.com\/in\/[\w-]+\/?$/;
-    if (!linkedinRegex.test(linkedinUrl)) {
-        alert("Please enter a valid LinkedIn URL.");
-        return;
-    }
-
-    // Validate file formats
-    const allowedFormats = ["pdf", "docx"];
-    const cvFileName = cvFile.name.toLowerCase();
-    const coverLetterFileName = coverLetterFile.name.toLowerCase();
-    const cvExtension = cvFileName.substring(cvFileName.lastIndexOf(".") + 1);
-    const coverLetterExtension = coverLetterFileName.substring(coverLetterFileName.lastIndexOf(".") + 1);
-    if (!allowedFormats.includes(cvExtension) || !allowedFormats.includes(coverLetterExtension)) {
-        alert("Please upload files in PDF or DOCX format only.");
-        return;
-    }
-
-    // If all validations pass, submit the form
-    // You can submit the form via AJAX or any other preferred method here
-
-    // Display thank you message
-    document.getElementById("Bhuvesh-thank-you-message-job-application").style.display = "block";
-}
+  // Validation logic
+  if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
+    // Form is filled correctly
+    document.getElementById("message").innerText = "Thank you for your application!";
+    // You can submit the form data to a server here
+  } else {
+    // Form is not filled correctly
+    document.getElementById("message").innerText = "Please fill in all fields.";
+  }
+});
 
 //17. Acc button
 function performAccessibilityAction() {
