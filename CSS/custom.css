@@ -1,3 +1,4 @@
+/* CSS for application */
 .Bhuvesh-container {
   max-width: 90%; /* Adjust as needed */
   margin: 0 auto;
@@ -29,29 +30,14 @@
 .Bhuvesh-form-control,
 .Bhuvesh-form-control-email,
 .Bhuvesh-input,
-.Bhuvesh-file-input {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 0 1em; /* Adjust the padding value as needed */
-}
-
+.Bhuvesh-file-input,
+.Bhuvesh-select,
 .Bhuvesh-textarea {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-
-.Bhuvesh-cover-letter-container {
-  width: 100%;
-  margin-top: 2%;
-}
-
-.Bhuvesh-button-container {
-  width: 100%;
-  margin-top: 2%;
-  display: flex;
-  justify-content: center;
+  padding: 0 1em; /* Adjust the padding value as needed */
+  border: 1px solid white; /* Set border color to white */
 }
 
 .Bhuvesh-label {
@@ -64,10 +50,16 @@
 .Bhuvesh-select,
 .Bhuvesh-textarea {
   padding: 0.5em 0.8em;
-  border: 1px solid;
   border-radius: 4px;
   font-size: 1em; /* Change to em for relative sizing */
   background-color: transparent;
+}
+
+.Bhuvesh-button-container {
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
 }
 
 .Bhuvesh-button {
