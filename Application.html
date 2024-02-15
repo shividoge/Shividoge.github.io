@@ -145,49 +145,55 @@
                   </ul>
 	    </p>
 	
-<div class="Bhuvesh-container">
-  <div class="Bhuvesh-apply-box">
-    <h2 class="Bhuvesh-h1">Application Form</h2>
-    <form id="applicationForm" enctype="multipart/form-data" class="Bhuvesh-form-container">
-      <div class="Bhuvesh-form-control">
-        <label for="fullName" class="Bhuvesh-label">Full Name:</label>
-        <input type="text" id="fullName" name="fullName" required class="Bhuvesh-input">
-      </div>
-      <div class="Bhuvesh-form-control-email">
-        <label for="email" class="Bhuvesh-label">Email:</label>
-        <input type="email" id="email" name="email" required class="Bhuvesh-input">
-      </div>
-      <div class="Bhuvesh-form-control">
-        <label for="position" class="Bhuvesh-label">Position Applying For:</label>
-        <input type="text" id="position" name="position" required class="Bhuvesh-input">
-      </div>
-      <div class="Bhuvesh-form-control">
-        <label for="linkedin" class="Bhuvesh-label">LinkedIn URL:</label>
-        <input type="url" id="linkedin" name="linkedin" required class="Bhuvesh-input">
-      </div>
-      <div class="Bhuvesh-form-control">
-        <label for="whyUs" class="Bhuvesh-label">Why Us:</label>
-        <textarea id="whyUs" name="whyUs" rows="4" cols="50" required class="Bhuvesh-textarea"></textarea>
-      </div>
-      <div class="Bhuvesh-form-control">
-        <label for="howToImprove" class="Bhuvesh-label">How can you make our company better:</label>
-        <textarea id="howToImprove" name="howToImprove" rows="4" cols="50" required class="Bhuvesh-textarea"></textarea>
-      </div>
-      <div class="Bhuvesh-form-control">
-        <label for="cv" class="Bhuvesh-label">Upload CV (PDF or DOCX):</label>
-        <input type="file" id="cv" name="cv" accept=".pdf,.docx" required class="Bhuvesh-file-input">
-      </div>
-      <div class="Bhuvesh-form-control">
-        <label for="coverLetter" class="Bhuvesh-label">Upload Cover Letter (PDF or DOCX):</label>
-        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.docx" required class="Bhuvesh-file-input">
-      </div>
-      <div class="Bhuvesh-button-container">
-        <button type="submit" class="Bhuvesh-button">Submit Application</button>
-      </div>
-    </form>
-    <div id="message"></div>
-  </div>
-</div>
+		<div class="Bhuvesh-container">
+		  <div class="Bhuvesh-apply-box">
+		    <h2 class="Bhuvesh-h1">Application Form</h2>
+		    <form id="applicationForm" enctype="multipart/form-data" class="Bhuvesh-form-container">
+		      <div class="Bhuvesh-form-control">
+		        <label for="fullName" class="Bhuvesh-label">Full Name:</label>
+		        <input type="text" id="fullName" name="fullName" required class="Bhuvesh-input">
+		      </div>
+		      <div class="Bhuvesh-form-control-email">
+		        <label for="email" class="Bhuvesh-label">Email:</label>
+		        <input type="email" id="email" name="email" required class="Bhuvesh-input">
+		      </div>
+		      <div class="Bhuvesh-form-control">
+		        <label for="position" class="Bhuvesh-label">Position Applying For:</label>
+		        <select id="position" name="position" required class="Bhuvesh-select">
+		          <option value="">Select Position</option>
+		          <option value="Software Engineer">Software Engineer</option>
+		          <option value="Data Analyst">Data Analyst</option>
+		          <option value="Marketing Manager">Marketing Manager</option>
+		          <option value="Sales Representative">Sales Representative</option>
+		        </select>
+		      </div>
+		      <div class="Bhuvesh-form-control">
+		        <label for="linkedin" class="Bhuvesh-label">LinkedIn URL:</label>
+		        <input type="url" id="linkedin" name="linkedin" required class="Bhuvesh-input">
+		      </div>
+		      <div class="Bhuvesh-form-control">
+		        <label for="whyUs" class="Bhuvesh-label">Why Us:</label>
+		        <textarea id="whyUs" name="whyUs" rows="4" cols="50" required class="Bhuvesh-textarea"></textarea>
+		      </div>
+		      <div class="Bhuvesh-form-control">
+		        <label for="howToImprove" class="Bhuvesh-label">How can you make our company better:</label>
+		        <textarea id="howToImprove" name="howToImprove" rows="4" cols="50" required class="Bhuvesh-textarea"></textarea>
+		      </div>
+		      <div class="Bhuvesh-form-control">
+		        <label for="cv" class="Bhuvesh-label">Upload CV (PDF or DOCX):</label>
+		        <input type="file" id="cv" name="cv" accept=".pdf,.docx" required class="Bhuvesh-file-input">
+		      </div>
+		      <div class="Bhuvesh-form-control">
+		        <label for="coverLetter" class="Bhuvesh-label">Upload Cover Letter (PDF or DOCX):</label>
+		        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.docx" required class="Bhuvesh-file-input">
+		      </div>
+		      <div class="Bhuvesh-button-container">
+		        <button type="submit" class="Bhuvesh-button">Submit Application</button>
+		      </div>
+		    </form>
+		    <div id="message"></div>
+		  </div>
+		</div>
 	</section>
 
     </div>
