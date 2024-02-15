@@ -27,17 +27,23 @@
   gap: 2%;
 }
 
-.Bhuvesh-form-control,
-.Bhuvesh-form-control-email,
 .Bhuvesh-input,
 .Bhuvesh-file-input,
-.Bhuvesh-select,
+
 .Bhuvesh-textarea {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 0 1em; /* Adjust the padding value as needed */
   border: 1px solid white; /* Set border color to white */
+}
+
+.Bhuvesh-form-control,
+.Bhuvesh-form-control-email {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em; /* Adjust the padding value as needed */
 }
 
 .Bhuvesh-label {
@@ -53,6 +59,12 @@
   border-radius: 4px;
   font-size: 1em; /* Change to em for relative sizing */
   background-color: transparent;
+}
+
+.Bhuvesh-name,
+.Bhuvesh-email,
+.Bhuvesh-linkedin {
+  flex-basis: calc(50% - 1em); /* Make the sections half the width with some gap */
 }
 
 .Bhuvesh-button-container {
@@ -86,7 +98,6 @@
 .Bhuvesh-textarea-control .Bhuvesh-textarea {
   width: 100%;
 }
-
 
 /* Accesibility button*/
   #accessibilityButton {
