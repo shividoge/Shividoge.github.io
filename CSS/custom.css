@@ -29,12 +29,11 @@
 
 .Bhuvesh-input,
 .Bhuvesh-file-input,
-
 .Bhuvesh-textarea {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 1em; /* Adjust the padding value as needed */
+  padding: 2% 2%; /* Adjust the padding value as needed */
   border: 1px solid white; /* Set border color to white */
 }
 
@@ -43,7 +42,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 1em; /* Adjust the padding value as needed */
+  padding: 2% 2%; /* Adjust the padding value as needed */
 }
 
 .Bhuvesh-label {
@@ -55,7 +54,7 @@
 .Bhuvesh-input,
 .Bhuvesh-select,
 .Bhuvesh-textarea {
-  padding: 0.5em 0.8em;
+  padding: 1% 2%; /* Adjust the padding value as needed */
   border-radius: 4px;
   font-size: 1em; /* Change to em for relative sizing */
   background-color: transparent;
@@ -64,7 +63,7 @@
 .Bhuvesh-name,
 .Bhuvesh-email,
 .Bhuvesh-linkedin {
-  flex-basis: calc(50% - 1em); /* Make the sections half the width with some gap */
+  flex-basis: 100%; /* Make the sections full width */
 }
 
 .Bhuvesh-button-container {
@@ -79,7 +78,7 @@
   border: white solid 2px;
   color: white;
   border-radius: 1.2em; /* Change to em for relative sizing */
-  padding: 0.5em 1em;
+  padding: 1% 2%; /* Adjust the padding value as needed */
   font-size: 1em; /* Change to em for relative sizing */
   transition: transform 0.4s ease-out;
 }
@@ -98,6 +97,7 @@
 .Bhuvesh-textarea-control .Bhuvesh-textarea {
   width: 100%;
 }
+
 
 /* Accesibility button*/
   #accessibilityButton {
