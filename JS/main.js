@@ -1,8 +1,7 @@
 /*
-Theme Name: Lana
-Description: Creative Coming Soon Template
-Author: Erilisdesign
-Theme URI: https://preview.erilisdesign.com/html/lana/
+Theme Name: RoboHorizons
+Description: Robohorizons website
+Author: Shivin Anand, Bhuvesh Arveti,& Akshar Veerendra
 Author URI: https://themeforest.net/user/erilisdesign
 Version: 2.1
 License: https://themeforest.net/licenses/standard
