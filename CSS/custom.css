@@ -290,3 +290,76 @@ togglesa{
         color: #000;
     }
 }
+
+/*"I'm a" animated text*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+body
+{
+    min-height: 100vh;
+    background: #262626;
+}
+#h2ani
+{
+    display: inline-block;
+    color: #fff;
+    font-size: 4em;
+    font-weight : 600;
+    padding: 0 100px;
+}
+#h2ani span
+{
+    position: relative; 
+    color: transparent;
+    -webkit-text-stroke: 1px #50b6bc;
+    line-height: 1.2em; 
+    padding: 5px 10px;
+    animation: displayText 12s infinite; 
+    animation-delay: calc(-3s * var(--i));
+}
+    @keyframes displayText 
+{
+    0%
+    {
+        display: inline-block;
+    }
+    25%, 100%
+    {
+        display: none;
+    }
+}
+#h2ani span::before
+{
+    content: attr(data-text);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 100%; 
+    color:#50b6bc;
+    overflow: hidden; 
+    white-space: nowrap; 
+    border: 2px solid #50b6bc;
+    box-sizing: border-box; 
+    border-radius: 10px; 
+    padding: 5px 10px;
+    animation: animate 3s linear infinite;
+    filter: drop-shadow(0 0 1px #50b6bc) drop-shadow(0 0 25px #50b6bc);
+}
+@keyframes animate
+{
+    0%, 10%,100%
+    {
+        width: 0%;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+/* End of CSS for "I'm a" animated text*/
