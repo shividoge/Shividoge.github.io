@@ -26,6 +26,7 @@ Version: 2.1
 16. Applicaiton and chat button
 17. Terms and services
 18. Nav Bar
+19. Openings
 -------------------------------------------------------------------*/
 
 (function($) {
@@ -863,83 +864,83 @@ defer>
 
 
 // [16. Applicaiton]
-    document.getElementById("applicationForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-    
-      var fullName = document.getElementById("fullName").value;
-      var email = document.getElementById("email").value;
-      var position = document.getElementById("position").value;
-      var linkedin = document.getElementById("linkedin").value;
-      var whyUs = document.getElementById("whyUs").value;
-      var howToImprove = document.getElementById("howToImprove").value;
-      var cv = document.getElementById("cv").files[0];
-      var coverLetter = document.getElementById("coverLetter").files[0];
-    
-      // Validation logic
-      if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
-        // Form is filled correctly
-        document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
-        // Reset the form
-        document.getElementById("applicationForm").reset();
-      } else {
-        // Form is not filled correctly
-        document.getElementById("message").innerText = "Please fill in all fields.";
-      }
-    });
-//17. Acc button
-function performAccessibilityAction() {
-  var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Saturation\n4. Reset to Defaults"));
-  
-  switch (option) {
-    case 1:
-      increaseTextSize();
-      break;
-    case 2:
-      decreaseTextSize();
-      break;
-    case 3:
-      var saturationLevel = parseInt(prompt("Enter saturation level (0-100):"));
-      if (saturationLevel >= 0 && saturationLevel <= 100) {
-        changeSaturation(saturationLevel);
-      } else {
-        alert("Invalid saturation level. Please enter a number between 0 and 100.");
-      }
-      break;
-    case 4:
-      resetDefaults();
-      break;
-    default:
-      alert("Invalid option. Please choose a number between 1 and 4.");
-  }
-}
-
-function increaseTextSize() {
-  // Implement code to increase text size
-  document.body.style.fontSize = "larger";
-  alert("Text size increased.");
-}
-
-function decreaseTextSize() {
-  // Implement code to decrease text size
-  document.body.style.fontSize = "smaller";
-  alert("Text size decreased.");
-}
-
-function changeSaturation(saturationLevel) {
-  // Implement code to change saturation based on the saturationLevel input
-  var saturationPercentage = saturationLevel + "%";
-  document.body.style.filter = "saturate(" + saturationPercentage + ")";
-  alert("Saturation changed to " + saturationLevel + ".");
-}
-
-function resetDefaults() {
-  // Implement code to reset to defaults
-  document.body.style.fontSize = "medium";
-  document.body.style.filter = "none"; // Reset saturation
-  alert("Reset to defaults.");
-}
-
-performAccessibilityAction(); // Call the function to start the accessibility action
+	    document.getElementById("applicationForm").addEventListener("submit", function(event) {
+	      event.preventDefault();
+	    
+	      var fullName = document.getElementById("fullName").value;
+	      var email = document.getElementById("email").value;
+	      var position = document.getElementById("position").value;
+	      var linkedin = document.getElementById("linkedin").value;
+	      var whyUs = document.getElementById("whyUs").value;
+	      var howToImprove = document.getElementById("howToImprove").value;
+	      var cv = document.getElementById("cv").files[0];
+	      var coverLetter = document.getElementById("coverLetter").files[0];
+	    
+	      // Validation logic
+	      if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
+	        // Form is filled correctly
+	        document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
+	        // Reset the form
+	        document.getElementById("applicationForm").reset();
+	      } else {
+	        // Form is not filled correctly
+	        document.getElementById("message").innerText = "Please fill in all fields.";
+	      }
+	    });
+	//17. Acc button
+	function performAccessibilityAction() {
+	  var option = parseInt(prompt("Choose an option:\n1. Increase Text Size\n2. Decrease Text Size\n3. Change Saturation\n4. Reset to Defaults"));
+	  
+	  switch (option) {
+	    case 1:
+	      increaseTextSize();
+	      break;
+	    case 2:
+	      decreaseTextSize();
+	      break;
+	    case 3:
+	      var saturationLevel = parseInt(prompt("Enter saturation level (0-100):"));
+	      if (saturationLevel >= 0 && saturationLevel <= 100) {
+	        changeSaturation(saturationLevel);
+	      } else {
+	        alert("Invalid saturation level. Please enter a number between 0 and 100.");
+	      }
+	      break;
+	    case 4:
+	      resetDefaults();
+	      break;
+	    default:
+	      alert("Invalid option. Please choose a number between 1 and 4.");
+	  }
+	}
+	
+	function increaseTextSize() {
+	  // Implement code to increase text size
+	  document.body.style.fontSize = "larger";
+	  alert("Text size increased.");
+	}
+	
+	function decreaseTextSize() {
+	  // Implement code to decrease text size
+	  document.body.style.fontSize = "smaller";
+	  alert("Text size decreased.");
+	}
+	
+	function changeSaturation(saturationLevel) {
+	  // Implement code to change saturation based on the saturationLevel input
+	  var saturationPercentage = saturationLevel + "%";
+	  document.body.style.filter = "saturate(" + saturationPercentage + ")";
+	  alert("Saturation changed to " + saturationLevel + ".");
+	}
+	
+	function resetDefaults() {
+	  // Implement code to reset to defaults
+	  document.body.style.fontSize = "medium";
+	  document.body.style.filter = "none"; // Reset saturation
+	  alert("Reset to defaults.");
+	}
+	
+	performAccessibilityAction(); // Call the function to start the accessibility action
 
 // 18. Nav Bar
  window.addEventListener('scroll', function () {
@@ -951,3 +952,39 @@ performAccessibilityAction(); // Call the function to start the accessibility ac
             var headersa = document.getElementById('header');
             headersa.classList.toggle('active');
         };
+
+// 19. Openings
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+	        <script>
+	            VanillaTilt.init(document.querySelector("#abox") , {
+	                max: 25,
+	                speed: 400,
+	                glare: true,
+	                "max-glare": 0.5
+	            });
+	            VanillaTilt.init(document.querySelector("#abox1") , {
+	                max: 25,
+	                speed: 400,
+	                glare: true,
+	                "max-glare": 0.5
+	            });
+	            VanillaTilt.init(document.querySelector("#abox2") , {
+	                max: 25,
+	                speed: 400,
+	                glare: true,
+	                "max-glare": 0.5
+	            });
+	            VanillaTilt.init(document.querySelector("#abox3") , {
+	                max: 25,
+	                speed: 400,
+	                glare: true,
+	                "max-glare": 0.5
+	            });
+	            VanillaTilt.init(document.querySelector("#abox4") , {
+	                max: 25,
+	                speed: 400,
+	                glare: true,
+	                "max-glare": 0.5
+	            });
+	        </script>
