@@ -365,24 +365,21 @@ body
 
 /* Beg of CSS for positions */
 
-#newpos
-{
+#sranewpos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(400px, auto);
     gap: 20px; 
 }
 
-#newpos2
-{
+#sranewpos2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(400px, auto);
     gap: 20px;
 }
 
-#acontiner
-{
+#sraacontiner {
     position: relative;
     display: flex;
     justify-content: center;
@@ -391,11 +388,11 @@ body
     width: 100%;
     transform-style: preserve-3d;
 }
-/*each box has its own bath of css, here is the firts one, and it is all the same for the rest but the number next to "abox" is +1*/
+
+/*each box has its own batch of css, here is the first one, and it is all the same for the rest but the number next to "sraabox" is +1*/
 
 /*box0*/
-#acontiner #abox
-{
+#sraacontiner #sraabox {
     position: relative;
     width: 300px; 
     height: 400px; 
@@ -405,8 +402,7 @@ body
     transform-style: preserve-3d;
 }
 
-#acontiner #abox #ah2
-{
+#sraacontiner #sraabox #sraah2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -420,14 +416,12 @@ body
     transition: 0.5s;
 }
 
-#acontiner #abox:hover #ah2
-{
+#sraacontiner #sraabox:hover #sraah2 {
     top: 15px;
     opacity: 1;
 }
 
-#acontiner #abox #learnm
-{
+#sraacontiner #sraabox #sralearnm {
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -447,13 +441,11 @@ body
     opacity: 0;
 }
 
-#acontiner #abox:hover #learnm
-{
+#sraacontiner #sraabox:hover #sralearnm {
     opacity: 1;
 }
 
-#acontiner #abox #product
-{
+#sraacontiner #sraabox #sraproduct {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -461,15 +453,14 @@ body
     max-width: 70%;
     transition: 0.5s;
 }
-#acontiner #abox:hover #product
-{
+
+#sraacontiner #sraabox:hover #sraproduct {
     transform: translate3d(-50%,-50%,100px);
 }
 /*end of box 0*/
 
 /* beg box 1*/
-#acontiner #abox1
-{
+#sraacontiner #sraabox1 {
     position: relative;
     width: 300px; 
     height: 400px; 
@@ -479,8 +470,7 @@ body
     transform-style: preserve-3d;
 }
 
-#acontiner #abox1 #ah2
-{
+#sraacontiner #sraabox1 #sraah2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -494,14 +484,12 @@ body
     transition: 0.5s;
 }
 
-#acontiner #abox1:hover #ah2
-{
+#sraacontiner #sraabox1:hover #sraah2 {
     top: 15px;
     opacity: 1;
 }
 
-#acontiner #abox1 #learnm
-{
+#sraacontiner #sraabox1 #sralearnm {
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -521,13 +509,11 @@ body
     opacity: 0;
 }
 
-#acontiner #abox1:hover #learnm
-{
+#sraacontiner #sraabox1:hover #sralearnm {
     opacity: 1;
 }
 
-#acontiner #abox1 #product
-{
+#sraacontiner #sraabox1 #sraproduct {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -535,15 +521,14 @@ body
     max-width: 70%;
     transition: 0.5s;
 }
-#acontiner #abox1:hover #product
-{
+
+#sraacontiner #sraabox1:hover #sraproduct {
     transform: translate3d(-50%,-50%,100px);
 }
 /*end of box 1*/
 
 /* beg box 2*/
-#acontiner #abox2
-{
+#sraacontiner #sraabox2 {
     position: relative;
     width: 300px; 
     height: 400px; 
@@ -553,8 +538,7 @@ body
     transform-style: preserve-3d;
 }
 
-#acontiner #abox2 #ah2
-{
+#sraacontiner #sraabox2 #sraah2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -568,14 +552,12 @@ body
     transition: 0.5s;
 }
 
-#acontiner #abox2:hover #ah2
-{
+#sraacontiner #sraabox2:hover #sraah2 {
     top: 15px;
     opacity: 1;
 }
 
-#acontiner #abox2 #learnm
-{
+#sraacontiner #sraabox2 #sralearnm {
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -595,13 +577,11 @@ body
     opacity: 0;
 }
 
-#acontiner #abox2:hover #learnm
-{
+#sraacontiner #sraabox2:hover #sralearnm {
     opacity: 1;
 }
 
-#acontiner #abox2 #product
-{
+#sraacontiner #sraabox2 #sraproduct {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -609,16 +589,14 @@ body
     max-width: 70%;
     transition: 0.5s;
 }
-#acontiner #abox2:hover #product
-{
+
+#sraacontiner #sraabox2:hover #sraproduct {
     transform: translate3d(-50%,-50%,100px);
 }
 /*end of box 2*/
 
-
 /* beg box 3*/
-#acontiner #abox3
-{
+#sraacontiner #sraabox3 {
     position: relative;
     width: 300px; 
     height: 400px; 
@@ -628,8 +606,7 @@ body
     transform-style: preserve-3d;
 }
 
-#acontiner #abox3 #ah2
-{
+#sraacontiner #sraabox3 #sraah2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -643,14 +620,12 @@ body
     transition: 0.5s;
 }
 
-#acontiner #abox3:hover #ah2
-{
+#sraacontiner #sraabox3:hover #sraah2 {
     top: 15px;
     opacity: 1;
 }
 
-#acontiner #abox3 #learnm
-{
+#sraacontiner #sraabox3 #sralearnm {
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -670,13 +645,11 @@ body
     opacity: 0;
 }
 
-#acontiner #abox3:hover #learnm
-{
+#sraacontiner #sraabox3:hover #sralearnm {
     opacity: 1;
 }
 
-#acontiner #abox3 #product
-{
+#sraacontiner #sraabox3 #sraproduct {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -684,16 +657,14 @@ body
     max-width: 70%;
     transition: 0.5s;
 }
-#acontiner #abox3:hover #product
-{
+
+#sraacontiner #sraabox3:hover #sraproduct {
     transform: translate3d(-50%,-50%,100px);
 }
 /*end of box 3*/
 
-
 /* beg box 4*/
-#acontiner #abox4
-{
+#sraacontiner #sraabox4 {
     position: relative;
     width: 300px; 
     height: 400px; 
@@ -703,8 +674,7 @@ body
     transform-style: preserve-3d;
 }
 
-#acontiner #abox4 #ah2
-{
+#sraacontiner #sraabox4 #sraah2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -718,14 +688,12 @@ body
     transition: 0.5s;
 }
 
-#acontiner #abox4:hover #ah2
-{
+#sraacontiner #sraabox4:hover #sraah2 {
     top: 15px;
     opacity: 1;
 }
 
-#acontiner #abox4 #learnm
-{
+#sraacontiner #sraabox4 #sralearnm {
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -745,13 +713,11 @@ body
     opacity: 0;
 }
 
-#acontiner #abox4:hover #learnm
-{
+#sraacontiner #sraabox4:hover #sralearnm {
     opacity: 1;
 }
 
-#acontiner #abox4 #product
-{
+#sraacontiner #sraabox4 #sraproduct {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -759,8 +725,8 @@ body
     max-width: 70%;
     transition: 0.5s;
 }
-#acontiner #abox4:hover #product
-{
+
+#sraacontiner #sraabox4:hover #sraproduct {
     transform: translate3d(-50%,-50%,100px);
 }
 /*end of box 4*/
