@@ -337,6 +337,7 @@ togglesa{
     border-radius: 10px; 
     padding: 5px 10px;
     animation: animate 3s linear infinite;
+    opacity: 0; /* Initially invisible */
     filter: drop-shadow(0 0 1px #50b6bc) drop-shadow(0 0 25px #50b6bc);
 }
 @keyframes animate
@@ -344,10 +345,12 @@ togglesa{
     0%, 10%,100%
     {
         width: 0%;
+        opacity: 0;
     }
     70%,90%
     {
         width: 100%;
+        opacity: 1;
     }
 }
 /* End of CSS for "I'm a" animated text*/
