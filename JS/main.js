@@ -26,7 +26,6 @@ Version: 2.1
 16. Applicaiton and chat button
 17. Terms and services
 18. Nav Bar
-19. Openings
 -------------------------------------------------------------------*/
 
 (function($) {
@@ -952,39 +951,3 @@ defer>
             var headersa = document.getElementById('header');
             headersa.classList.toggle('active');
         };
-
-// 19. Openings
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
-	        <script>
-	            VanillaTilt.init(document.querySelector("#abox") , {
-	                max: 25,
-	                speed: 400,
-	                glare: true,
-	                "max-glare": 0.5
-	            });
-	            VanillaTilt.init(document.querySelector("#abox1") , {
-	                max: 25,
-	                speed: 400,
-	                glare: true,
-	                "max-glare": 0.5
-	            });
-	            VanillaTilt.init(document.querySelector("#abox2") , {
-	                max: 25,
-	                speed: 400,
-	                glare: true,
-	                "max-glare": 0.5
-	            });
-	            VanillaTilt.init(document.querySelector("#abox3") , {
-	                max: 25,
-	                speed: 400,
-	                glare: true,
-	                "max-glare": 0.5
-	            });
-	            VanillaTilt.init(document.querySelector("#abox4") , {
-	                max: 25,
-	                speed: 400,
-	                glare: true,
-	                "max-glare": 0.5
-	            });
-	        </script>
