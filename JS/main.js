@@ -864,34 +864,54 @@ defer>
 
 	// [16. Applicaiton]
 	    document.getElementById("applicationForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-  
-    var form = event.target;
-    var formData = new FormData(form);
-    
-    fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
-            form.reset();
-        } else {
-            response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                    document.getElementById("message").innerText = data["errors"].map(error => error["message"]).join(", ");
-                } else {
-                    document.getElementById("message").innerText = "There was a problem submitting your form.";
-                }
-            });
-        }
-    }).catch(error => {
-        document.getElementById("message").innerText = "There was a problem submitting your form.";
-    });
-});
+	    event.preventDefault();
+	  
+	    var fullName = document.getElementById("fullName").value;
+	    var email = document.getElementById("email").value;
+	    var position = document.getElementById("position").value;
+	    var linkedin = document.getElementById("linkedin").value;
+	    var whyUs = document.getElementById("whyUs").value;
+	    var howToImprove = document.getElementById("howToImprove").value;
+	    var cv = document.getElementById("cv").files[0];
+	    var coverLetter = document.getElementById("coverLetter").files[0];
+	  
+	    // Validation logic
+	    if (fullName && email && position && linkedin && whyUs && howToImprove && cv && coverLetter) {
+	        // Form is filled correctly
+	        var formData = new FormData();
+	        formData.append("fullName", fullName);
+	        formData.append("email", email);
+	        formData.append("position", position);
+	        formData.append("linkedin", linkedin);
+	        formData.append("whyUs", whyUs);
+	        formData.append("howToImprove", howToImprove);
+	        formData.append("cv", cv);
+	        formData.append("coverLetter", coverLetter);
+	
+	        // Send the form data to the server-side script
+	        fetch('path/to/your/server-side/script', {
+	            method: 'POST',
+	            body: formData
+	        })
+	        .then(response => response.text())
+	        .then(result => {
+	            // Display the message after successful submission
+	            document.getElementById("message").innerText = "Thank you for your application, we will reach out to you in a few days about the next steps in the application process.";
+	            console.log(result); // Handle the server response here
+	
+	            // Reset the form
+	            document.getElementById("applicationForm").reset();
+	        })
+	        .catch(error => {
+	            console.error('Error:', error);
+	            document.getElementById("message").innerText = "There was an error submitting your application. Please try again.";
+	        });
+	
+	    } else {
+	        // Form is not filled correctly
+	        document.getElementById("message").innerText = "Please fill in all fields.";
+	    }
+	});
 
 
 	//17. Acc button
